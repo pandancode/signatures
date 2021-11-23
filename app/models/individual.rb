@@ -18,6 +18,6 @@ class Individual < ApplicationRecord
   validates :phone_number, numericality: { only_integer: true }
 
   validates :title, presence: true
-  validates :title, inclusion: { in: %w[Mr Ms]}
+  validates :title, inclusion: { in: %w[Mr Ms] }
   validates :title, numericality: { only_integer: false }
 end
