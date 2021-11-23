@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 2021_11_23_114733) do
     t.string "company_name"
     t.string "address"
     t.text "detail"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -48,8 +50,10 @@ ActiveRecord::Schema.define(version: 2021_11_23_114733) do
     t.string "last_name"
     t.date "birth_date"
     t.string "phone_number"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_individuals_on_user_id"
   end
 
   create_table "signatories", force: :cascade do |t|
@@ -66,8 +70,6 @@ ActiveRecord::Schema.define(version: 2021_11_23_114733) do
     t.string "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.bigint "company_id", null: false
-    t.bigint "individual_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -75,16 +77,14 @@ ActiveRecord::Schema.define(version: 2021_11_23_114733) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["individual_id"], name: "index_users_on_individual_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "individuals"
+  add_foreign_key "companies", "users"
   add_foreign_key "contracts", "companies"
+  add_foreign_key "individuals", "users"
   add_foreign_key "signatories", "contracts"
   add_foreign_key "signatories", "individuals"
-  add_foreign_key "users", "companies"
-  add_foreign_key "users", "individuals"
 end
