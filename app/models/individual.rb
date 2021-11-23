@@ -14,5 +14,10 @@ class Individual < ApplicationRecord
   validates :phone_number, length: { maximum: 11 }
   #only number for phone number  
   validates :phone_number, numericality: { only_integer: true }
-  
+  #title validation for mr mrs
+  validates :title, inclusion: { in: %w(Mr Ms)} 
+  #only charachter for title name and last name
+  validates :title, numericality: { only_integer: false }
+  validates :first_name, numericality: { only_integer: false } 
+  validates :last_name, numericality: { only_integer: false } 
 end
