@@ -20,15 +20,4 @@ class Individual < ApplicationRecord
   validates :title, presence: true
   validates :title, inclusion: { in: %w(Mr Ms)} 
   validates :title, numericality: { only_integer: false }
-  
-
-  
-  
-  
-
-  
-
-  
-
-
 end
