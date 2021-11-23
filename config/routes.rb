@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'contracts#company'
+  get 'contracts/company', to: 'contracts#company', as: contract_company
+  resources :contracts, only: %i[index new create show] do
+    resources :signatories, only: %i[new create]
+  end
+  resources :signatories, only: %i[edit update show]
 end
