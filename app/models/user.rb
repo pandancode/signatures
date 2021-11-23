@@ -5,9 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :companies
-  has_many :individual
+  has_many :individuals
 
+  validates :role, inclusion: { in: %w[individual company] }
   validates :role, presence: true
   validates :email, presence: true
+  validates :password, length: { in: 6..12 }
   validates :password, presence: true
 end
