@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :company
-  belongs_to :individual
+  has_one :company
+  has_one :individual
 
   validates :role, inclusion: { in: %w[individual company] }
   validates :role, presence: true
