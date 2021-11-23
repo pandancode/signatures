@@ -1,1 +1,14 @@
-<h1>EZ</h1>
+<h1>Form To Create Company</h1>
+<div class="container-sell-form">
+    <div class="container-form">
+        <h3 class="title-form">Creating company</h3>
+        <%= simple_form_for company_description_path do |f| %>
+          <%= f.input :company_name, input_html: { class: "select2", style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
+          <%= f.input :address, label_html: { class: "row justify-content-center"} %>
+          <%= f.input :detail, label_html: { class: "row justify-content-center"} %>
+          <%= f.button :submit, 'Create Company!', class: 'btn-submit' %>
+        <% end %>
+      </div>
+    <div class="container-form-img">
+    </div>
+</div>
