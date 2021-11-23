@@ -2,6 +2,7 @@ class Individual < ApplicationRecord
   has_many :signatories
   has_many :contracts,  through: :signatories
   has_many :addresses
+  has_many :users
 
   validates :title, presence: true
   validates :first_name, presence: true
