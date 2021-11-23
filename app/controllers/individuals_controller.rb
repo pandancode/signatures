@@ -1,4 +1,18 @@
 class IndividualsController < ApplicationController
+  def new
+    @individual = Individual.new
+  end
+
+  def create
+    @individual = Individual.new(individual_params)
+    @user = current_user
+    if @individual.save
+      redirect_to individual_path(@individual)
+    else
+      render :new
+    end
+  end
+
   def show
     @individual = Individual.find(individual_params)
   end
@@ -6,7 +20,6 @@ class IndividualsController < ApplicationController
   def update
     @individual = Individual.find(params[:id])
     @individual.update(individual_params)
-    redirect_to individual_path(@individual)
   end
 
 private
