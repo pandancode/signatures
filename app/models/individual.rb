@@ -2,12 +2,10 @@ class Individual < ApplicationRecord
   has_many :signatories
   has_many :contracts, through: :signatories
   has_many :addresses
-  has_many :users
+  belongs_to :user
 
   validates :first_name, presence: true
-  validates :first_name, numericality: { only_integer: false }
 
-  validates :last_name, numericality: { only_integer: false }
   validates :last_name, presence: true
 
   validates :birth_date, presence: true
@@ -19,5 +17,4 @@ class Individual < ApplicationRecord
 
   validates :title, presence: true
   validates :title, inclusion: { in: %w[Mr Ms] }
-  validates :title, numericality: { only_integer: false }
 end
