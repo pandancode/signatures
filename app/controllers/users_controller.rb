@@ -7,4 +7,12 @@ class UsersController < ApplicationController
   def create
 
   end
+
+  def company_description
+    # @company = Company.new
+  end
+
+  def individual_description
+    # @individual = Individual.new
+  end
 end

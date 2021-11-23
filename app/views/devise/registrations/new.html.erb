@@ -6,8 +6,7 @@
   <div class="form-inputs">
     <%= f.input :role,
                 required: true,
-                collection: ["Individual", "Company"],
-                selected: "Individual",
+                collection: User::ROLES,
                 autofocus: true,
                 input_html: { autocomplete: "role" }%>
     <%= f.input :email,
