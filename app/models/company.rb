@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
-  has_many :users
   has_many :contracts
+  belongs_to :user
 
   validates :company_name, presence: true
   validates :address, presence: true
