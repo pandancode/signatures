@@ -10,17 +10,17 @@ class ContractsController < ApplicationController
   # end
 
   def new
-    @contract = Contract.new
     @company = Company.find(params[:company_id])
+    @contract = Contract.new    
   end
 
   def create
     # Double check below
     @contract = Contract.new
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:company_id])
     @contract.company = @company
     if @contract.save
-      redirect_to contract_path(@contract)
+      redirect_to company_path(@company)
     else
       render :new
     end
