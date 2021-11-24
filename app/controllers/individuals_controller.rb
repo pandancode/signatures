@@ -18,6 +18,7 @@ class IndividualsController < ApplicationController
   end
 
   def edit
+    @individual = Individual.find(params[:id])
   end
 
   def update
