@@ -49,7 +49,7 @@ puts "Creating user 2 (individual user1): done"
 puts " "
 
 puts "Creating individual 1 (for user2)..."
-individual1 = Individual.new(title: "Ms", first_name: "Jacqueline", last_name: "Smith", phone_number: "0000000001",
+individual1 = Individual.new(title: "Ms", first_name: "Anne", last_name: "Boleyn", phone_number: "0000000001",
                              birth_date: "1988/1/1", user_id: user2.id)
 puts "Is this a valid individual? #{individual1.valid?}"
 individual1.save!
@@ -57,15 +57,15 @@ puts "Creating individual 1 (for user2): done"
 puts " "
 
 # 3. Seed third individual
-puts "Creating user 3 (individual user)..."
+puts "Creating user 3 (individual user 2)..."
 user3 = User.new(role: "Individual", email: "u2@user.com", password: "111111")
 puts "Is this a valid user? #{user3.valid?}"
 user3.save!
-puts "Creating user 3 (individual user): done"
+puts "Creating user 3 (individual user 2): done"
 puts " "
 
 puts "Creating individual 2 (for user3)..."
-individual2 = Individual.new(title: "Mr", first_name: "Jack", last_name: "Adams", phone_number: "0000000002",
+individual2 = Individual.new(title: "Mr", first_name: "Bart", last_name: "Chiswick", phone_number: "0000000002",
                              birth_date: "1989/1/1", user_id: user3.id)
 puts "Is this a valid individual? #{individual2.valid?}"
 individual2.save!
@@ -81,16 +81,14 @@ puts "Creating contract 1 (for company 1): done"
 puts " "
 
 # 5. Company 1 creates contract 2 for individual 2
-puts "Creating contract 2 (for company 1) for individual 2..."
+puts "Creating contract 2 (for company 1) for individual 2 [signed]..."
 contract2 = Contract.new(company_id: company1.id, individual_id: individual2.id, fully_signed_at: nil, status: "unopened")
 puts "Is this a valid contract? #{contract2.valid?}"
 puts "Signing..."
-contract4.fully_signed_at = Time.now
+contract2.fully_signed_at = Time.now
 contract2.save!
-puts "Creating contract 2 (for company 1): done"
+puts "Creating contract 2 (for company 1) for individual 2: done"
 puts " "
-
-# =================================================
 
 # 6. Seed second company
 puts "Creating user 4 (company user)..."
@@ -100,59 +98,59 @@ user4.save!
 puts "Creating user 4 (company user): done"
 puts " "
 
-puts "Creating company 2 (for company user4)..."
+puts "Creating company 2 (for user4)..."
 company2 = Company.new(company_name: "Beta", address: "Westminster London SW1A 0AA", detail: "Parliament",
                        user_id: user4.id)
 puts "Is this a valid company? #{company2.valid?}"
 company2.save!
-puts "Creating company 2 (for company user4): done"
+puts "Creating company 2 (for user4): done"
 
 # 7. Seed third individual
-puts "Creating user 5 (individual user3)..."
+puts "Creating user 5 (individual user)..."
 user5 = User.new(role: "Individual", email: "u3@user.com", password: "111111")
 puts "Is this a valid user? #{user5.valid?}"
 user5.save!
-puts "Creating user 5 (individual user3): done"
+puts "Creating user 5 (individual user): done"
 puts " "
 
-puts "Creating individual 3 (for user2)..."
-individual3 = Individual.new(title: "Ms", first_name: "Jacqueline", last_name: "Smith", phone_number: "0000000001",
-                             birth_date: "1988/1/1", user_id: user5.id)
+puts "Creating individual 3 (for user5)..."
+individual3 = Individual.new(title: "Ms", first_name: "Charmaine", last_name: "Dickinson", phone_number: "0000000003",
+                             birth_date: "1987/1/1", user_id: user5.id)
 puts "Is this a valid individual? #{individual3.valid?}"
 individual3.save!
-puts "Creating individual 3 (for user2): done"
+puts "Creating individual 3 (for user5): done"
 puts " "
 
 # 8. Seed fourth individual
-puts "Creating user 5 (individual user4)..."
+puts "Creating user 6 (individual user)..."
 user6 = User.new(role: "Individual", email: "u4@user.com", password: "111111")
 puts "Is this a valid user? #{user6.valid?}"
 user6.save!
-puts "Creating user 5 (individual user4): done"
+puts "Creating user 6 (individual user): done"
 puts " "
 
-puts "Creating individual 3 (for user2)..."
-individual3 = Individual.new(title: "Ms", first_name: "Jacqueline", last_name: "Smith", phone_number: "0000000001",
-                             birth_date: "1988/1/1", user_id: user5.id)
-puts "Is this a valid individual? #{individual3.valid?}"
-individual3.save!
-puts "Creating individual 3 (for user2): done"
+puts "Creating individual 4 (for user6)..."
+individual4 = Individual.new(title: "Mr", first_name: "Dustin", last_name: "Edwards", phone_number: "0000000004",
+                             birth_date: "1986/1/1", user_id: user6.id)
+puts "Is this a valid individual? #{individual4.valid?}"
+individual4.save!
+puts "Creating individual 4 (for user6): done"
 puts " "
 
 # 9. Company 2 creates contract 3 for individual 3
-puts "Creating contract 3 (for company 2) for individual 1..."
-contract3 = Contract.new(company_id: company1.id, individual_id: individual1.id, fully_signed_at: nil, status: "unopened")
+puts "Creating contract 3 (for company 2) for individual 3..."
+contract3 = Contract.new(company_id: company2.id, individual_id: individual3.id, fully_signed_at: nil, status: "unopened")
 puts "Is this a valid contract? #{contract3.valid?}"
 contract3.save!
 puts "Creating contract 3 (for company 2): done"
 puts " "
 
 # 10. Company 2 creates contract 4 for individual 4
-puts "Creating contract 4 (for company 2) for individual 2..."
-contract4 = Contract.new(company_id: company1.id, individual_id: individual2.id, fully_signed_at: nil, status: "unopened")
+puts "Creating contract 4 (for company 2) for individual 4 [signed]..."
+contract4 = Contract.new(company_id: company1.id, individual_id: individual4.id, fully_signed_at: nil, status: "unopened")
 puts "Is this a valid contract? #{contract4.valid?}"
 puts "Signing..."
 contract4.fully_signed_at = Time.now
 contract4.save!
-puts "Creating contract 4 (for company 2): done"
+puts "Creating contract 4 (for company 2) for individual 4: done"
 puts " "
