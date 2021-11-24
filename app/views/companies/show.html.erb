@@ -1,14 +1,6 @@
-
-<div class="container my-auto">
-  <h1 class="text-center"><%= @company.company_name %></h1>
-
-  <p><%= @company.address %></p>
-
-  <p><%= @company.detail %></p> 
-
-  <%= link_to "Create contract",  new_company_contract_path(@company) %> 
+<div class="container">
+  <h2>Company details</h2>
+    <h4>Company name: <%= @company.company_name %> <h4>
+    <h4>Company address: <%= @company.address %><h4>
+    <h4>Company description: <%= @company.detail %><h4>
 </div>
-
-
-
-

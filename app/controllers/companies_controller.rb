@@ -1,11 +1,6 @@
 class CompaniesController < ApplicationController
-
   def show
-    # set user id
-   @user = current_user
-    #find the company through current_user id
-    # @company= Company.find(params[:id])
-    @company= Company.find_by(user_id: @user.id)
+    @company = Company.find(params[:id])
   end
 
   def new
@@ -14,9 +9,9 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    @company.user = current_user    
+    @company.user = current_user
     if @company.save
-      redirect_to company_path(current_user)        
+      redirect_to company_path(@company)
     else
       render :new
     end
