@@ -20,6 +20,7 @@ class CompaniesController < ApplicationController
     else
       render :new
     end
+  end
 
   private
 
