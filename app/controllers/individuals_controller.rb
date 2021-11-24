@@ -14,7 +14,7 @@ class IndividualsController < ApplicationController
   end
 
   def show
-    @individual = Individual.find(individual_params)
+    @individual = Individual.find(params[:id])
   end
 
   def edit

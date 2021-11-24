@@ -3,9 +3,13 @@
     <div class="container-form">
         <h3 class="title-form">Enter your details</h3>
         <%= simple_form_for @individual do |f| %>
-          <%= f.input :title, label_html: { class: "row justify-content-center w-25"} %>
+        <div class="w-25">
+          <%= f.input :title, label_html: { class: "row justify-content-center"} %>
+        </div>
+        <div class="w-50">
           <%= f.input :first_name, input_html: { class: "row justify-content-center"} %>
           <%= f.input :last_name, label_html: { class: "row justify-content-center"} %>
+        </div>
           <%= f.input :birth_date, label_html: { class: "row justify-content-center"} %>
           <%= f.input :phone_number, label_html: { class: "row justify-content-center"} %>
           <%= f.button :submit, 'Confirm details', class: 'btn-submit' %>
