@@ -1,7 +1,9 @@
 class ContractsController < ApplicationController
   def index
-    @user = current_user.company
-    @contracts = Contract.where(company_id:@user)
+    # @user = current_user
+    # @individual = @user.individual
+    # @company = @user.company
+    @contracts = Contract.all
     # @contract = Contract.all.where(fully_signed_at: nil)
   end
 
@@ -11,7 +13,7 @@ class ContractsController < ApplicationController
 
   def new
     @company = Company.find(params[:company_id])
-    @contract = Contract.new
+    @contract = Contract.new    
   end
 
   def create
@@ -23,7 +25,7 @@ class ContractsController < ApplicationController
       redirect_to company_path(@company)
     else
       render :new
-    end
+    ennewd
   end
 
   private
