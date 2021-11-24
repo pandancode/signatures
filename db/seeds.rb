@@ -9,9 +9,6 @@
 # =================================================
 # 0. Cleaning DB
 puts "Cleaning DB..."
-puts "Deleting all existing signatories..."
-Signatory.delete_all
-puts "Deleting all existing signatories: done"
 puts "Deleting all existing contracts..."
 Contract.delete_all
 puts "Deleting all existing contracts: done"
