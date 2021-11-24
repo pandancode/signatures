@@ -1,6 +1,7 @@
 class ContractsController < ApplicationController
   def index
     @contract = Contract.new
+    # @contract = Contract.all.where(fully_signed_at: nil)
   end
 
   def show

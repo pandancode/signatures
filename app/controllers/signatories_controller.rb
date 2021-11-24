@@ -16,7 +16,7 @@ class SignatoriesController < ApplicationController
     @contract = Contract.find(params[:contract_id])
     @individual = Individual.find(params[:individual_id])
     @signatory.contract = @contract
-    @signaory.individual = @individual
+    @signatory.individual = @individual
     if @signatory.save
       redirect_to contract_path(@contract)
     else

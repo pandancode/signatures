@@ -1,18 +1,23 @@
 class CompaniesController < ApplicationController
 
   def show
-    
+    @company.user = current_user
   end
 
   def new
     @user = current_user
-    @company = Company.new(company_params)
     @company.user = @user
-    
-    @company.save
+    @company = Company.new
   end
 
   def create
+    @company = Company.new(company_params)    
+    if @company.save
+
+          
+    else
+      
+    end
     
   end
 
