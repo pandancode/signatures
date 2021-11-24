@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  resources :individuals, only: %i[new create show edit update] do
+    resources :signatories, only: %i[show edit update]
+  end
   resources :contracts, only: %i[index new create show] do
     resources :signatories, only: %i[new create]
   end
