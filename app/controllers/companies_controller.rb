@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def show
-    @company = Company.find(current_user.id)
+    @company = Company.find(params[:id])
   end
 
   def new
@@ -11,7 +11,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     @company.user = current_user
     if @company.save
-      redirect_to company_path(current_user)
+      redirect_to company_path(@company)
     else
       render :new
     end
