@@ -14,7 +14,7 @@ class IndividualsController < ApplicationController
   end
 
   def show
-    @individual = Individual.find(current_user.id)
+    @individual = Individual.find(params[:id])
   end
 
   def edit
