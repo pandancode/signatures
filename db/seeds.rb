@@ -12,19 +12,19 @@ User.delete_all
 puts "Deleting all existing users: done"
 
 puts "Creating user 1 (company user)..."
-user1 = User.new(role: "company", email: "co1@co.com", password: "111111")
+user1 = User.new(role: "Company", email: "co1@co.com", password: "111111")
 puts "Is this a valid company? #{user1.valid?}"
 user1.save!
 puts "Creating user 1 (company user): done"
 
 puts "Creating user 2 (individual user)..."
-user2 = User.new(role: "individual", email: "u1@user.com", password: "111111")
+user2 = User.new(role: "Individual", email: "u1@user.com", password: "111111")
 puts "Is this a valid company? #{user2.valid?}"
 user2.save!
 puts "Creating user 2 (individual user): done"
 
 puts "Creating user 3 (individual user)..."
-user3 = User.new(role: "company", email: "u2@user.com", password: "111111")
+user3 = User.new(role: "Company", email: "u2@user.com", password: "111111")
 puts "Is this a valid company? #{user3.valid?}"
 user3.save!
 puts "Creating user 3 (individual user): done"
