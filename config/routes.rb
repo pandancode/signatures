@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :companies, only: %i[show new create] do
     resources :contracts, only: %i[new create]
   end
-  
+
   resources :users, only: [:show]
-  
+
   resources :individuals, only: %i[show new create edit update]
 
   resources :contracts, only: %i[index show] do
