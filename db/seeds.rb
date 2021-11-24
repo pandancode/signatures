@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# =================================================
 # 0. Cleaning DB
 puts "Cleaning DB..."
 puts "Deleting all existing signatories..."
@@ -25,24 +26,28 @@ User.delete_all
 puts "Deleting all existing users: done"
 puts "Cleaning DB: done"
 
+# =================================================
 # 1. SEED 1: First unique company / 2 individual signatories pair
 puts "Creating user 1 (company user)..."
 user1 = User.new(role: "Company", email: "co1@co.com", password: "111111")
 puts "Is this a valid user? #{user1.valid?}"
 user1.save!
 puts "Creating user 1 (company user): done"
+puts " "
 
 puts "Creating user 2 (individual user)..."
 user2 = User.new(role: "Individual", email: "u1@user.com", password: "111111")
 puts "Is this a valid user? #{user2.valid?}"
 user2.save!
 puts "Creating user 2 (individual user): done"
+puts " "
 
 puts "Creating user 3 (individual user)..."
 user3 = User.new(role: "Individual", email: "u2@user.com", password: "111111")
 puts "Is this a valid user? #{user3.valid?}"
 user3.save!
 puts "Creating user 3 (individual user): done"
+puts " "
 
 # Creating a company (for user1)
 # Create company 1
@@ -51,6 +56,7 @@ company1 = Company.new(company_name: "Alpha", address: "1 Whitehall London SW1A 
 puts "Is this a valid company? #{company1.valid?}"
 company1.save!
 puts "Creating company 1 (for company user1): done"
+puts " "
 
 # Create individual 2
 puts "Creating individual 2 (for user2)..."
@@ -59,6 +65,7 @@ individual2 = Individual.new(title: "Ms", first_name: "Jacqueline", last_name: "
 puts "Is this a valid individual? #{individual2.valid?}"
 individual2.save!
 puts "Creating individual 2 (for user2): done"
+puts " "
 
 # Create individual 3
 puts "Creating individual 3 (for user3)..."
@@ -67,6 +74,7 @@ individual3 = Individual.new(title: "Mr", first_name: "Jack", last_name: "Adams"
 puts "Is this a valid individual? #{individual3.valid?}"
 individual3.save!
 puts "Creating individual 3 (for user3): done"
+puts " "
 
 # Company 1 creates contract 1
 puts "Creating contract 1 (for company 1)..."
@@ -74,6 +82,7 @@ contract1 = Contract.new(company_id: company1.id, fully_signed_at: nil)
 puts "Is this a valid contract? #{contract1.valid?}"
 contract1.save!
 puts "Creating contract 1 (for company 1): done"
+puts " "
 
 # Contract 1 creates signatories 1 & signatories 2
 puts "Creating signatories 1 (for contract 1)..."
@@ -81,25 +90,30 @@ signatory1 = Signatory.new(signing_status: false, contract_id: contract1.id, ind
 puts "Is this a valid signatory? #{signatory1.valid?}"
 signatory1.save!
 puts "Creating signatory 1 (for contract 1): done"
+puts " "
 
 puts "Creating signatories 2 (for contract 1)..."
 signatory2 = Signatory.new(signing_status: false, contract_id: contract1.id, individual_id: individual3.id)
 puts "Is this a valid signatory? #{signatory2.valid?}"
 signatory2.save!
 puts "Creating signatory 2 (for contract 1): done"
+puts " "
 
+# =================================================
 # 2. SEED 2: Second company / 2 contracts / 2 sets of 2 individual signatories pairs
 puts "Creating user 4 (company user)..."
 user4 = User.new(role: "Company", email: "co2@co.com", password: "111111")
 puts "Is this a valid company? #{user4.valid?}"
 user4.save!
 puts "Creating user 4 (company user): done"
+puts " "
 
 puts "Creating user 5 (individual user)..."
-user5 = User.new(role: "Individual", email: "u5@user.com", password: "111111")
-puts "Is this a valid company? #{user5.valid?}"
-user5.save!
+user3 = User.new(role: "Individual", email: "u3@user.com", password: "111111")
+puts "Is this a valid company? #{user3.valid?}"
+user3.save!
 puts "Creating user 5 (individual user): done"
+puts " "
 
 # Creating a company (for user1)
 # Create company 2
@@ -111,29 +125,61 @@ company2.save!
 puts "Creating company 2 (for company user1): done"
 
 # Create individual 5
-puts "Creating individual 5 (for user5)..."
-individual3 = Individual.new(title: "Ms", first_name: "Jacques", last_name: "Chirac", phone_number: "0000000003",
+puts "Creating individual 5 (for user3)..."
+individual3 = Individual.new(title: "Mr", first_name: "Jacques", last_name: "Chirac", phone_number: "0000000003",
                              birth_date: "1987/1/1", user_id: user2.id)
 puts "Is this a valid individual? #{individual3.valid?}"
 individual3.save!
 puts "Creating individual 2 (for user2): done"
 
+# 3. Creates a completed contract
 # Company 2 creates contract 2
 puts "Creating contract 2 (for company 2)..."
-contract2 = Contract.new(company_id: company2.id, fully_signed_at: nil)
+contract2 = Contract.new(company_id: company1.id, fully_signed_at: nil)
 puts "Is this a valid contract? #{contract2.valid?}"
 contract2.save!
 puts "Creating contract 2 (for company 2): done"
 
-# Contract 2 creates signatories 2 & signatories 3
+# Contract 2 creates signatories 1 & signatories 2
+puts "Creating signatories 1 (for contract 2)..."
+signatory3 = Signatory.new(signing_status: false, contract_id: contract2.id, individual_id: individual2.id)
+puts "Is this a valid signatory? #{signatory3.valid?}"
+signatory3.save!
+puts "Creating signatory 1 (for contract 2): done"
+
+puts "Creating signatories 2 (for contract 2)..."
+signatory4 = Signatory.new(signing_status: false, contract_id: contract2.id, individual_id: individual3.id)
+puts "Is this a valid signatory? #{signatory4.valid?}"
+signatory4.save!
+puts "Creating signatory 2 (for contract 2): done"
+
+# =================================================
+# 4. Creates a completed contract
+# Company 1 creates contract 3
+puts "Creating contract 3 (for company 1)..."
+contract3 = Contract.new(company_id: company2.id, fully_signed_at: nil)
+puts "Is this a valid contract? #{contract3.valid?}"
+contract3.save!
+puts "Creating contract 2 (for company 2): done"
+
+# Contract 3 creates signatories 2 & signatories 3
 puts "Creating signatories 1 (for contract 1)..."
-signatory1 = Signatory.new(signing_status: false, contract_id: contract2.id, individual_id: individual2.id)
-puts "Is this a valid signatory? #{signatory1.valid?}"
-signatory1.save!
-puts "Creating signatory 1 (for contract 1): done"
+signatory5 = Signatory.new(signing_status: false, contract_id: contract3.id, individual_id: individual2.id)
+puts "Is this a valid signatory? #{signatory5.valid?}"
+puts "Signing..."
+signatory5.signing_status = true
+signatory5.save!
+puts "Creating signed signatory 1 (for contract 3): done"
 
 puts "Creating signatories 2 (for contract 1)..."
-signatory2 = Signatory.new(signing_status: false, contract_id: contract2.id, individual_id: individual3.id)
-puts "Is this a valid signatory? #{signatory2.valid?}"
-signatory2.save!
-puts "Creating signatory 2 (for contract 1): done"
+signatory6 = Signatory.new(signing_status: false, contract_id: contract3.id, individual_id: individual3.id)
+puts "Is this a valid signatory? #{signatory6.valid?}"
+puts "Signing..."
+signatory6.signing_status = true
+signatory6.save!
+puts "Creating signed signatory 2 (for contract 3): done"
+
+# Updating Contract 3's contract status
+contract3.fully_signed_at = signatory6.updated_at
+contract3.save!
+puts "Updated contract 3 to be fully completed"
