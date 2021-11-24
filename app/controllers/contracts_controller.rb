@@ -1,9 +1,9 @@
 class ContractsController < ApplicationController
-  # def index
-  #   @user = current_user
-  #   @contracts = Contract.where(company_id:@user)
-  #   # @contract = Contract.all.where(fully_signed_at: nil)
-  # end
+  def index
+    @user = current_user.company
+    @contracts = Contract.where(company_id:@user)
+    # @contract = Contract.all.where(fully_signed_at: nil)
+  end
 
   # def show
   #   @contract = Contract.find(contract_params)
