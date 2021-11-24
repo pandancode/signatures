@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # get 'contracts/company', to: 'contracts#company', as: contract_company
   # resources :users, only: :show do
-    resources :companies, only: %i[new create]
+    resources :companies, only: %i[show new create]
   # end
   
   resources :contracts, only: %i[index new create show] do

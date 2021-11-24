@@ -13,7 +13,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @
+    
   end
 
   private
