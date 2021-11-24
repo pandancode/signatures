@@ -1,1 +1,8 @@
-<h1>signatories</h1>
+<h1>Add a signatory to a contract</h1>
+
+<%= simple_form_for @individual do |f| %>
+  <%= f.input :individual, collection: Individual.all, input_html: { class: "select2", style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
+  <%# <%= f.input :contract, collection: Contract.all, input_html: { class: "select2", style: "width: 100%"}, label_html: { class: "row justify-content-center"} %> %>
+
+  <%= f.button :submit, 'Update signatories', class: 'btn-submit' %>
+<% end %>
