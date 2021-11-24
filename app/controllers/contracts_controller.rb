@@ -11,7 +11,7 @@ class ContractsController < ApplicationController
 
   def new
     @company = Company.find(params[:company_id])
-    @contract = Contract.new    
+    @contract = Contract.new
   end
 
   def create
