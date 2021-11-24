@@ -1,24 +1,25 @@
 class CompaniesController < ApplicationController
 
   def show
-    @company.user = current_user
+    # set user id
+   @user = current_user
+    #find the company through current_user id
+    # @company= Company.find(params[:id])
+    @company= Company.find_by(user_id: @user.id)
   end
 
   def new
-    @user = current_user
-    @company.user = @user
     @company = Company.new
   end
 
   def create
-    @company = Company.new(company_params)    
+    @company = Company.new(company_params)
+    @company.user = current_user    
     if @company.save
-
-          
+      redirect_to company_path(current_user)        
     else
-      
+      render :new
     end
-    
   end
 
   private
