@@ -1,0 +1,25 @@
+// .button-color {
+//   background: ;
+//   color: white;
+//   font-size: 16.8px;
+//   line-height: 125%;
+//   padding: 20px, 20px, 20px;
+//   border-radius: 5px;
+//   font-family: "Flexo-Demi",arial,sans-serif;
+//   border: none;
+// }
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(rgb(80, 0, 202), rgb(80, 70, 202));
+  transition: background 0.3s ease;
+  border: 1px solid rgb(80, 0, 202);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(rgb(80, 70, 202), rgb(80, 0, 202));
+  color: white;
+}
