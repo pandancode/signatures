@@ -1,0 +1,7 @@
+<% if @user.role = "Individual" %>
+  <p>You're an individual</p>
+  <%= link_to "See you personal details", individual_path %>
+<% else %>
+  <p>You're a company</p>
+  <%= link_to "See your details", company_path %>
+<% end %>

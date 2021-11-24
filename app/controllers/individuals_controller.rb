@@ -14,7 +14,7 @@ class IndividualsController < ApplicationController
   end
 
   def show
-    @individual = Individual.find(individual_params)
+    @individual = Individual.find(current_user.id)
   end
 
   def edit
@@ -25,7 +25,7 @@ class IndividualsController < ApplicationController
     @individual.update(individual_params)
   end
 
-private
+  private
 
   def individual_params
     params.require(:individual).permit(:first_name, :last_name, :birth_date, :phone_number, :title)

@@ -1,13 +1,15 @@
 class SignatoriesController < ApplicationController
   def show
-    @signatory = Signatory.find(signatory_params)
+    # DONE
+    @signatory = Signatory.find(params[:id])
   end
 
   def new
-    @contract = Contract.find(params[:id])
-    # TO CHECK BELOW
-    @individual = Individual.find(params[:id])
+    # DONE
     @signatory = Signatory.new
+    @contract = Contract.find(params[:id])
+    @signatory.contract = @contract
+    @signatory.individual = current_user
   end
 
   def create
