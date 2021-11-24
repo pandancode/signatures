@@ -6,6 +6,7 @@ class CreateIndividuals < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.date :birth_date
       t.string :phone_number
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
