@@ -22,14 +22,15 @@ puts "Deleting all existing users..."
 User.delete_all
 puts "Deleting all existing users: done"
 puts "Cleaning DB: done"
+puts " "
 
 # =================================================
 # 1. Seed first company
-puts "Creating user 1 (company user)..."
+puts "Creating user 1 (company user1)..."
 user1 = User.new(role: "Company", email: "co1@co.com", password: "111111")
 puts "Is this a valid user? #{user1.valid?}"
 user1.save!
-puts "Creating user 1 (company user): done"
+puts "Creating user 1 (company user1): done"
 puts " "
 
 puts "Creating company 1 (for company user1)..."
@@ -40,11 +41,11 @@ puts "Creating company 1 (for company user1): done"
 puts " "
 
 # 2. Seed first individual
-puts "Creating user 2 (individual user)..."
+puts "Creating user 2 (individual user1)..."
 user2 = User.new(role: "Individual", email: "u1@user.com", password: "111111")
 puts "Is this a valid user? #{user2.valid?}"
 user2.save!
-puts "Creating user 2 (individual user): done"
+puts "Creating user 2 (individual user1): done"
 puts " "
 
 puts "Creating individual 1 (for user2)..."
@@ -52,7 +53,7 @@ individual1 = Individual.new(title: "Ms", first_name: "Jacqueline", last_name: "
                              birth_date: "1988/1/1", user_id: user2.id)
 puts "Is this a valid individual? #{individual1.valid?}"
 individual1.save!
-puts "Creating individual 2 (for user2): done"
+puts "Creating individual 1 (for user2): done"
 puts " "
 
 # 3. Seed third individual
@@ -68,7 +69,7 @@ individual2 = Individual.new(title: "Mr", first_name: "Jack", last_name: "Adams"
                              birth_date: "1989/1/1", user_id: user3.id)
 puts "Is this a valid individual? #{individual2.valid?}"
 individual2.save!
-puts "Creating individual 3 (for user3): done"
+puts "Creating individual 2 (for user3): done"
 puts " "
 
 # 4. Company 1 creates contract 1 for individual 1
