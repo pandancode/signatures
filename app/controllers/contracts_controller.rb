@@ -36,6 +36,13 @@ class ContractsController < ApplicationController
     end
   end
 
+  def update
+    @contract = Contract.find(params[:id])
+    @contract.fully_signed_at = Time.now
+    @contract.save!
+    redirect_to contract_path(@contract)
+  end
+
   private
 
   def new_contract_params

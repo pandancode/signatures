@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :individuals, only: %i[show new create edit update]
 
-  resources :contracts, only: %i[index show new create]
+  resources :contracts, only: %i[index show new create update]
 end
