@@ -21,13 +21,20 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'dotenv-rails', groups: [:development, :test]
-#add gem for cloudinary
+# Yilun thinks Gio added the below, hashed it out for now
+# gem 'dotenv-rails', groups: [:development, :test]
+# add gem for cloudinary
 gem 'cloudinary', '~> 1.16.0'
 # AMIN ADDED DEVISE GEM
 gem 'devise'
 # AMIN ADDED HEXAPDF GEM
 gem 'hexapdf'
+# Yilun added bucketeer gem
+# source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
+gem 'aws-sdk'
+# Yilun had to add this too apparently
+# source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
+gem "aws-sdk-s3", require: false
 
 
 # Use Active Storage variant
