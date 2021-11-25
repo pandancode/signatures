@@ -7,5 +7,4 @@ class Contract < ApplicationRecord
   # validates :status, presence: true
   validates :name, presence: true
   validates :description, presence: true
-  validates :contract_body, presence: true
 end
