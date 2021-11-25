@@ -1,7 +1,7 @@
 class Contract < ApplicationRecord
   belongs_to :company
   belongs_to :individual
-  has_one_attached :photo
+  has_one_attached :document
 
   validates :status, inclusion: { in: %w[unopened opened signed] }
   # validates :status, presence: true

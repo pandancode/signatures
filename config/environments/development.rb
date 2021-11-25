@@ -17,9 +17,9 @@ Rails.application.configure do
 
   # Yilun adding AWS stuff
   # https://devcenter.heroku.com/articles/active-storage-on-heroku
-  config.active_storage.service = :amazon
+  # config.active_storage.service = :amazon
   # Yilun decided to keep this :local for now (testing?)
-  # config.active_storage.service = :local
+  config.active_storage.service = :local
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
