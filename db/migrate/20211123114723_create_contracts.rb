@@ -8,6 +8,7 @@ class CreateContracts < ActiveRecord::Migration[6.0]
       t.string :name, default: "nil"
       t.string :recipient_email, default: "nil"
       t.text :description, default: "nil"
+      t.text :contract_body
 
       t.timestamps
     end
