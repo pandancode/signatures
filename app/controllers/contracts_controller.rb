@@ -9,8 +9,9 @@ class ContractsController < ApplicationController
       #else 
     else
       #display all contract where individual_id
-      @individual = current_user.individual
-      @contracts = @individual.contracts         
+      # @individual = current_user.individual
+      # @contracts = @individual.contracts   
+      @contracts = Contract.where(individual_id: current_user.individual)      
     end    
   end
 
