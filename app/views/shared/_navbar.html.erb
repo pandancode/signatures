@@ -12,7 +12,15 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "User details", "#", class: "nav-link" %>
+
+        <% if current_user.role == "Company" %>
+          <%= link_to "Profile", company_path(current_user.company)  %>
+        <% else %>
+            <%= link_to "Profile", individual_path(current_user.individual)  %>
+        <% end %>
+
+
+
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "giorgio.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -28,12 +36,3 @@
     </ul>
   </div>
 </div>
-
-case current_user.role
-    when "Company"
-      @user = current_user.company
-      <%= link_to new_company_path  %>
-    when "Individual"
-      @user = current_user.individual
-      <%= link_to new_individual_path %>
-    end %>

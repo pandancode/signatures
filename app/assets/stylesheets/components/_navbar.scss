@@ -23,12 +23,12 @@
 }
 
 .navbar-side {
-  width: 15%;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: black;
   h3, h4 {
     color: white;
@@ -41,10 +41,38 @@
   h4 {
     margin-bottom: 20px;
   }
+}
 
+.individual-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .navbar-layout {
   display:flex;
   height: 100vh;
 }
+
+
+.nav_button {
+  display: inline-block;
+  outline: 0;
+  border:0;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  line-height: 10px;
+  font-weight: 400;
+  transition: all 0.2s;
+  font-size: 17px;
+  text-align: center;
+  padding: 25px 0px;
+  width: 100%;
+    &:hover {
+      box-shadow: rgb(89, 91, 98) -2px -2px 0px 2px, rgb(4, 69, 246) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+      transform: scale(1.01);
+      text-decoration: none;
+    }
+  }
