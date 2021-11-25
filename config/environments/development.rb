@@ -12,8 +12,15 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  #config active storage Giorgio
-  config.active_storage.service = :cloudinary
+  # config active storage Giorgio
+  # config.active_storage.service = :cloudinary
+
+  # Yilun adding AWS stuff
+  # https://devcenter.heroku.com/articles/active-storage-on-heroku
+  config.active_storage.service = :amazon
+  # Yilun decided to keep this :local for now (testing?)
+  # config.active_storage.service = :local
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
