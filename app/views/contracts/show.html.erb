@@ -1,2 +1,4 @@
-<h3>Contracts#show</h3>
-<p><em>Contract id</em>: <%= @contract.id %></p>
+<h3><%= @contract.name %></h3>
+<p><em>Description</em>: <%= @contract.description %></p>
+<p><em>Status</em>: <%= @contract.status %></p>
+<p><em>Receiver</em>: <%= @contract.individual.user.email %></p>
