@@ -26,6 +26,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 # AMIN ADDED DEVISE GEM
 gem 'devise'
+# AMIN ADDED HEXAPDF GEM
+gem 'hexapdf'
 
 
 # Use Active Storage variant
