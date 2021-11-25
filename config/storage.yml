@@ -6,10 +6,21 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-#Giorgio is doing active storage
-cloudinary:
-  service: Cloudinary
-  folder: <%= Rails.env %>
+# Giorgio is doing active storage
+# cloudinary:
+  # service: Cloudinary
+  # folder: <%= Rails.env %>
+
+# Yilun is adding the following from this doc
+# https://devcenter.heroku.com/articles/active-storage-on-heroku
+amazon:
+  service: S3
+  access_key_id: <%= ENV['BUCKETEER_AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'] %>
+  region: <%= ENV['BUCKETEER_AWS_REGION'] %>
+  bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
+
+
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
