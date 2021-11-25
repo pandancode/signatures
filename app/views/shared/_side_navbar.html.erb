@@ -1,14 +1,15 @@
 <div class="navbar-side">
   <div>
-    <%# <h3><%= current_user.role %></h3>
+    <h3> Signed in as: <%= current_user.role %></h3>
+  </div>
+  <%# if current_user.role = Company %>
+  <div>
+    <%= link_to "Dashboard", contracts_path, class: "nav_button" %>
   </div>
   <div>
-    <h4>Dashboard</h4>
+    <%= link_to "New Contract", new_contract_path, class: "nav_button" %>
   </div>
   <div>
-    <h4>New Contract</h4>
-  </div>
-  <div>
-    <h4>Settings</h4>
+    <%= link_to "Logout", contracts_path, class: "nav_button" %>
   </div>
 </div>
