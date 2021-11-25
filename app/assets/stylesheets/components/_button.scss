@@ -1,14 +1,14 @@
-.btn-gradient {
+.home-button {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(rgb(80, 0, 202), rgb(80, 70, 202));
-  transition: background 0.3s ease;
-  border: 1px solid rgb(80, 0, 202);
+  background: linear-gradient(#167FFB, #0F60C4);
+  // transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(rgb(80, 70, 202), rgb(80, 0, 202));
+.home-button:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }

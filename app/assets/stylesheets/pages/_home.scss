@@ -1,20 +1,29 @@
 // Specific CSS for your home-page
-// .background-color {
-//   background-color: rgb(235, 225, 236);
-// }
 
-// .container-home-page {
-//   width: 106%;
-//   height: 90vh;
-//   background-image: url(signature.jpg);
-//   background-position: center;
-//   background-size: cover;
-
-//   display: flex;
-//   align-items: center;
-// }
-
-.banner {
-  background-image: url("signature.jpg");
+.container-home-page {
+  width: 106%;
+  height: 90vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(112, 57, 57, 0.4)), url(signature.jpg);
+  background-position: center;
   background-size: cover;
+
+  display: flex;
+  align-items: center;
+}
+
+.container-home-page h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.container p {
+  font-size: 20px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
 }
