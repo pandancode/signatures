@@ -4,7 +4,7 @@
   <p><em>Title</em>: <%= contract.name %></p>
   <p><em>Description</em>: <%= contract.description %></p>
   <p><em>Status</em>: <%= contract.status %></p>
-  <p><em>Recipient Email</em>: <%= contract.recipient_email %></p>
+  <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
    <%= link_to "show", contract_path(contract.id) %>
 <% end %>
 
