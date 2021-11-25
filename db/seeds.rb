@@ -170,8 +170,6 @@ puts " "
 puts "Creating contract 6 (for company 2) for individual 2 [signed]..."
 contract6 = Contract.new(company_id: company2.id, individual_id: individual2.id, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "6 Picadilly lease starting 2021/1/6")
 puts "Is this a valid contract? #{contract6.valid?}"
-puts "Signing..."
-contract6.fully_signed_at = Time.now
 contract6.save!
 puts "Creating contract 6 (for company 2) for individual 2: done"
 puts " "

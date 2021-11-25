@@ -12,6 +12,10 @@ class ContractsController < ApplicationController
 
   def show
     @contract = Contract.find(params[:id])
+    if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? && @contract.status == "unopened"
+      @contract.status = "opened"
+      @contract.save
+    end
   end
 
   def new
@@ -41,7 +45,11 @@ class ContractsController < ApplicationController
   end
 
   def update
-
+    @contract = Contract.find(params[:id])
+    @contract.fully_signed_at = Time.now
+    @contract.status = "signed"
+    @contract.save!
+    redirect_to contract_path(@contract)
   end
 
   private
