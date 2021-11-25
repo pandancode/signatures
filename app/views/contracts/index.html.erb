@@ -8,6 +8,7 @@
   <p>Contract created at: <%= contract.created_at %></p>
   <p>Contract signed at: <%= contract.fully_signed_at %></p>
   <p>Contract status: <%= contract.status %></p>
+  <p>Contract has attachment: <%= contract.document.attached? %></p>
 <% end %>
 
 <h3>Unsigned contracts (for given user) with all attributes</h3>
@@ -20,6 +21,7 @@
   <p>Contract created at: <%= contract.created_at %></p>
   <p>Contract signed at: <%= contract.fully_signed_at %></p>
   <p>Contract status: <%= contract.status %></p>
+  <p>Contract has attachment: <%= contract.document.attached? %></p>
 <% end %>
 
 <h3>Signed contracts (for given user) with all attributes</h3>
@@ -32,4 +34,5 @@
   <p>Contract created at: <%= contract.created_at %></p>
   <p>Contract signed at: <%= contract.fully_signed_at %></p>
   <p>Contract status: <%= contract.status %></p>
+  <p>Contract has attachment: <%= contract.document.attached? %></p>
 <% end %>
