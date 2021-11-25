@@ -1,6 +1,6 @@
 <h3>Contracts#show</h3>
 <p><em>Contract id</em>: <%= @contract.id %></p>
-<p>Contract name: <%= @contract.name %></p>
+<p>Contract name: <%= link_to @contract.name, contract_path(@contract) %></p>
 <p>Contract description: <%= @contract.description %></p>
 <p>Contract company: <%= @contract.company.company_name %></p>
 <p>Contract individual: <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>
