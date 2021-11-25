@@ -29,7 +29,7 @@ class ContractsController < ApplicationController
     @contract.company = @company
     # This presumes that the recipient email is in our database, else, we will still have to create one (which would conflict with our validations but whatever)
     # The below kind of works but I want to go to the next level faster
-    # @user = User.where(email: new_contract_params[:recipient_email])
+    @user = User.where(email: new_contract_params[:recipient_email])
     # Note the below technically returns an array, which is why we need the [0]
     @individual = Individual.where(user_id: User.where(email: new_contract_params[:recipient_email]))[0]
     @contract.individual_id = @individual.id
@@ -38,6 +38,10 @@ class ContractsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @contract = Contract.find(params[:id])
   end
 
   def update
@@ -51,6 +55,6 @@ class ContractsController < ApplicationController
   private
 
   def new_contract_params
-    params.require(:contract).permit(:name, :description, :recipient_email, :document)
+    params.require(:contract).permit(:name, :description, :recipient_email, :document, :contract_body)
   end
 end
