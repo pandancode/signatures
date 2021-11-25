@@ -1,30 +1,42 @@
 <%# I'll we add if current user is a company show everything otherise only unsigned contract  %>
-<% @contracts.each do |contract| %>
-  <p><em>Contract id</em>: <%= contract.id %></p>
-  <p><em>Title</em>: <%= contract.name %></p>
-  <p><em>Description</em>: <%= contract.description %></p>
-  <p><em>Status</em>: <%= contract.status %></p>
-  <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
-   <%= link_to "show", contract_path(contract.id) %>
-<% end %>
+<% if current_user.role == "Company" %>
+  <% @contracts.each do |contract| %>
+    <p><em>Contract id</em>: <%= contract.id %></p>
+    <p><em>Title</em>: <%= contract.name %></p>
+    <p><em>Description</em>: <%= contract.description %></p>
+    <p><em>Status</em>: <%= contract.status %></p>
+    <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
+    <%= link_to "show", contract_path(contract.id) %>
+  <% end %>
 
- <h3>Unsigned contracts</h3>
- <% @contracts.where(fully_signed_at: nil).each do |contract| %> 
-  <p><em>Contract id</em>: <%= contract.id %></p>
-  <p><em>Title</em>: <%= contract.name %></p>
-  <p><em>Description</em>: <%= contract.description %></p>
-  <p><em>Status</em>: <%= contract.status %></p>
-  <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
-  <%= link_to "show", contract_path(contract.id) %>
- <% end %> 
-
- <h3>Signed contracts (for given user) with all attributes</h3> 
- <% @contracts.where.not(fully_signed_at: nil).each do |contract| %> 
-  <p><em>Contract id</em>: <%= contract.id %></p>
-  <p><em>Title</em>: <%= contract.name %></p>
-  <p><em>Description</em>: <%= contract.description %></p>
-  <p><em>Signed at</em>: <%= contract.fully_signed_at %></p>
-  <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
-  <%= link_to "show", contract_path(contract.id) %>
+  <h3>Unsigned contracts</h3>
+  <% @contracts.where(fully_signed_at: nil).each do |contract| %> 
+    <p><em>Contract id</em>: <%= contract.id %></p>
+    <p><em>Title</em>: <%= contract.name %></p>
+    <p><em>Description</em>: <%= contract.description %></p>
+    <p><em>Status</em>: <%= contract.status %></p>
+    <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
+    <%= link_to "show", contract_path(contract.id) %>
   <% end %> 
+
+  <h3>Signed contracts (for given user) with all attributes</h3> 
+  <% @contracts.where.not(fully_signed_at: nil).each do |contract| %> 
+    <p><em>Contract id</em>: <%= contract.id %></p>
+    <p><em>Title</em>: <%= contract.name %></p>
+    <p><em>Description</em>: <%= contract.description %></p>
+    <p><em>Signed at</em>: <%= contract.fully_signed_at %></p>
+    <p><em>Recipient Email</em>: <%= contract.individual.user.email %></p>
+    <%= link_to "show", contract_path(contract.id) %>
+    <% end %> 
+
+ <% else %>
  
+    <h3>Unsigned contracts</h3>
+  <% @contracts.where(fully_signed_at: nil).each do |contract| %> 
+    <p><em>Contract id</em>: <%= contract.id %></p>
+    <p><em>Title</em>: <%= contract.name %></p>
+    <p><em>Description</em>: <%= contract.description %></p>
+    <p><em>Status</em>: <%= contract.status %></p>
+    <%= link_to "show", contract_path(contract.id) %>
+  <% end %> 
+ <% end %>

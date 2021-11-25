@@ -1,5 +1,16 @@
-<h3><%= @contract.name %></h3>
-<p><em>Description</em>: <%= @contract.description %></p>
-<p><em>Status</em>: <%= @contract.status %></p>
-<p><em>Receiver</em>: <%= @contract.individual.user.email %></p>
-<%= link_to "All contracts", contracts_path %>
+<% if current_user.role == "Company" %>
+  
+  <h3><%= @contract.name %></h3>
+  <p><em>Description</em>: <%= @contract.description %></p>
+  <p><em>Status</em>: <%= @contract.status %></p>
+  <p><em>Receiver</em>: <%= @contract.individual.user.email %></p>
+  <%= link_to "All contracts", contracts_path %>
+
+<% else %>
+<%# if u are an individual u dont see the name of the email receiver %>
+  <h3><%= @contract.name %></h3>
+  <p><em>Description</em>: <%= @contract.description %></p>
+  <p><em>Status</em>: <%= @contract.status %></p> 
+  <%= link_to "All contracts", contracts_path %>
+
+<% end %>
