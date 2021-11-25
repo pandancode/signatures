@@ -30,6 +30,10 @@ gem 'devise'
 # Yilun added bucketeer gem
 # source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
 gem 'aws-sdk'
+# Yilun had to add this too apparently
+# source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
+gem "aws-sdk-s3", require: false
+
 
 
 # Use Active Storage variant
