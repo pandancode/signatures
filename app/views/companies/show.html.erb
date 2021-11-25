@@ -1,6 +1,11 @@
-<div class="container">
-  <h2>Company details</h2>
-    <h4>Company name: <%= @company.company_name %> <h4>
-    <h4>Company address: <%= @company.address %><h4>
-    <h4>Company description: <%= @company.detail %><h4>
+<%# <div class="companies-layout"> %>
+
+  <div class="container">
+    <h2>Company details</h2>
+      <h4>Company name: <%= @company.company_name %> </h4>
+      <h4>Company address: <%= @company.address %></h4>
+      <h4>Company description: <%= @company.detail %></h4>
+  </div>
 </div>
+
+<%= link_to "See all your contracts", contracts_path %>

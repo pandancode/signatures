@@ -47,13 +47,14 @@ ActiveRecord::Schema.define(version: 2021_11_24_151219) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "fully_signed_at"
+    t.datetime "fully_signed_at"
     t.string "status", default: "unopened"
     t.bigint "company_id", null: false
     t.bigint "individual_id", null: false
     t.string "name", default: "nil"
     t.string "recipient_email", default: "nil"
     t.text "description", default: "nil"
+    t.text "contract_body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_contracts_on_company_id"

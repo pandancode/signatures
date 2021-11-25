@@ -1,3 +1,5 @@
+require 'wicked_pdf'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -17,9 +19,9 @@ Rails.application.configure do
 
   # Yilun adding AWS stuff
   # https://devcenter.heroku.com/articles/active-storage-on-heroku
-  config.active_storage.service = :amazon
+  # config.active_storage.service = :amazon
   # Yilun decided to keep this :local for now (testing?)
-  # config.active_storage.service = :local
+  config.active_storage.service = :local
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -71,4 +73,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # If you would like to have WickedPdf automatically generate PDF views for all (or nearly all) pages by appending .pdf to the URL
+  config.middleware.use WickedPdf::Middleware
 end

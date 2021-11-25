@@ -1,2 +1,31 @@
 <h3>Contracts#show</h3>
 <p><em>Contract id</em>: <%= @contract.id %></p>
+<p>Contract name: <%= @contract.name %></p>
+<p>Contract description: <%= @contract.description %></p>
+<p>Contract company: <%= @contract.company.company_name %></p>
+<p>Contract individual: <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>
+<p>Contract created at: <%= @contract.created_at %></p>
+<p>Contract signed at: <%= @contract.fully_signed_at %></p>
+<p>Contract status: <%= @contract.status %></p>
+<p>Contract has attachment: <%= @contract.document.attached? %></p>
+<% if @contract.document.attached? %>
+  <p><%= link_to "Download contract", rails_blob_path(@contract.document, disposition: 'attachment') %></p>
+<% end %>
+
+
+<% if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? %>
+  <div style="width: 80%">
+    <p>Please enter your name here to sign the contract</p>
+    <%= form_tag contract_path(@contract), method: :patch do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Please enter your name here to sign the contract: #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}"
+      %>
+      <%= submit_tag "Search", class: "d-none" %>
+    <% end %>
+    <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch %>
+  </div>
+<% end %>
+
+<%= link_to "Back to index", contracts_path %>
