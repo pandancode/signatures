@@ -6,6 +6,7 @@ class IndividualsController < ApplicationController
   def create
     @individual = Individual.new(individual_params)
     @user = current_user
+    @individual.user = @user
     if @individual.save
       redirect_to individual_path(@individual)
     else
