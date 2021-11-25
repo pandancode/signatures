@@ -1,14 +1,19 @@
 <h3>All contracts (for given user) with all attributes</h3>
 <% @contracts.each do |contract| %>
   <p><em>Contract id</em>: <%= contract.id %></p>
+  <p><em>Title</em>: <%= contract.name %></p>
+  <p><em>Description</em>: <%= contract.description %></p>
+  <p><em>Recipient Email</em>: <%= contract.recipient_email %></p>
+   <%= link_to "show", contract_path(contract.id) %>
 <% end %>
 
-<h3>Unsigned contracts (for given user) with all attributes</h3>
-<% @contracts.where(fully_signed_at: nil).each do |contract| %>
-  <p><em>Contract id</em>: <%= contract.id %></p>
-<% end %>
+<%# <h3>Unsigned contracts (for given user) with all attributes</h3> %>
+<%# <% @contracts.where(fully_signed_at: nil).each do |contract| %> 
+  <%# <p><em>Contract id</em>: <%= contract.id</p> %> 
+<%# <% end %> 
 
-<h3>Signed contracts (for given user) with all attributes</h3>
-<% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
-  <p><em>Contract id</em>: <%= contract.id %></p>
-<% end %>
+<%# <h3>Signed contracts (for given user) with all attributes</h3> %>
+<%# <% @contracts.where.not(fully_signed_at: nil).each do |contract| %> 
+  <%# <p><em>Contract id</em>: <%= contract.id</p>  %>
+ <%# <% end %> 
+ 
