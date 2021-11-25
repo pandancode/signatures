@@ -1,35 +1,14 @@
 <h3>All contracts (for given user) with all attributes</h3>
 <% @contracts.each do |contract| %>
   <p><em>Contract id</em>: <%= contract.id %></p>
-  <p>Contract name: <%= contract.name %></p>
-  <p>Contract description: <%= contract.description %></p>
-  <p>Contract company: <%= contract.company.company_name %></p>
-  <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-  <p>Contract created at: <%= contract.created_at %></p>
-  <p>Contract signed at: <%= contract.fully_signed_at %></p>
-  <p>Contract status: <%= contract.status %></p>
 <% end %>
 
 <h3>Unsigned contracts (for given user) with all attributes</h3>
 <% @contracts.where(fully_signed_at: nil).each do |contract| %>
   <p><em>Contract id</em>: <%= contract.id %></p>
-  <p>Contract name: <%= contract.name %></p>
-  <p>Contract description: <%= contract.description %></p>
-  <p>Contract company: <%= contract.company.company_name %></p>
-  <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-  <p>Contract created at: <%= contract.created_at %></p>
-  <p>Contract signed at: <%= contract.fully_signed_at %></p>
-  <p>Contract status: <%= contract.status %></p>
 <% end %>
 
 <h3>Signed contracts (for given user) with all attributes</h3>
 <% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
   <p><em>Contract id</em>: <%= contract.id %></p>
-  <p>Contract name: <%= contract.name %></p>
-  <p>Contract description: <%= contract.description %></p>
-  <p>Contract company: <%= contract.company.company_name %></p>
-  <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-  <p>Contract created at: <%= contract.created_at %></p>
-  <p>Contract signed at: <%= contract.fully_signed_at %></p>
-  <p>Contract status: <%= contract.status %></p>
 <% end %>
