@@ -1,14 +1,23 @@
-<div class="navbar-side">
-  <div>
-    <%# <h3><%= current_user.role %></h3>
-  </div>
-  <div>
-    <h4>Dashboard</h4>
-  </div>
-  <div>
-    <h4>New Contract</h4>
-  </div>
-  <div>
-    <h4>Settings</h4>
-  </div>
-</div>
+<% if user_signed_in? %>
+  <% if current_user.role == "Individual" %>
+    <div class="navbar-side">
+      <h3><%= current_user.role %></h3>
+      <div class="individual-buttons">
+        <%= link_to "Unsigned Contracts", contracts_path, class: "nav_button" %>
+        <%= link_to "Signed Contracts", new_contract_path, class: "nav_button" %>
+        <%= link_to "Settings", new_contract_path, class: "nav_button" %>
+      </div>
+      <%= link_to "Logout", class: "nav_button" %>
+    </div>
+  <% else %>
+    <div class="navbar-side">
+      <h3><%= current_user.role %></h3>
+      <div class="individual-buttons">
+        <%= link_to "Unsigned Contracts", contracts_path, class: "nav_button" %>
+        <%= link_to "Signed Contracts", new_contract_path, class: "nav_button" %>
+        <%= link_to "Settings", new_contract_path, class: "nav_button" %>
+      </div>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    </div>
+  <% end %>
+<% end %>
