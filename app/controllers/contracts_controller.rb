@@ -55,6 +55,6 @@ class ContractsController < ApplicationController
   private
 
   def new_contract_params
-    params.require(:contract).permit(:name, :description, :recipient_email, :document, :contract_body)
+    params.require(:contract).permit(:name, :description, :recipient_email, :document)
   end
 end
