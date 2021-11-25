@@ -6,9 +6,9 @@
   background: linear-gradient(#167FFB, #0F60C4);
   // transition: background 0.3s ease;
   border: 1px solid #0F60C4;
-}
-
-.home-button:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+  &:hover{
+    text-decoration: none;
+    background: linear-gradient(#147EFF, #0F67DA);
+    color: white;
+  }
 }
