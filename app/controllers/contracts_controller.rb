@@ -3,10 +3,10 @@ class ContractsController < ApplicationController
     case current_user.role
     when "Company"
       @user = current_user.company
-      @contracts = Contract.where(company_id: @user)
+      @contracts = Contract.where(company_id: @user).order("updated_at DESC")
     when "Individual"
       @user = current_user.individual
-      @contracts = Contract.where(individual_id: @user)
+      @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
     end
   end
 
