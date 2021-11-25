@@ -1,4 +1,5 @@
 <h3>All contracts (for given user) with all attributes</h3>
+<%= link_to "Create new contract", new_contract_path %>
 <% @contracts.each do |contract| %>
   <p><em>Contract id</em>: <%= contract.id %></p>
   <p>Contract name: <%= contract.name %></p>

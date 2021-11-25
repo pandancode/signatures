@@ -12,6 +12,12 @@ class ContractsController < ApplicationController
 
   def show
     @contract = Contract.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def new
@@ -25,7 +31,7 @@ class ContractsController < ApplicationController
     @contract.company = @company
     # This presumes that the recipient email is in our database, else, we will still have to create one (which would conflict with our validations but whatever)
     # The below kind of works but I want to go to the next level faster
-    # @user = User.where(email: new_contract_params[:recipient_email])
+    @user = User.where(email: new_contract_params[:recipient_email])
     # Note the below technically returns an array, which is why we need the [0]
     @individual = Individual.where(user_id: User.where(email: new_contract_params[:recipient_email]))[0]
     @contract.individual_id = @individual.id

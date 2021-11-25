@@ -25,8 +25,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'cloudinary', '~> 1.16.0'
 # AMIN ADDED DEVISE GEM
 gem 'devise'
-# AMIN ADDED HEXAPDF GEM
-gem 'hexapdf'
+# AMIN ADDED the 2gems GEM
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Yilun added bucketeer gem
 # source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
 gem 'aws-sdk'
