@@ -20,16 +20,34 @@ class ContractsController < ApplicationController
   end
 
   def new
-
+    #if u are a company
+    @contract = Contract.new
   end
 
   def create
-
+    #get company id
+    @company = current_user.company.id
+    
+    @contract = Contract.new(contract_params)
+    #set the company id
+    @contract.company_id = @company
+    #find user by recipiant email
+    @user = User.find_by(email: @contract.recipient_email)
+    # git the individual id
+    @individual = Individual.find_by(user_id: @user).id
+    #assign to contract individual_id
+    @contract.individual_id = @individual
+    if @contract.save
+      redirect_to contract_path(@contract)
+    else
+      render :new
+    end
+    
   end
 
   private
 
   def contract_params
-
+    params.require(:contract).permit(:name, :description, :recipient_email)
   end
 end

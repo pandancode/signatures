@@ -2,3 +2,4 @@
 <p><em>Description</em>: <%= @contract.description %></p>
 <p><em>Status</em>: <%= @contract.status %></p>
 <p><em>Receiver</em>: <%= @contract.individual.user.email %></p>
+<%= link_to "All contracts", contracts_path %>

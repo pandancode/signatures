@@ -1,8 +1,10 @@
 <%# <%= render 'form', contracts: @contracts %>
 <h1>Create a new contract</h1>
 
-<%= simple_form_for [@company, @contract] do |f| %>
-
-  <%= f.input :document, as: :file %>
+<%= simple_form_for( @contract) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :recipient_email %>
+  <%# <%= f.input :document, as: :file %>
   <%= f.button :submit, 'Upload Contract!'%>
 <% end %>
