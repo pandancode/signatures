@@ -8,3 +8,18 @@
 <p>Contract signed at: <%= @contract.fully_signed_at %></p>
 <p>Contract status: <%= @contract.status %></p>
 <p>Contract has attachment: <%= @contract.document.attached? %></p>
+<p><%= link_to "Open attachment" %></p>
+<%#= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+
+<p>Please enter your name here to sign the contract</p>
+
+<div style="width: 80%">
+  <%= form_tag contract_path(@contract), method: :patch do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Please enter your name here to sign the contract: #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}"
+    %>
+    <%= submit_tag "Search", class: "d-none" %>
+  <% end %>
+</div>
