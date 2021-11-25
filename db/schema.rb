@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_151219) do
     t.string "name", default: "nil"
     t.string "recipient_email", default: "nil"
     t.text "description", default: "nil"
+    t.text "contract_body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_contracts_on_company_id"
