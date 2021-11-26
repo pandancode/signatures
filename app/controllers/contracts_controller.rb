@@ -52,9 +52,24 @@ class ContractsController < ApplicationController
     redirect_to contract_path(@contract)
   end
 
+  def sign
+    # Updating contract
+    @contract = Contract.find(params[:id])
+    signature_pdf = WickedPdf.new.pdf_from_string(render_to_string('pdf_signatures/show', layout: "pdf", locals: { individual: current_user.individual }))
+    contract = @contract.document.download
+
+    pdf = ::CombinePDF.new
+    pdf << ::CombinePDF.parse(contract)
+    pdf << ::CombinePDF.parse(signature_pdf)
+
+    @contract.document.attach(io: StringIO.new(pdf.to_pdf), filename: "signed_contract.pdf")
+    @contract.update(status: "signed", fully_signed_at: Time.current)
+    redirect_to contract_path(@contract)
+  end
+
   private
 
   def new_contract_params
-    params.require(:contract).permit(:name, :description, :recipient_email, :document, :contract_body)
+    params.require(:contract).permit(:name, :description, :recipient_email, :document)
   end
 end

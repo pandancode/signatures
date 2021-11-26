@@ -23,8 +23,9 @@
         placeholder: "Please enter your name here to sign the contract: #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}"
       %>
       <%= submit_tag "Search", class: "d-none" %>
-    </div>
-  <% end %>
+    <% end %>
+    <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch %>
+  </div>
 <% end %>
 
 <%= link_to "Back to index", contracts_path %>
