@@ -3,8 +3,7 @@
     <div class="navbar-side">
       <h3><%= current_user.role %></h3>
       <div class="individual-buttons">
-        <%= link_to "Unsigned Contracts", contracts_path, class: "nav_button" %>
-        <%= link_to "Signed Contracts", new_contract_path, class: "nav_button" %>
+        <%= link_to "See my contracts", contracts_path, class: "nav_button" %>
         <%= link_to "Settings", new_contract_path, class: "nav_button" %>
       </div>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>

@@ -1,61 +1,91 @@
-<div>
-  <h3>All contracts (for given user) with all attributes</h3>
-
-  <%= link_to "Create new contract", new_contract_path %>
-
-  <%= form_tag contracts_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "What do you want to search for?"
-    %>
-    <%= submit_tag "Search", class: "d-none" %>
-  <% end %>
-
-  <% @contracts.each do |contract| %>
-    <p><em>Contract id</em>: <%= contract.id %></p>
-    <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
-    <p>Contract description: <%= contract.description %></p>
-    <p>Contract company: <%= contract.company.company_name %></p>
-    <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-    <p>Contract created at: <%= contract.created_at %></p>
-    <p>Contract signed at: <%= contract.fully_signed_at %></p>
-    <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-      <%= link_to "SIGN ME NOW", contract_path(contract) %>
+<div class="container-contacts">
+  <div class="side-actions">
+    <% if user_signed_in? %>
+      <% if current_user.role == "Individual" %>
+        <div class="navbar-side">
+          <h3><%= current_user.role %></h3>
+          <div class="individual-buttons">
+            <%= link_to "See my contracts", contracts_path, class: "nav_button" %>
+            <%= link_to "Settings", individual_path(current_user) , class: "nav_button" %>
+          </div>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
+        </div>
+      <% else %>
+        <div class="navbar-side">
+          <h3><%= current_user.role %></h3>
+          <div class="individual-buttons">
+            <%= link_to "Dashboards", contracts_path, class: "nav_button" %>
+            <%= link_to "Create New Contract", new_contract_path, class: "nav_button" %>
+            <%= link_to "Signed Contracts", contracts_path, class: "nav_button" %>
+            <%# link_to "Settings", , class: "nav_button" %>
+          </div>
+          <%= link_to "Logout", contracts_path, class: "nav_button" %>
+        </div>
+      <% end %>
     <% end %>
-    <p>Contract status: <%= contract.status %></p>
-    <p>Contract has attachment: <%= contract.document.attached? %></p>
-  <% end %>
+  </div>
 
-  <h3>Unsigned contracts (for given user) with all attributes</h3>
-  <% @contracts.where(fully_signed_at: nil).each do |contract| %>
-    <p><em>Contract id</em>: <%= contract.id %></p>
-    <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
-    <p>Contract description: <%= contract.description %></p>
-    <p>Contract company: <%= contract.company.company_name %></p>
-    <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-    <p>Contract created at: <%= contract.created_at %></p>
-    <p>Contract signed at: <%= contract.fully_signed_at %></p>
-    <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-      <%= link_to "SIGN ME NOW", contract_path(contract) %>
-    <% end %>
-    <p>Contract status: <%= contract.status %></p>
-    <p>Contract has attachment: <%= contract.document.attached? %></p>
-  <% end %>
+  <div class="content-window">
+    <h3>All contracts</h3>
 
-  <h3>Signed contracts (for given user) with all attributes</h3>
-  <% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
-    <p><em>Contract id</em>: <%= contract.id %></p>
-    <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
-    <p>Contract description: <%= contract.description %></p>
-    <p>Contract company: <%= contract.company.company_name %></p>
-    <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
-    <p>Contract created at: <%= contract.created_at %></p>
-    <p>Contract signed at: <%= contract.fully_signed_at %></p>
-    <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-      <%= link_to "SIGN ME NOW", contract_path(contract) %>
-    <% end %>
-    <p>Contract status: <%= contract.status %></p>
-    <p>Contract has attachment: <%= contract.document.attached? %></p>
-  <% end %>
+    <%= link_to "Create new contract", new_contract_path %>
+
+    <h2>Signed contracts</h2>
+    <div class="all-contracts">
+      <% @contracts.where(status: "signed").each do |contract| %>
+        <div class="contract signed">
+          <p><em>Contract id</em>: <%= contract.id %></p>
+          <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
+          <p>Contract description: <%= contract.description %></p>
+          <p>Contract company: <%= contract.company.company_name %></p>
+          <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
+          <p>Contract signed at: <%= contract.fully_signed_at %></p>
+          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+            <%= link_to "SEE CONTRACT", contract_path(contract) %>
+          <% end %>
+          <p>Contract has attachment: <%= contract.document.attached? %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <h2>Unsigned contracts</h2>
+    <div class="all-contracts">
+      <% @contracts.where(fully_signed_at: nil).each do |contract| %>
+        <div class="contract unsigned">
+          <p><em>Contract id</em>: <%= contract.id %></p>
+          <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
+          <p>Contract description: <%= contract.description %></p>
+          <p>Contract company: <%= contract.company.company_name %></p>
+          <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %></p>
+          <p>Contract created at: <%= contract.created_at %></p>
+          <p>Contract signed at: <%= contract.fully_signed_at %></p>
+          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+            <%= link_to "SIGN ME NOW", contract_path(contract) %>
+          <% end %>
+          <p>Contract status: <%= contract.status %></p>
+          <p>Contract has attachment: <%= contract.document.attached? %></p>
+        </div>
+      <% end %>
+    </div>
 </div>
+
+
+
+
+
+    <%# <h3>Signed contracts (for given user) with all attributes</h3>
+    <% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
+      <%# <><em>Contract id</em>: <%= contract.id %>
+      <%# <>Contract name: <%= link_to contract.name, contract_path(contract) %>
+      <%# <>Contract description: <%= contract.description %>
+      <%# <>Contract company: <%= contract.company.company_name %>
+      <%# <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %>
+      <%# <>Contract created at: <%= contract.created_at %>
+      <%# <p>Contract signed at: <%= contract.fully_signed_at %>
+      <%# <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+        <%# <%= link_to "SIGN ME NOW", contract_path(contract) %>
+      <%# <% end %>
+      <%# <p>Contract status: <%= contract.status</p> %>
+      <%# <>Contract has attachment: <%= contract.document.attached? %>
+    <%# <% end %>
+  <%# </div> %>
