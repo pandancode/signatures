@@ -3,6 +3,15 @@
 
   <%= link_to "Create new contract", new_contract_path %>
 
+  <%= form_tag contracts_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "What do you want to search for?"
+    %>
+    <%= submit_tag "Search", class: "d-none" %>
+  <% end %>
+
   <% @contracts.each do |contract| %>
     <p><em>Contract id</em>: <%= contract.id %></p>
     <p>Contract name: <%= link_to contract.name, contract_path(contract) %></p>
