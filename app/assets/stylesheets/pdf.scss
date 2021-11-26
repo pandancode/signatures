@@ -1,1 +1,29 @@
+body {
+ background-color: white;
+}
 
+.signature-area-div {
+  background-color: white;
+  margin: 3rem auto 0;
+  text-align: center;
+  width: 50%;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.signature-text{
+  margin-top: 5rem;
+  font-family: 'Freehand', cursive !important;
+  font-size: 5rem;
+}
+
+.signature-date {
+  font-size: 2rem;
+}
+
+#stamp {
+  width: 300px;
+  height: 200px;
+}

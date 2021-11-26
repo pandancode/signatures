@@ -27,8 +27,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 # AMIN ADDED the 4 gems GEM
 gem 'wicked_pdf'
-gem "wkhtmltopdf-binary", group: :development
-gem "wkhtmltopdf-heroku", group: :production
+gem "wkhtmltopdf-binary"
+# gem "wkhtmltopdf-heroku", group: :production
 gem 'combine_pdf'
 # Yilun added bucketeer gem
 # source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
@@ -36,7 +36,8 @@ gem 'aws-sdk'
 # Yilun had to add this too apparently
 # source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
 gem "aws-sdk-s3", require: false
-
+# Giorgio added pg search gem
+gem 'pg_search', '~> 2.3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

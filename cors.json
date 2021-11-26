@@ -1,0 +1,23 @@
+{
+  "CORSRules": [
+    {
+      "AllowedHeaders": [
+        "*"
+      ],
+      "ExposeHeaders": [
+        "ETag",
+        "x-amz-meta-custom-header"
+      ],
+      "AllowedMethods": [
+        "HEAD",
+        "GET",
+        "PUT",
+        "POST",
+        "DELETE"
+      ],
+      "AllowedOrigins": [
+        "*"
+      ]
+    }
+  ]
+}
