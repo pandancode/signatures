@@ -61,17 +61,15 @@ class ContractsController < ApplicationController
     pdf = ::CombinePDF.new
     pdf << ::CombinePDF.parse(contract)
     pdf << ::CombinePDF.parse(signature_pdf)
-    # pdf.save "signed_contract.pdf"
 
     @contract.document.attach(io: StringIO.new(pdf.to_pdf), filename: "signed_contract.pdf")
     @contract.update(status: "signed", fully_signed_at: Time.current)
     redirect_to contract_path(@contract)
-    # send_data pdf.to_pdf, filename: "signed_contract.pdf"
   end
 
   private
 
   def new_contract_params
-    params.require(:contract).permit(:name, :description, :recipient_email, :document, :contract_body)
+    params.require(:contract).permit(:name, :description, :recipient_email, :document)
   end
 end
