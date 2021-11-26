@@ -1,2 +1,6 @@
-<p>Signature: <%= individual.full_name %></p>
-<p><%= Date.current %></p>
+<div class="signature-area-div">
+  <p class="signature-date">Signed the: <span class="date"><%= Date.current %></span></p>
+  <p> (using EZ-Contract)</p>
+  <p class="signature-text"><%= individual.full_name %></p>
+  <%= image_tag "signed-stamp.jpeg", id: "stamp", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+</div>
