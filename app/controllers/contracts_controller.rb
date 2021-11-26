@@ -1,12 +1,22 @@
 class ContractsController < ApplicationController
   def index
+    sql_query = "name @@ :query OR description @@ :query"
+
     case current_user.role
     when "Company"
       @user = current_user.company
-      @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
     when "Individual"
       @user = current_user.individual
-      @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
     end
   end
 
