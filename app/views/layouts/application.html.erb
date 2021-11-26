@@ -21,10 +21,7 @@
     <%= render 'shared/navbar' %>
     <%= yield %>
   <% else %>
-    <div class="navbar-layout">
-      <%= render 'shared/side_navbar' %>
       <%= yield %>
-    <div>
   <% end %>
 
     <p class="notice"><%= notice %></p>
