@@ -1,64 +1,84 @@
 <div class="contract-container">
   <h3>Contracts</h3>
 
+ <h4>All contracts</h4>
   <div class="contract-overflow all-contract-container">
 
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
+    <% @contracts.each do |contract| %>
+      <div>
+        <div style="width: 18rem;">
+        <%=  image_tag "contract.jpeg", class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+          </div>
+          <ul class="list-group list-group-flush"> %>
+            <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+            <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+          </ul>
+          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+              <%= link_to "SIGN ME NOW", contract_path(contract) %>
+            <% end %>
+          <div class="card-body">
+            <p>Contract status: <%= contract.status %></p>
+            <p>Contract has attachment: <%= contract.document.attached? %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 
+  <h4>Unsigned Contracts</h4>
   <div class="contract-overflow unsigned-contracts">
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
+
+    <% @contracts.each do |contract| %>
+      <div>
+        <div style="width: 18rem;">
+        <%=  image_tag "contract.jpeg", class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+          </div>
+          <ul class="list-group list-group-flush"> %>
+            <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+            <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+          </ul>
+          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+              <%= link_to "SIGN ME NOW", contract_path(contract) %>
+            <% end %>
+          <div class="card-body">
+            <p>Contract status: <%= contract.status %></p>
+            <p>Contract has attachment: <%= contract.document.attached? %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 
+  <h4>Signed contracts</h4>
   <div class="contract-overflow signed-contracts">
-    <h4>Card 1</h4>
-    <h4>Card 2</h4>
-    <h4>Card 3</h4>
+
+<% @contracts.each do |contract| %>
+      <div>
+        <div style="width: 18rem;">
+        <%=  image_tag "contract.jpeg", class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+          </div>
+          <ul class="list-group list-group-flush"> %>
+            <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+            <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+          </ul>
+          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+              <%= link_to "SIGN ME NOW", contract_path(contract) %>
+            <% end %>
+          <div class="card-body">
+            <p>Contract status: <%= contract.status %></p>
+            <p>Contract has attachment: <%= contract.document.attached? %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
+
+  <%= link_to "Create new contract", new_contract_path %>
+
 </div>
