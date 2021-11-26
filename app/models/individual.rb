@@ -3,9 +3,7 @@ class Individual < ApplicationRecord
   belongs_to :user
 
   validates :first_name, presence: true
-
   validates :last_name, presence: true
-
   validates :birth_date, presence: true
 
   validates :phone_number, presence: true
@@ -17,6 +15,6 @@ class Individual < ApplicationRecord
   validates :title, inclusion: { in: %w[Mr Ms Mx] }
 
   def full_name
-     "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}"
   end
 end
