@@ -13,7 +13,8 @@
 }
 
 .search-bar {
-  width: 50%;
+  width: 35%;
+  padding: 0.2rem;
 }
 
 .side-actions {
@@ -25,10 +26,10 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 250px;
-  min-width: 250px;
+  width: 280px;
+  min-width: 280px;
   background-color: #CEDFF8;
   position: fixed;
 }
@@ -44,7 +45,32 @@
   border-radius: 4px;
   text-align: center;
   color: white;
+
+  &:hover {
+    box-shadow: 0 0 10px black;
+  }
 }
+
+.sign-btn {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #282828;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 10px black;
+    color: white;
+  }
+}
+
+
 
 .content-window {
   text-align: center;
