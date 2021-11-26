@@ -36,6 +36,8 @@ gem 'aws-sdk'
 # Yilun had to add this too apparently
 # source: https://devcenter.heroku.com/articles/bucketeer#using-with-ruby-rails
 gem "aws-sdk-s3", require: false
+# Giorgio added pg search gem
+gem 'pg_search', '~> 2.3.0'
 
 
 # Use Active Storage variant

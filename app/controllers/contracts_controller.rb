@@ -5,7 +5,7 @@ class ContractsController < ApplicationController
 
     if current_user.role == "Company"
       if params[:query].present?
-        sql_query = "name ILIKE :query OR description ILIKE :query"
+        sql_query = "name @@ :query OR description @@ :query"
         @contracts = Contract.where(sql_query, query: "%#{params[:query]}%")
       else
         @user = current_user.company
@@ -13,7 +13,7 @@ class ContractsController < ApplicationController
       end
     else
       if params[:query].present?
-        sql_query = "name ILIKE :query OR description ILIKE :query"
+        sql_query = "name @@ :query OR description @@ :query"
         @contracts = Contract.where(sql_query, query: "%#{params[:query]}%")
       else
         @user = current_user.individual
