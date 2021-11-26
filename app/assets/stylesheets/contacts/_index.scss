@@ -1,5 +1,19 @@
 .container-contacts {
   display: flex;
+  margin-bottom: 4rem;
+}
+
+.container-contacts h2 {
+  margin-top: 1rem;
+}
+
+.container-contacts h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  width: 50%;
 }
 
 .side-actions {
