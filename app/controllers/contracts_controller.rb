@@ -1,13 +1,47 @@
 class ContractsController < ApplicationController
   def index
-    case current_user.role
-    when "Company"
-      @user = current_user.company
-      @contracts = Contract.where(company_id: @user).order("updated_at DESC")
-    when "Individual"
-      @user = current_user.individual
-      @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+
+    
+
+    if current_user.role == "Company"
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @user = current_user.company
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
+    else
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @user = current_user.individual
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
     end
+
+      # if current_user.role == "Company"
+      #   @user = current_user.company
+      #   @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      # else
+      #   @user = current_user.individual
+      #   @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      # end
+
+      # code already existing
+        # case current_user.role
+        # when "Company"
+        #   @user = current_user.company
+        #   @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+        # when "Individual"
+        #   @user = current_user.individual
+        #   @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+        # end
+      # -----
+   
+
+   
   end
 
   def show

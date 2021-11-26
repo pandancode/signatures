@@ -1,3 +1,15 @@
+<%# search bar %>
+<%= form_tag contracts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Contract"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<%# ------------- %>
+
 <h3>All contracts (for given user) with all attributes</h3>
 
 <%= link_to "Create new contract", new_contract_path %>
