@@ -1,0 +1,76 @@
+<%# <div class="flex-wrap"> %>
+<div class="Checker">
+  <h3>All contracts (for given user) with all attributes</h3>
+  <% @contracts.each do |contract| %>
+    <div class="card d-flex align-items-stretch" style="width: 18rem;">
+      <img src="contract.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+        <%# <p class="card-text">Contract description: <%= contract.description %></p> %>
+      </div>
+      <ul class="list-group list-group-flush"> %>
+        <%# <li class="list-group-item">Contract company: <%= contract.company.company_name %></li>
+        <%# <li class="list-group-item">Contract individual: <%="#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}"%></p></li> %> %>
+        <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+        <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+      </ul>
+      <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+          <%= link_to "SIGN ME NOW", contract_path(contract) %>
+        <% end %>
+      <div class="card-body">
+        <p>Contract status: <%= contract.status %></p>
+        <p>Contract has attachment: <%= contract.document.attached? %></p>
+    </div>
+</div>
+<% end %>
+
+<h3>Unsigned contracts (for given user) with all attributes</h3>
+<% @contracts.where(fully_signed_at: nil).each do |contract| %>
+<div class="card" style="width: 18rem;">
+  <img src="contract.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+    <p class="card-text">Contract description: <%= contract.description %></p>
+  </div>
+  <ul class="list-group list-group-flush"> %>
+    <li class="list-group-item">Contract company: <%= contract.company.company_name %></li>
+    <li class="list-group-item">Contract individual: <%="#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}"%></p></li>
+    <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+    <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+  </ul>
+  <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+      <%= link_to "SIGN ME NOW", contract_path(contract) %>
+    <% end %>
+  <div class="card-body">
+    <p>Contract status: <%= contract.status %></p>
+    <p>Contract has attachment: <%= contract.document.attached? %></p>
+  </div>
+</div>
+<% end %>
+
+<h3>Signed contracts (for given user) with all attributes</h3>
+<% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
+<div class="card" style="width: 18rem;">
+  <img src="contract.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><p>Contract id: <%= contract.id %></p> Contract Name: <%= contract.name %></h5>
+    <p class="card-text">Contract description: <%= contract.description %></p>
+  </div>
+  <ul class="list-group list-group-flush"> %>
+    <li class="list-group-item">Contract company: <%= contract.company.company_name %></li>
+    <li class="list-group-item">Contract individual: <%="#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}"%></p></li>
+    <li class="list-group-item"><p>Contract created at: <%= contract.created_at %></p></li>
+    <li class="list-group-item"><p>Contract signed at: <%= contract.fully_signed_at %></p></li>
+  </ul>
+  <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+      <%= link_to "SIGN ME NOW", contract_path(contract) %>
+    <% end %>
+  <div class="card-body">
+    <p>Contract status: <%= contract.status %></p>
+    <p>Contract has attachment: <%= contract.document.attached? %></p>
+  </div>
+</div>
+<% end %>
+<%# </div> %>
+
+<%= link_to "Create new contract", new_contract_path %>

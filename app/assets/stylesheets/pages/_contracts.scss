@@ -1,0 +1,16 @@
+.contract-container {
+  display: flex;
+  flex-direction: column;
+  width:90%;
+  padding: 30px;
+}
+
+.contract-overflow{
+  border: 1px solid grey;
+  margin-bottom: 20px;
+  height: 200px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  overflow: scroll;
+}
