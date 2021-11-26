@@ -27,7 +27,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 # AMIN ADDED the 4 gems GEM
 gem 'wicked_pdf'
-gem "wkhtmltopdf-binary" #, group: :development
+gem "wkhtmltopdf-binary"
 # gem "wkhtmltopdf-heroku", group: :production
 gem 'combine_pdf'
 # Yilun added bucketeer gem
