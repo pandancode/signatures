@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item-no-pic">
 
         <% if current_user.role == "Company" %>
           <%= link_to "Profile", company_path(current_user.company) %>
