@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to contracts_path ,class: "navbar-brand" do %>
-    <%= image_tag "EZlogo.png", class: "logo" %>
+  <%= link_to root_path ,class: "navbar-brand" do %>
+    <%= image_tag "EZContractBlue.png", class:"logo" %>
+    <p class="logo-text">EZ-Contract</p>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,15 +13,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item-no-pic">
-
-        <% if current_user.role == "Company" %>
-          <%= link_to "Profile", company_path(current_user.company) %>
-          <%= link_to "Contracts", contracts_path(current_user.company) %>
-        <% else %>
-          <%= link_to "Profile", individual_path(current_user.individual) %>
-          <%= link_to "Contracts", contracts_path(current_user.individual) %>
-        <% end %>
-
+          <% if current_user.role == "Company" %>
+            <%= link_to "Contracts", contracts_path(current_user.company) %>
+            <%= link_to current_user.company.company_name, company_path(current_user.company) %>
+            <%=  %>
+          <% else %>
+            <%= link_to "Contracts", contracts_path(current_user.individual) %>
+            <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <% image_tag "https://en.wikipedia.org/wiki/Boris_Johnson#/media/File:Boris_Johnson_official_portrait_(cropped).jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -29,8 +29,8 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item-no-pic">
+          <%= link_to "Login", new_user_session_path, class: "btn-login" %>
         </li>
       <% end %>
     </ul>

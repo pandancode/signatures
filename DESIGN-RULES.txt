@@ -1,0 +1,13 @@
+Colors:
+rgb(15, 4, 76)
+rgb(20, 30, 97)
+rgb(120, 122, 145)
+rgb(238, 238, 238)
+rgb(40,40,40)
+
+Spacing rule ( 2 4 8 12 16 24 32 48 64 80 96 128 … )
+
+Fonts:
+
+font-family: 'Freehand', cursive;
+font-family: 'Poppins', sans-serif;

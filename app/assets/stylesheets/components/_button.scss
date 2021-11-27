@@ -1,16 +1,28 @@
 .home-button {
-  color: rgb(40,40,40);
-  padding: 8px 24px;
+  padding: 12px 32px;
   border-radius: 4px;
   text-transform: uppercase;
-  background: linear-gradient(#CEDFF8, #ACCEFF);
+  background: rgb(20,30,97);
+  color: rgb(238, 238, 238);
   font-weight: bold;
-  border: 1px solid black;
-
+  transition: background-color 100ms;
+  border: 1px solid rgb(238,238,238);
 
   &:hover{
     text-decoration: none;
-    background: linear-gradient(#ACCEFF, #9CBBFF);
-    color: rgb(40,40,40);
+    background: rgb(238, 238, 238);
+    color: rgb(20,30,97);
+    border: 1px solid rgb(20,30,97);
   }
+}
+
+// RESPECT THE ORDER OF THE RULES (PRECENDENCE IN ACTION ON THIS PAGE)
+
+.btn-sign {
+  padding: 8px 72px;
+}
+
+.extra-btn {
+  padding: 4px 32px;
+  background-color: rgb(40,40,40);
 }
