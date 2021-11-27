@@ -1,6 +1,6 @@
 class ContractsController < ApplicationController
   def index
-    sql_query = "name @@ :query OR description @@ :query"
+    sql_query = "name ILIKE :query OR description ILIKE :query"
 
     case current_user.role
     when "Company"
