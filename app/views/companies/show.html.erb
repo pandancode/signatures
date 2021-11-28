@@ -1,12 +1,11 @@
-<%# <div class="companies-layout"> %>
-<body class="company-style">
-  <div class="container text-center">
+<div class="container-details-show">
+  <div class="container-details-show-content">
     <h2>Company details</h2>
-      <h4>Company name: <%= @company.company_name %> </h4>
-      <h4>Company address: <%= @company.address %></h4>
-      <h4>Company description: <%= @company.detail %></h4>
+    <h4>Company name: <%= @company.company_name %> </h4>
+    <h4>Company address: <%= @company.address %></h4>
+    <h4 class="last-element">Company description: <%= @company.detail %></h4>
+    <%= link_to "See all your contracts", contracts_path, class: "home-button" %>
+    <%= link_to "Update infos", contracts_path, class: "home-button" %>
+    <%= link_to "New contract", new_contract_path, class: "home-button" %>
   </div>
 </div>
-</body>
-
-<%= link_to "See all your contracts", contracts_path %>

@@ -1,11 +1,12 @@
-<div class="container">
-  <h2>Your details</h2>
+<div class="container-details-show">
+  <div class="container-details-show-content">
+    <h2>Your details</h2>
     <h4>Title: <%= @individual.title %><h4>
     <h4>First name: <%= @individual.first_name %></h4>
     <h4>Last name: <%= @individual.last_name %></h4>
     <h4>Date of birth: <%= @individual.birth_date %></h4>
-    <h4>Phone number: <%= @individual.phone_number %></h4>
+    <h4 class="last-element">Phone number: <%= @individual.phone_number %></h4>
+    <%= link_to "See all your contracts", contracts_path, class: "home-button" %>
+    <%= link_to "Update my infos", contracts_path, class: "home-button" %>
+  </div>
 </div>
-
-<%= link_to "Back", contracts_path %><br>
-<%= link_to "Update my infos (SOON)" %>
