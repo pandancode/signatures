@@ -7,6 +7,6 @@
     <h4>Date of birth: <%= @individual.birth_date %></h4>
     <h4 class="last-element">Phone number: <%= @individual.phone_number %></h4>
     <%= link_to "See all your contracts", contracts_path, class: "home-button" %>
-    <%= link_to "Update my infos", contracts_path, class: "home-button" %>
+    <%= link_to "Update my infos", edit_individual_path, class: "home-button" %>
   </div>
 </div>
