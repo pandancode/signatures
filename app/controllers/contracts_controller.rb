@@ -1,7 +1,7 @@
 class ContractsController < ApplicationController
   def index
     # sql_query = "name @@ :query OR description @@  :query"
-
+    
     case current_user.role
     when "Company"
       @user = current_user.company
