@@ -3,27 +3,28 @@
 .container-home-page {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(173, 207, 255, 0.2), rgba(40, 40, 40, 0.8)), url(signaturebis.jpg);
+  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(signaturebis.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
   top: 0;
   display: flex;
-  align-items:end;
+  align-items: center;
+  text-align: center;
 }
 
 .main-infos {
-  margin-bottom: 5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container-home-page h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
   font-family: Arial, sans-serif;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .container p {
@@ -32,4 +33,5 @@
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }

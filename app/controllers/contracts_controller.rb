@@ -77,6 +77,49 @@ class ContractsController < ApplicationController
     redirect_to contract_path(@contract)
   end
 
+  def signed
+    case current_user.role
+    when "Company"
+      @user = current_user.company
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
+    when "Individual"
+      @user = current_user.individual
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
+    end
+
+    # @user = current_user.individual
+    # @contracts = Contract.where(individual_id: @user)
+  end
+
+  def unsigned
+        case current_user.role
+    when "Company"
+      @user = current_user.company
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
+    when "Individual"
+      @user = current_user.individual
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
+    end
+    # @user = current_user.individual
+    # @contracts = Contract.where(individual_id: @user)
+  end
+
   private
 
   def new_contract_params
