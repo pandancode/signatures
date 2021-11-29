@@ -36,7 +36,10 @@
 //   font-family: 'Poppins', sans-serif;
 // }
 
+
+
 // description
+
 // .description, h2 {
 //   font-family: 'Arial', sans-serif;
 //   // text-decoration: underline;
@@ -50,14 +53,22 @@
 
 
 // pricing
-// .pricing-cards {
-//   display: flex;
-//   // border: 1px, black;
-//   justify-content: center;
-//   justify-content: space-around;
-//   // border-radius: 15px;
-// }
 
+.container-pricing {
+  text-align: center;
+  // font-family: 'Arial';
+  color: white;
+}
+
+.pricing-cards {
+  display: flex;
+  // border: 1px, black;
+  // justify-content: center;
+  justify-content: space-around;
+  // border-radius: 15px;
+  align-items: flex-end;
+  align-items: stretch;
+}
 
 // carousel
 
