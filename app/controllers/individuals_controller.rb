@@ -8,7 +8,7 @@ class IndividualsController < ApplicationController
     @user = current_user
     @individual.user = @user
     if @individual.save
-      redirect_to individual_path(@individual)
+      redirect_to unsigned_path
     else
       render :new
     end
