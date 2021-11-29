@@ -8,87 +8,93 @@
   background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(signaturebis.jpg);
   background-position: center;
   background-size: cover;
-  position: absolute;
   top: 0;
   display: flex;
   align-items: center;
   text-align: center;
 }
-// .main-infos {
-//   font-family: 'Poppins', sans-serif;
-// }
+.main-infos {
+  font-family: 'Poppins', sans-serif;
+}
 
-// .container-home-page h1 {
-//   color: white;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   font-size: 48px;
-//   font-weight: bold;
-//   font-family: Arial, sans-serif;
-//   text-transform: uppercase;
-//   margin-bottom: 2rem;
-// }
+.container-home-page h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 48px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
 
-// .container-home-page h1 {
-  // color: white;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // font-size: 48px;
-  // font-weight: bold;
-  // font-family: Arial, sans-serif;
-  // text-transform: uppercase;
-  // margin-bottom: 2rem;
-// .container p {
-//   font-size: 20px;
-//   color: white;
-//   opacity: .8;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   font-family: Arial, sans-serif;
-//   font-family: 'Poppins', sans-serif;
-// }
+.container-home-page h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 48px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.container p {
+  font-size: 24px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
 
 
 
 // description
+.description {
+  padding: 182px;
+  color: white;
+}
 
-// .description, h2 {
-//   font-family: 'Arial', sans-serif;
-//   // text-decoration: underline;
-//   // text-align: center;
-// }
-
-// .description, h3 {
-//   text-decoration: none;
-//   justify-content: center;
-// }
+.description, h2 {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
 
 
-// pricing
 
-// .container-pricing {
-//   text-align: center;
-//   // font-family: 'Arial';
-//   color: white;
-// }
+/////////////////pricing
 
-// .pricing-cards {
-//   display: flex;
-//   // border: 1px, black;
-//   // justify-content: center;
-//   justify-content: space-around;
-//   // border-radius: 15px;
-//   align-items: flex-end;
-//   align-items: stretch;
-// }
+.container-pricing {
+  text-align: center;
+  font-family: 'Arial';
+  color: white;
+}
+
+.pricing-cards {
+  display: flex;
+  // border: 1px, black;
+  // justify-content: center;
+  justify-content: space-around;
+  // border-radius: 15px;
+  align-items: flex-end;
+  align-items: stretch;
+  padding-bottom : 374px;
+}
 
 // carousel
 
 .carousel-inner img {
   margin: auto;
-  position: relative; top: 30px;
+  width: auto;
+  max-height: 768px;
+  overflow: hidden;
 }
 
 #companies-text {
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
-  position: relative; top: 25px;
+}
+
+.companies-carousel {
+  padding-bottom: 214px;
 }

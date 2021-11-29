@@ -1,32 +1,31 @@
-<%# <div class="container-home-page">
+<div class="container-home-page">
   <div class="container main-infos">
     <h1>Signing contracts made easy.</h1>
     <p>See all of your contracts in one place</p>
     <p>Sign a contract with the click of a button</p>
     <p style="margin-bottom: 4rem">Never lose a contract again</p>
     <%= link_to "Let's get started", new_user_registration_path, class: "home-button" %>
-  <%# </div>
-</div>
-
-
-<%# /////////////////////DESCRIPTION///////////////// %>
-<div class="container-home-page">
-  <div class="description">
-    <h2>Send</h2>
-    <h3>EZ-Contract allows companies to upload and send contracts to users, saving you time and money.</h3>
-    <br>
-    <h2>Sign</h2>
-    <h3>EZ-Contract allows users to view and sign contracts at the click of a button.</h3>
-    <br>
-    <h2>Save</h2>
-    <h3>All of your contracts are always accessible once you have signed in.</h3>
-    <h3>No more storing paper contracts, and no more losing contracts.</h3>
   </div>
 </div>
 
 
+<%# /////////////////////DESCRIPTION///////////////// %>
+  <div class="description">
+    <h2 class="font-weight-bold">About EZ-Contract</h2>
+    <br>
+    <h2><u>Send</u></h2>
+    <h5>EZ-Contract allows companies to upload and send contracts to users, saving you time and money.</h5>
+    <br>
+    <h2><u>Sign</u></h2>
+    <h5>EZ-Contract allows users to view and sign contracts at the click of a button.</h5>
+    <br>
+    <h2><u>Save</u></h2>
+    <h5>All of your contracts are always accessible once you have signed in.</h5>
+    <h5>No more storing paper contracts, and no more losing contracts.</h5>
+  </div>
+
+
 <%# ////////////////////////PRICING/////////////// %>
-<%# <div class="container-home-page">
 <div class="container-pricing">
   <div class="description">
     <h2 class="font-weight-bold"><u>Pricing</u></h2>
@@ -36,7 +35,7 @@
 </div>
 
 <%# /////////////////////PRICING CARDS//////////////// %>
-  <%# <div class="container-cards">
+  <div class="container-cards">
     <div class="pricing-cards">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -62,12 +61,11 @@
         </div>
       </div>
     </div>
-  </div>
 
 
 <%# ///////////////COMPANIES WE WORK WITH//////////// %>
-<div companies-carousel>
-  <h2>Companies we work with</h2>
+<div class="companies-carousel">
+  <h2 id="companies-text">Companies we work with:</h2>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -88,5 +86,9 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+    <%# <br>
+    <br>
+    <br>
+    <br> %>
   </div>
 </div>
