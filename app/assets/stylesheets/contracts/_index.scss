@@ -1,8 +1,9 @@
 .container-contracts {
   display: flex;
   margin: 0 auto;
-  height: 70vh;
+  height: 73vh;
   overflow: auto;
+  margin-top: 2rem;
 }
 
 .container-contacts h3 {
@@ -15,7 +16,8 @@
   padding: 0.2rem;
   position: fixed;
   right: 370px;
-  top: 82px;
+  top: 95px;
+  border-radius: 200px;
 }
 
 .side-actions {
@@ -73,8 +75,9 @@
 
 .content-window {
   text-align: center;
-  margin-left: 180px;
+  margin-left: 187px;
   margin-top: 3rem;
+  width: 100%;
 }
 
 .content-window h3 {

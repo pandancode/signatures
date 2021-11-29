@@ -14,11 +14,11 @@
       <% if user_signed_in? %>
         <li class="nav-item-no-pic">
           <% if current_user.role == "Company" %>
-            <%= link_to "Contracts", contracts_path(current_user.company) %>
+            <%= link_to "Dashboard", contracts_path(current_user.company) %>
             <%= link_to current_user.company.company_name, company_path(current_user.company) %>
             <%=  %>
           <% else %>
-            <%= link_to "Contracts", contracts_path(current_user.individual) %>
+            <%= link_to "Dashboard", contracts_path(current_user.individual) %>
             <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %>
           <% end %>
         </li>
