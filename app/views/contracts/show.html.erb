@@ -1,12 +1,10 @@
 <div class="container-show-contract">
   <h2><%= @contract.name %></h2>
   <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
-  <p><span class="show-keywords">For:</span> <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>
-  <p><span class="show-keywords">Creation date:</span> <%= @contract.created_at %></p>
-  <% if !@contract.fully_signed_at.nil? %>
+  <p><span class="show-keywords">For:</span> <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>  <% if !@contract.fully_signed_at.nil? %>
     <p><span class="show-keywords">Signing date:</span> <%= @contract.fully_signed_at %></p>
   <% end %>
-  <><span class="show-keywords">Contract has attachment:</span> <%= @contract.document.attached? %></p>
+  <span class="show-keywords">Contract has attachment:</span> <%= @contract.document.attached? %></p>
   <% if @contract.document.attached? %>
     <%= link_to "Download contract", rails_blob_path(@contract.document, disposition: 'attachment'), class: "home-button btn-sign show-sign-btn download-contract" %>
   <% end %>
@@ -26,5 +24,3 @@
       <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button btn-sign show-sign-btn" %>
   <% end %>
 </div>
-
-<%# link_to "Back to index", contracts_path %>

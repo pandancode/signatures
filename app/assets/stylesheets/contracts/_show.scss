@@ -10,8 +10,14 @@
 
 .container-show-contract h2 {
   text-align: center;
-  margin-bottom: 4rem;
   font-weight: bolder;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.container-details-show-content h2 {
+  font-family: 'Freehand', cursive;
+  font-size: 3rem;
 }
 
 .show-keywords {
@@ -32,4 +38,11 @@
   width: 60%;
   margin: 0 auto;
   margin-top: 2rem;
+}
+
+.show-details-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
