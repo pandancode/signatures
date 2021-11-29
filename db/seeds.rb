@@ -124,7 +124,7 @@ puts "Creating company 2 (for user6): done"
 
 # 7. Company 1 creates contract 1 for individual 1
 puts "Creating contract 1 (for company 1) for individual 1..."
-contract1 = Contract.new(company_id: company1.id, individual_id: individual1.id, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "1 Picadilly lease starting 2021/1/1")
+contract1 = Contract.new(company_id: company1.id, individual_id: individual1.id, email: individual1.user.email, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "1 Picadilly lease starting 2021/1/1")
 puts "Is this a valid contract? #{contract1.valid?}"
 contract1.save!
 puts "Creating contract 1 (for company 1): done"
@@ -132,7 +132,7 @@ puts " "
 
 # 8. Company 1 creates contract 2 for individual 2
 puts "Creating contract 2 (for company 1) for individual 2 [signed]..."
-contract2 = Contract.new(company_id: company1.id, individual_id: individual2.id, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "2 Picadilly lease starting 2021/1/2")
+contract2 = Contract.new(company_id: company1.id, individual_id: individual2.id, email: individual2.user.email,fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "2 Picadilly lease starting 2021/1/2")
 puts "Is this a valid contract? #{contract2.valid?}"
 puts "Signing..."
 contract2.fully_signed_at = Time.now
@@ -142,7 +142,7 @@ puts " "
 
 # 9. Company 1 creates contract 3 for individual 3
 puts "Creating contract 3 (for company 1) for individual 3..."
-contract3 = Contract.new(company_id: company1.id, individual_id: individual3.id, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "3 Picadilly lease starting 2021/1/3")
+contract3 = Contract.new(company_id: company1.id, individual_id: individual3.id, email: individual3.user.email, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "3 Picadilly lease starting 2021/1/3")
 puts "Is this a valid contract? #{contract3.valid?}"
 contract3.save!
 puts "Creating contract 3 (for company 1): done"
@@ -150,7 +150,7 @@ puts " "
 
 # 10. Company 1 creates contract 4 for individual 4
 puts "Creating contract 4 (for company 1) for individual 4 [signed]..."
-contract4 = Contract.new(company_id: company1.id, individual_id: individual4.id, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "4 Picadilly lease starting 2021/1/4")
+contract4 = Contract.new(company_id: company1.id, individual_id: individual4.id, email: individual4.user.email, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "4 Picadilly lease starting 2021/1/4")
 puts "Is this a valid contract? #{contract4.valid?}"
 puts "Signing..."
 contract4.fully_signed_at = Time.now
@@ -160,7 +160,7 @@ puts " "
 
 # 11. Company 2 creates contract 5 for individual 1
 puts "Creating contract 5 (for company 2) for individual 1..."
-contract5 = Contract.new(company_id: company2.id, individual_id: individual1.id, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "5 Picadilly lease starting 2021/1/5")
+contract5 = Contract.new(company_id: company2.id, individual_id: individual1.id, email: individual1.user.email, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "5 Picadilly lease starting 2021/1/5")
 puts "Is this a valid contract? #{contract5.valid?}"
 contract5.save!
 puts "Creating contract 5 (for company 2): done"
@@ -168,7 +168,7 @@ puts " "
 
 # 12. Company 2 creates contract 6 for individual 2
 puts "Creating contract 6 (for company 2) for individual 2 [signed]..."
-contract6 = Contract.new(company_id: company2.id, individual_id: individual2.id, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "6 Picadilly lease starting 2021/1/6")
+contract6 = Contract.new(company_id: company2.id, individual_id: individual2.id, email: individual2.user.email, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "6 Picadilly lease starting 2021/1/6")
 puts "Is this a valid contract? #{contract6.valid?}"
 contract6.save!
 puts "Creating contract 6 (for company 2) for individual 2: done"
@@ -176,7 +176,7 @@ puts " "
 
 # 13. Company 2 creates contract 7 for individual 3
 puts "Creating contract 7 (for company 2) for individual 3..."
-contract7 = Contract.new(company_id: company2.id, individual_id: individual3.id, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "7 Picadilly lease starting 2021/1/7")
+contract7 = Contract.new(company_id: company2.id, individual_id: individual3.id, email: individual3.user.email, fully_signed_at: nil, status: "unopened", name: "Commercial lease", description: "7 Picadilly lease starting 2021/1/7")
 puts "Is this a valid contract? #{contract7.valid?}"
 contract7.save!
 puts "Creating contract 7 (for company 2): done"
@@ -184,7 +184,7 @@ puts " "
 
 # 14. Company 2 creates contract 8 for individual 4
 puts "Creating contract 8 (for company 2) for individual 4 [signed]..."
-contract8 = Contract.new(company_id: company2.id, individual_id: individual4.id, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "8 Picadilly lease starting 2021/1/8")
+contract8 = Contract.new(company_id: company2.id, individual_id: individual4.id, email: individual4.user.email, fully_signed_at: nil, status: "unopened", name: "Residential lease", description: "8 Picadilly lease starting 2021/1/8")
 puts "Is this a valid contract? #{contract8.valid?}"
 puts "Signing..."
 contract8.fully_signed_at = Time.now
