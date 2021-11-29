@@ -44,7 +44,7 @@ class ContractsController < ApplicationController
     @individual = Individual.where(user_id: User.where(email: new_contract_params[:recipient_email]))[0]
     @contract.individual_id = @individual.id
     if @contract.save
-      redirect_to contract_path(@contract), notice: "Contract has been successfully created"
+      redirect_to contract_path(@contract), flash: { success: "Contract has been successfully created" }
     else
       render :new
     end
