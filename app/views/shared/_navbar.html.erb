@@ -20,8 +20,8 @@
             <% end %>
           <% else %>
             <% if current_user.individual %>
-              <%= link_to "Dashboard", contracts_path(current_user.individual) %>
-              <%= link_to current_user.individual.first_name, unsigned_path %>
+              <%= link_to "Dashboard", unsigned_path %>
+              <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %>
             <% end %>
           <% end %>
         </li>
