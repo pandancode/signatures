@@ -1,5 +1,7 @@
 // Specific CSS for your home-page
 
+// main
+
 .container-home-page {
   width: 100%;
   height: 100vh;
@@ -34,4 +36,38 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: Arial, sans-serif;
   font-family: 'Poppins', sans-serif;
+}
+
+
+
+// description
+
+.description, h2 {
+  font-family: 'Arial', sans-serif;
+  // text-decoration: underline;
+  // text-align: center;
+}
+
+.description, h3 {
+  text-decoration: none;
+  justify-content: center;
+}
+
+
+// pricing
+
+.pricing-cards {
+  display: flex;
+  // border: 1px, black;
+  // justify-content: center;
+  justify-content: space-around;
+  // border-radius: 15px;
+  align-items: flex-end;
+
+}
+
+// carousel
+
+.carousel-inner img {
+  margin: auto;
 }
