@@ -56,6 +56,12 @@
 
 // pricing
 
+.container-pricing {
+  text-align: center;
+  // font-family: 'Arial';
+  color: white;
+}
+
 .pricing-cards {
   display: flex;
   // border: 1px, black;
@@ -64,7 +70,6 @@
   // border-radius: 15px;
   align-items: flex-end;
   align-items: stretch;
-
 }
 
 // carousel
