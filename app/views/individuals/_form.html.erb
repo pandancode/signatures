@@ -3,12 +3,12 @@
         <h3 class="title-form">Enter your details</h3>
         <%= simple_form_for @individual do |f| %>
         <div>
-          <%= f.input :title, collection: ["Mr", "Ms", "Mx"], label_html: { class: "row justify-content-center"} %>
-          <%= f.input :first_name, label_html: { class: "row justify-content-center"} %>
-          <%= f.input :last_name, label_html: { class: "row justify-content-center"} %>
-          <%= f.input :birth_date, label_html: { class: "row justify-content-center"} %>
-          <%= f.input :phone_number, label_html: { class: "row justify-content-center"} %>
-          <%= f.button :submit, 'Confirm your details', unsigned_path ,class: 'btn btn-submit', label_html: { class: "row justify-content-center"} %>
+          <%= f.input :title, collection: ["Mr", "Ms", "Mx"] %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :birth_date %>
+          <%= f.input :phone_number %>
+          <%= f.button :submit, 'Confirm your details', class: 'btn btn-submit' %>
         <% end %>
       </div>
 </div>
