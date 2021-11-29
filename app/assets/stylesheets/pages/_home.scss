@@ -35,3 +35,33 @@
   font-family: Arial, sans-serif;
   font-family: 'Poppins', sans-serif;
 }
+
+.description, h2 {
+  font-family: 'Arial', sans-serif;
+  // text-decoration: underline;
+  // text-align: center;
+}
+
+.description, h3 {
+  text-decoration: none;
+  justify-content: center;
+}
+
+.pricing-cards {
+  display: flex;
+  // border: 1px, black;
+  justify-content: center;
+  justify-content: space-around;
+  // border-radius: 15px;
+}
+
+.container-cards {
+  justify-content: space-around;
+}
+
+// .companies-carosel {
+// }
+
+.carousel-inner img {
+  margin: auto;
+}
