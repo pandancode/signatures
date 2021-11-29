@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(user)
-    contracts_path
+    unsigned_path
   end
 end

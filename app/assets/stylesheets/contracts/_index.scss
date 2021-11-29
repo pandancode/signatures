@@ -18,6 +18,8 @@
   right: 370px;
   top: 95px;
   border-radius: 200px;
+  text-align: center;
+  z-index: 2000;
 }
 
 .side-actions {
@@ -81,8 +83,10 @@
 }
 
 .content-window h3 {
+  font-size: 3rem;
   font-family: 'Freehand', cursive;
   color: rgb(238, 238, 238);
+  margin-bottom: 2rem;
 }
 
 .all-contracts {

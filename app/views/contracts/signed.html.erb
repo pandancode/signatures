@@ -21,7 +21,7 @@
   <div class="content-window">
 
      <%= form_tag contracts_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "What do you want to search for?" %>
+        <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description" %>
         <%= submit_tag "Search", class: "d-none" %>
       <% end %>
 
