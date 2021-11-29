@@ -118,6 +118,10 @@ class ContractsController < ApplicationController
     end
     # @user = current_user.individual
     # @contracts = Contract.where(individual_id: @user)
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'contracts.html', locals: { contracts: @contracts } }
+    end
   end
 
   private
