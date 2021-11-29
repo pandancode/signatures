@@ -1,19 +1,19 @@
 class ContractsController < ApplicationController
   def index
-    sql_query = "name @@ :query OR description @@ :query"
+    # sql_query = "name @@ :query OR description @@  :query"
 
     case current_user.role
     when "Company"
       @user = current_user.company
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC").search_by_name_and_description(params[:query])
       else
         @contracts = Contract.where(company_id: @user).order("updated_at DESC")
       end
     when "Individual"
       @user = current_user.individual
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC").search_by_name_and_description(params[:query])
       else
         @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
       end
@@ -75,6 +75,49 @@ class ContractsController < ApplicationController
     @contract.document.attach(io: StringIO.new(pdf.to_pdf), filename: "signed_contract.pdf")
     @contract.update(status: "signed", fully_signed_at: Time.current)
     redirect_to contract_path(@contract)
+  end
+
+  def signed
+    case current_user.role
+    when "Company"
+      @user = current_user.company
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
+    when "Individual"
+      @user = current_user.individual
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
+    end
+
+    # @user = current_user.individual
+    # @contracts = Contract.where(individual_id: @user)
+  end
+
+  def unsigned
+        case current_user.role
+    when "Company"
+      @user = current_user.company
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+      end
+    when "Individual"
+      @user = current_user.individual
+      if params[:query].present?
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+      else
+        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+      end
+    end
+    # @user = current_user.individual
+    # @contracts = Contract.where(individual_id: @user)
   end
 
   private

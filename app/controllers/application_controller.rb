@@ -13,10 +13,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(user)
-    if user.role == "Individual"
-      individual_path(user.individual)
-    else
-      company_path(user.company)
-    end
+    contracts_path
   end
 end

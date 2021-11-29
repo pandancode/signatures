@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  padding: 0;
   justify-content: space-between;
   background: rgba(34, 33, 33, 0);
   color: white;
@@ -10,9 +11,16 @@
   flex-grow: 0;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 75px;
-  border-radius: 4px;
+  border-radius: 400px;
+  border: 2px solid white;
+  margin-left: 1.5rem;
+  margin-top: 1rem
 }
 
 .navbar-nav {
@@ -26,29 +34,38 @@
   width: 100px;
 }
 
+.logo-text {
+  font-family: 'Freehand', cursive;
+  color: rgb(255, 255, 255);
+  align-self: center;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
 .nav-item-no-pic a {
-  color: #282828;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   transition: text-shadow 200ms;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-left: 2rem;
 
   &:hover {
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
-    color: black;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
   }
 }
 
-.navbar-light .navbar-nav .nav-link {
- color: white;
+.nav-item-no-pic a:last-child {
+  margin-left: 5rem;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
  color: grey;
 }
 
+<<<<<<< HEAD
 .navbar-side {
   width: 20%;
   height: 100%;
@@ -159,3 +176,8 @@
 //       text-decoration: none;
 //     }
 //   }
+=======
+.btn-login {
+  margin-right: 3rem;
+}
+>>>>>>> d5503d9a0c184a4f68c78e63ed6c96e780e41f37
