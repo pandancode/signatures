@@ -1,0 +1,107 @@
+.container-contracts {
+  display: flex;
+  margin: 0 auto;
+  height: 73vh;
+  overflow: auto;
+  margin-top: 2rem;
+}
+
+.container-contacts h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  width: 28%;
+  padding: 0.2rem;
+  position: fixed;
+  right: 370px;
+  top: 95px;
+  border-radius: 200px;
+}
+
+.side-actions {
+  display: flex;
+  position: fixed;
+  margin-top: 2.8rem;
+  justify-content: center;
+  gap: 2rem;
+  width: 20%;
+}
+
+.navbar-side {
+  display: flex;
+  justify-content: center;
+  width: 164px;
+  min-width: 164px;
+}
+
+.individual-buttons .nav_button {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgb(238, 238, 238);
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  color: #282828;
+  border: 1px solid black;
+
+  &:hover {
+    box-shadow: 0 0 10px white;
+  }
+}
+
+.sign-btn {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #282828;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 10px rgb(20, 30, 97);
+    color: white;
+  }
+}
+
+.content-window {
+  text-align: center;
+  margin-left: 187px;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.content-window h3 {
+  font-family: 'Freehand', cursive;
+  color: rgb(238, 238, 238);
+}
+
+.all-contracts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contract {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgb(238, 238, 238);
+  border: 1px solid rgb(20, 30, 97);
+  border-radius: 25px;
+  padding: 1rem;
+  min-width: 300px;
+  width: 300px;
+}

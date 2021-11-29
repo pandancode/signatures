@@ -10,8 +10,12 @@ Rails.application.routes.draw do
     member do
       patch :sign
     end
+
   end
   if Rails.env.development?
     resource :pdf_signatures, only: :show
   end
+
+  get "signed", to: "contracts#signed"
+  get "unsigned", to: "contracts#unsigned"
 end

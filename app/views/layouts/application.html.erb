@@ -4,7 +4,7 @@
     <title>EZ-Contract</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Freehand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,13 +16,8 @@
   </head>
 
   <body>
-
-  <% if current_page?(root_path) %>
     <%= render 'shared/navbar' %>
     <%= yield %>
-  <% else %>
-      <%= yield %>
-  <% end %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
