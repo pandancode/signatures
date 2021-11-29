@@ -104,7 +104,8 @@ class ContractsController < ApplicationController
     when "Company"
       @user = current_user.company
       if params[:query].present?
-        @contracts = Contract.where(company_id: @user).order("updated_at DESC").search_by_name_and_description(params[:query])
+        @contracts = Contract.where('name ILIKE ?', "%#{params[:query]}%")
+        # @contracts = Contract.where(company_id: @user).order("updated_at DESC").search_by_name_and_description(params[:query])
       else
         @contracts = Contract.where(company_id: @user).order("updated_at DESC")
       end
@@ -120,7 +121,7 @@ class ContractsController < ApplicationController
     # @contracts = Contract.where(individual_id: @user)
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'contract.html', locals: { contract: @contracts } }
+      format.text { render partial: 'contracts/contract.html', locals: { contract: @contracts } }
     end
   end
 

@@ -26,11 +26,8 @@
         <% end %>
 
       <h3>Unsigned contracts</h3>
-      <div class="all-contracts" data-search-contracts-target="contracts">
-        <% @contracts.where(fully_signed_at: nil).each do |contract| %>
-          <%= render "contract", contract: contract %>
-        <% end %>
-      </div>
+      
+      <%= render "contract", contract: @contracts %>
     </div>
 </div>
 

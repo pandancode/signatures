@@ -1,8 +1,14 @@
+
 <div class="contract">
-            <p><span class="show-keywords">Contract name:</span> <%= link_to contract.name, contract_path(contract) %></p>
-            <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
-            <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-              <%= link_to "SIGN ME NOW", contract_path(contract), class: "sign-btn" %>
-            <% end %>
-            <%# <p>Contract has attachment: contract.document.attached?</p> %>
-          </div>
+  <div class="all-contracts" data-search-contracts-target="contracts">      
+    <% @contracts.to_a.each do |contract| %>
+      <% if contract.company_id == current_user.company.id && !contract.fully_signed_at %>
+        <p><span class="show-keywords">Contract name:</span> <%= link_to contract.name, contract_path(contract)%></p>
+        <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
+        <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+        <%= link_to "SIGN ME NOW", contract_path(contract), class: "sign-btn" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
