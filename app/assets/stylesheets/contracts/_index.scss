@@ -18,6 +18,8 @@
   right: 370px;
   top: 95px;
   border-radius: 200px;
+  text-align: center;
+  z-index: 2000;
 }
 
 .side-actions {
@@ -81,8 +83,10 @@
 }
 
 .content-window h3 {
+  font-size: 3rem;
   font-family: 'Freehand', cursive;
   color: rgb(238, 238, 238);
+  margin-bottom: 2rem;
 }
 
 .all-contracts {
@@ -99,9 +103,14 @@
   flex-direction: column;
 
   background-color: rgb(238, 238, 238);
-  border: 1px solid rgb(20, 30, 97);
+  // border: 1px solid rgb(20, 30, 97);
   border-radius: 25px;
   padding: 1rem;
   min-width: 300px;
   width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
+}
+
+.contract .show-keywords {
+  font-size: 0.8rem;
 }

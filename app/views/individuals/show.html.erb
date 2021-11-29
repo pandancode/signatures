@@ -1,12 +1,14 @@
 <div class="container-details-show">
   <div class="container-details-show-content">
     <h2>Your details</h2>
-    <h4>Title: <%= @individual.title %><h4>
-    <h4>First name: <%= @individual.first_name %></h4>
-    <h4>Last name: <%= @individual.last_name %></h4>
-    <h4>Date of birth: <%= @individual.birth_date %></h4>
-    <h4 class="last-element">Phone number: <%= @individual.phone_number %></h4>
-    <%= link_to "See all your contracts", contracts_path, class: "home-button" %>
-    <%= link_to "Update my infos", edit_individual_path, class: "home-button" %>
+    <h4><span class="show-keywords">Title: </span><%= @individual.title %><h4>
+    <h4><span class="show-keywords">First name: </span><%= @individual.first_name %></h4>
+    <h4><span class="show-keywords">Last name: </span><%= @individual.last_name %></h4>
+    <h4><span class="show-keywords">Date of birth: </span><%= @individual.birth_date %></h4>
+    <h4 class="last-element"><span class="show-keywords">Phone number: </span><%= @individual.phone_number %></h4>
+    <div class="show-details-btns">
+      <%= link_to "My contracts", unsigned_path, class: "home-button show-sign-btn" %>
+      <%= link_to "Update my details", edit_individual_path, class: "home-button show-sign-btn" %>
+    </div>
   </div>
 </div>

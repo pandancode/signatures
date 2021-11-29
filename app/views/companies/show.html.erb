@@ -1,11 +1,13 @@
 <div class="container-details-show">
   <div class="container-details-show-content">
-    <h2>Company details</h2>
-    <h4>Company name: <%= @company.company_name %> </h4>
-    <h4>Company address: <%= @company.address %></h4>
-    <h4 class="last-element">Company description: <%= @company.detail %></h4>
-    <%= link_to "New contract", new_contract_path, class: "home-button" %>
-    <%= link_to "See all your contracts", contracts_path, class: "home-button" %>
-    <%= link_to "Update infos", edit_company_path, class: "home-button" %>
+    <h2>Details of your company</h2>
+    <h4><span class="show-keywords">Company name:</span> <%= @company.company_name %></h4>
+    <h4><span class="show-keywords">Address:</span> <%= @company.address %></h4>
+    <h4 class="last-element"><span class="show-keywords">Description:</span> <%= @company.detail %></h4>
+    <div class="show-details-btns">
+      <%= link_to "New contract", new_contract_path, class: "home-button show-sign-btn" %>
+      <%= link_to "Your contracts", unsigned_path, class: "home-button show-sign-btn" %>
+      <%= link_to "Update details", edit_company_path, class: "home-button show-sign-btn" %>
+    </div>
   </div>
 </div>

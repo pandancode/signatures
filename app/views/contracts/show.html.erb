@@ -1,31 +1,26 @@
-<h3>Contracts#show</h3>
-<p><em>Contract id</em>: <%= @contract.id %></p>
-<p>Contract name: <%= @contract.name %></p>
-<p>Contract description: <%= @contract.description %></p>
-<p>Contract company: <%= @contract.company.company_name %></p>
-<p>Contract individual: <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>
-<p>Contract created at: <%= @contract.created_at %></p>
-<p>Contract signed at: <%= @contract.fully_signed_at %></p>
-<p>Contract status: <%= @contract.status %></p>
-<p>Contract has attachment: <%= @contract.document.attached? %></p>
-<% if @contract.document.attached? %>
-  <p><%= link_to "Download contract", rails_blob_path(@contract.document, disposition: 'attachment') %></p>
-<% end %>
+<div class="container-show-contract">
+  <h2><%= @contract.name %></h2>
+  <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
+  <p><span class="show-keywords">For:</span> <%= "#{@contract.individual.title.capitalize} #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}" %></p>  <% if !@contract.fully_signed_at.nil? %>
+    <p><span class="show-keywords">Signing date:</span> <%= @contract.fully_signed_at %></p>
+  <% end %>
+  <span class="show-keywords">Contract has attachment:</span> <%= @contract.document.attached? %></p>
+  <% if @contract.document.attached? %>
+    <%= link_to "Download contract", rails_blob_path(@contract.document, disposition: 'attachment'), class: "home-button btn-sign show-sign-btn download-contract" %>
+  <% end %>
 
 
-<% if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? %>
-  <div style="width: 80%">
-    <p>Please enter your name here to sign the contract</p>
-    <%= form_tag contract_path(@contract), method: :patch do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Please enter your name here to sign the contract: #{@contract.individual.first_name.capitalize} #{@contract.individual.last_name.capitalize}"
-      %>
-      <%= submit_tag "Search", class: "d-none" %>
-    <% end %>
-    <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch %>
-  </div>
-<% end %>
-
-<%= link_to "Back to index", contracts_path %>
+  <% if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? %>
+    <div class="sign-form">
+      <%= form_tag contract_path(@contract), method: :patch do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Please enter your name here to sign the contract: #{@contract.individual.full_name}"
+        %>
+        <%= submit_tag "Search", class: "d-none" %>
+      <% end %>
+    </div>
+      <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button btn-sign show-sign-btn" %>
+  <% end %>
+</div>
