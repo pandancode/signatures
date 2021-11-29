@@ -30,3 +30,7 @@ import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
 });
+
+$(".alert").fadeOut(5000);
+$(".alert-success").fadeOut(5000);
+$(".alert-danger").fadeOut(5000);
