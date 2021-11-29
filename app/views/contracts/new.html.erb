@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :recipient_email %>
-    <%= f.input :document, as: :file, required: false  %>
+    <%= f.input :document, as: :file, required: true  %>
     <%= f.button :submit, 'Create Contract !', class: "home-button create-contract" %>
   <% end %>
 </div>
