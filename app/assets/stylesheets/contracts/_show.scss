@@ -1,0 +1,35 @@
+.container-show-contract {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgb(238, 238, 238);
+  background-color: rgb(20, 30, 97);
+  box-shadow: 0 0 20px rgba(238, 238, 238, 0.5);
+  color: white;
+}
+
+.container-show-contract h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: bolder;
+}
+
+.show-keywords {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.container-show-contract .form-control {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.show-sign-btn {
+  text-align: center;
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
