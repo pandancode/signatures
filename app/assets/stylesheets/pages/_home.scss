@@ -14,10 +14,19 @@
   align-items: center;
   text-align: center;
 }
+// .main-infos {
+//   font-family: 'Poppins', sans-serif;
+// }
 
-.main-infos {
-  font-family: 'Poppins', sans-serif;
-}
+// .container-home-page h1 {
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-size: 48px;
+//   font-weight: bold;
+//   font-family: Arial, sans-serif;
+//   text-transform: uppercase;
+//   margin-bottom: 2rem;
+// }
 
 // .container-home-page h1 {
   color: white;
@@ -27,15 +36,66 @@
   font-family: Arial, sans-serif;
   text-transform: uppercase;
   margin-bottom: 2rem;
+// .container p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .8;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-family: Arial, sans-serif;
+//   font-family: 'Poppins', sans-serif;
+// }
+
+
+
+// description
+
+// .description, h2 {
+//   font-family: 'Arial', sans-serif;
+//   // text-decoration: underline;
+//   // text-align: center;
+// }
+
+// .description, h3 {
+//   text-decoration: none;
+//   justify-content: center;
+// }
+
+
+// pricing
+
+// .container-pricing {
+//   text-align: center;
+//   // font-family: 'Arial';
+//   color: white;
+// }
+
+// .pricing-cards {
+//   display: flex;
+//   // border: 1px, black;
+//   // justify-content: center;
+//   justify-content: space-around;
+//   // border-radius: 15px;
+//   align-items: flex-end;
+//   align-items: stretch;
+// }
+
+// carousel
+
+// .companies-carosel {
+// }
+
+// carousel
+
+.carousel-inner img {
+  margin: auto;
+  position: relative; top: 30px;
 }
 
-.container p {
-  font-size: 20px;
+#companies-text {
   color: white;
-  opacity: .8;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
   font-family: Arial, sans-serif;
-  font-family: 'Poppins', sans-serif;
+  position: relative; top: 25px;
 }
 
 
