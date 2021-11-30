@@ -1,70 +1,114 @@
+// NAVBAR
+
+.navbar {
+  height: 10vh;
+}
+
 .navbar-lewagon {
-  padding: 0;
-  justify-content: space-between;
-  background: rgba(34, 33, 33, 0);
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-brand {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1992F7;
+  color: white !important;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 75px;
-  border-radius: 400px;
-  border: 2px solid white;
-  margin-left: 1.5rem;
-  margin-top: 1rem
+.navbar-lewagon a {
+  color:white;
+  text-decoration: none;
 }
 
 .navbar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .logo {
-  width: 100px;
+  margin-left: 4rem;
 }
 
-.logo-text {
-  font-family: 'Freehand', cursive;
-  color: rgb(255, 255, 255);
-  align-self: center;
-  margin-top: 2rem;
+.navbar-nav .nav-item {
+  font-size: 24px;
+}
+
+.navbar p {
+  font-size: 24px;
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+.nav-login-signup {
+  margin-right: 4rem;
+}
+
+.nav-login-signup .nav-item {
+  font-size: 24px;
+}
+
+.nav-login-signup .nav-item:last-child {
   margin-left: 2rem;
-  font-size: 1.5rem;
 }
 
-.nav-item-no-pic a {
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: text-shadow 200ms;
-  font-size: 1.5rem;
-  margin-left: 2rem;
-
-  &:hover {
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
-  }
+.light {
+  font-weight: lighter;
 }
 
-.nav-item-no-pic a:last-child {
-  margin-left: 5rem;
-}
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
 
-.navbar-light .navbar-nav .nav-link:hover {
- color: grey;
-}
+// .navbar-brand {
+//   display: flex;
+// }
 
-.btn-login {
-  margin-right: 3rem;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 75px;
+//   border-radius: 400px;
+//   border: 2px solid white;
+//   margin-left: 1.5rem;
+//   margin-top: 1rem
+// }
+
+// .navbar-nav {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 2rem;
+// }
+
+// .logo {
+//   width: 100px;
+// }
+
+// .logo-text {
+//   font-family: 'Freehand', cursive;
+//   color: rgb(255, 255, 255);
+//   align-self: center;
+//   margin-top: 2rem;
+//   margin-left: 2rem;
+//   font-size: 1.5rem;
+// }
+
+// .nav-item-no-pic a {
+//   color: rgb(255, 255, 255);
+//   font-weight: bold;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   transition: text-shadow 200ms;
+//   font-size: 1.5rem;
+//   margin-left: 2rem;
+
+//   &:hover {
+//     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
+//   }
+// }
+
+// .nav-item-no-pic a:last-child {
+//   margin-left: 5rem;
+// }
+
+// .navbar-light .navbar-nav .nav-link:hover {
+//  color: grey;
+// }
+
+// .btn-login {
+//   margin-right: 3rem;
+// }

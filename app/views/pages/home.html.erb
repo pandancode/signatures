@@ -1,95 +1,46 @@
-<div class="container-home-page">
-  <div class="container main-infos">
-    <h1>Signing contracts made easy.</h1>
-    <p>See all of your contracts in one place</p>
-    <p>Sign a contract with the click of a button</p>
-    <p style="margin-bottom: 4rem">Never lose a contract again</p>
-    <%= link_to "Let's get started", new_user_registration_path, class: "home-button" %>
+<div class="main-section">
+  <div class="main-section-text">
+    <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
   </div>
+
+  <div class="main-section-img">
+    <%= image_tag "contract-undraft.svg" %>
+  </div>
+
+  <%= image_tag "polygon.svg", class: "polygon" %>
 </div>
 
+<div class="section-why">
+  <h2>Why would you use this app ?</h2>
 
-<%# /////////////////////DESCRIPTION///////////////// %>
-  <div class="description">
-    <h2 class="font-weight-bold">About EZ-Contract</h2>
-    <br>
-    <h2><u>Send</u></h2>
-    <h5>EZ-Contract allows companies to upload and send contracts to users, saving you time and money.</h5>
-    <br>
-    <h2><u>Sign</u></h2>
-    <h5>EZ-Contract allows users to view and sign contracts at the click of a button.</h5>
-    <br>
-    <h2><u>Save</u></h2>
-    <h5>All of your contracts are always accessible once you have signed in.</h5>
-    <h5>No more storing paper contracts, and no more losing contracts.</h5>
-  </div>
+  <ul>
+    <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Ecology friendly.</span> You help preserving the environment by signing your contract online.</li>
+    <li><ion-icon name="cloud-done-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Cloud Storage.</span> Have a permanent access to your contracts. Don't waste time anymore looking after them.</li>
+    <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Sign or view your contracts in few seconds and clicks.</li>
+    <li><ion-icon name="wifi-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Accessible from anywhere.</span> No matter where you are, you only need an internet connection to have access to your contracts.</li>
+  </ul>
+</div>
 
+<div class="section-how">
+    <h2>How does it work ?</h2>
 
-<%# ////////////////////////PRICING/////////////// %>
-<div class="container-pricing">
-  <div class="pricing-text">
-    <h2><u>Pricing</u></h2>
-    <h3 class="font-italic">EZ-Contract is always free for individuals</h3>
-    <h3 class="font-weight-bold">For companies, EZ-Contract offers a 30-day free trial.<h3>
-  </div>
-
-
-<%# /////////////////////PRICING CARDS//////////////// %>
-  <div class="container-cards">
-    <div class="pricing-cards">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Standard</h5>
-          <h6 class="font-weight-bold">£7.50 per month</h6>
-          <p class="card-text">Send up to 10 contracts each month</p>
-        </div>
+    <div class="section-how-cards">
+      <div class="card">
+        <ion-icon name="eye-outline" class="ionicon-how"></ion-icon>
+        <h3>View your contract</h3>
+        <p>Have a look at your contract and read its content</p>
       </div>
 
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Pro</h5>
-          <h6 class="font-weight-bold">£12.99 per month</h6>
-          <p class="card-text">Send up to 30 contracts each month</p>
-        </div>
+      <div class="card">
+        <ion-icon name="pencil-outline" class="ionicon-how"></ion-icon>
+        <h3>Sign it</h3>
+        <p>Once you agree the terms and conditions, sign your contract</p>
       </div>
 
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Advanced</h5>
-          <h6 class="font-weight-bold">£20 per month</h6>
-          <p class="card-text">Unlimited contracts</p>
-        </div>
+      <div class="card">
+        <ion-icon name="cloud-download-outline" class="ionicon-how"></ion-icon>
+        <h3>Download it</h3>
+        <p>You now have access to all your contract on our platform</p>
       </div>
     </div>
-  </div>
-
-
-<%# ///////////////COMPANIES WE WORK WITH//////////// %>
-<div class="companies-carousel">
-  <h2 id="companies-text">Companies we work with:</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-50" src="https://storage.googleapis.com/gd-wagtail-prod-assets/original_images/evolving_google_identity_3x2.jpg" alt="Google">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-50" src="http://cdn.mos.cms.futurecdn.net/PaXjywWbeKzAFPZjwYZRY6.jpg" alt="Meta">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-50" src="https://1000logos.net/wp-content/uploads/2016/10/Apple_logo_grey.png" alt="Apple">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    <%# <br>
-    <br>
-    <br>
-    <br> %>
-  </div>
 </div>

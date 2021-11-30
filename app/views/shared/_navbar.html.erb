@@ -1,41 +1,44 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path ,class: "navbar-brand" do %>
-    <%= image_tag "EZContractBlue.png", class:"logo" %>
-    <p class="logo-text">EZ-Contract</p>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item-no-pic">
-          <% if current_user.role == "Company" %>
-            <% if current_user.company %>
-              <%= link_to "Dashboard", unsigned_path %>
-              <%= link_to current_user.company.company_name, company_path(current_user.company) %>
-            <% end %>
-          <% else %>
-            <% if current_user.individual %>
-              <%= link_to "Dashboard", unsigned_path %>
-              <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %>
-            <% end %>
-          <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <% image_tag "https://en.wikipedia.org/wiki/Boris_Johnson#/media/File:Boris_Johnson_official_portrait_(cropped).jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item-no-pic">
-          <%= link_to "Login", new_user_session_path, class: "btn-login" %>
-        </li>
-      <% end %>
-    </ul>
+  <div>
+    <%= link_to root_path ,class: "navbar-brand" do %>
+      <%= image_tag "logo.svg", class:"logo" %>
+    <% end %>
   </div>
+
+  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> %>
+
+
+    <% if user_signed_in? %>
+      <ul class="navbar-nav">
+        <% if current_user.role == "Company" %>
+          <% if current_user.company %>
+              <li class="nav-item">
+                <%= link_to "Unsigned", unsigned_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Signed", signed_path %>
+              </li>
+          <% end %>
+        <% else %>
+          <% if current_user.individual %>
+            <li class="nav-item">
+              <%= link_to "Unsigned", unsigned_path %>
+            </li>
+             <li class="nav-item">
+              <%= link_to "Signed", signed_path %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+      <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
+
+    <% else %>
+      <div class="nav-login-signup">
+        <%= link_to "Login", new_user_session_path, class: "nav-item light" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-item" %>
+      </div>
+    <% end %>
+
 </div>
