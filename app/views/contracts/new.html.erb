@@ -1,11 +1,11 @@
 <div class="container-create-contract">
-  <h2>Create a new contract</h2>
+  <h2>New Contract</h2>
 
   <%= simple_form_for [@contract] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :recipient_email %>
+    <%= f.input :name, label: "Contract name" %>
+    <%= f.input :description, label: "Brief description of the contract" %>
+    <%= f.input :recipient_email, required: true %>
     <%= f.input :document, as: :file, required: true  %>
-    <%= f.button :submit, 'Create Contract !', class: "home-button create-contract" %>
+    <%= f.button :submit, 'Send it out!', class: "home-button create-contract" %>
   <% end %>
 </div>
