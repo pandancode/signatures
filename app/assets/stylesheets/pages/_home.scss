@@ -64,7 +64,6 @@
   color: white;
   line-height: 16px;
   background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contracts2.jpg);
-
   width: 100%;
   height: 100vh;
   background-position: center;
@@ -79,7 +78,7 @@
   justify-content: space-around;
   align-items: flex-end;
   align-items: stretch;
-  padding-bottom : 374px;
+  padding-bottom : 286px;
   color: black;
 
 .card-body {
@@ -120,8 +119,16 @@
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
+  line-height: 300px;
 }
 
 .companies-carousel {
-  padding-bottom: 214px;
+  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contract3.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  align-items: center;
+  text-align: center;
 }
