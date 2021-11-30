@@ -76,7 +76,7 @@ class ContractsController < ApplicationController
 
     @contract.document.attach(io: StringIO.new(pdf.to_pdf), filename: "signed_contract.pdf")
     @contract.update(status: "signed", fully_signed_at: Time.current)
-    redirect_to contract_path(@contract)
+    redirect_to contract_path(@contract), flash: { success: "Contract has been successfully created" }
   end
 
   def signed
