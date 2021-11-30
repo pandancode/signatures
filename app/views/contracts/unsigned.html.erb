@@ -19,30 +19,20 @@
   </div>
 
   <div class="content-window">
-
-     <%= form_tag unsigned_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description" %>
+  <div data-controller="search-contracts">
+     <%= form_tag unsigned_path, method: :get, data: { search_contracts_target: 'form' } do %>
+        <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
         <%= submit_tag "Search", class: "d-none" %>
       <% end %>
 
-    <h3>Unsigned Contracts</h3>
-    <div class="all-contracts">
-      <% @contracts.where(fully_signed_at: nil).each do |contract| %>
-        <%= link_to contract_path(contract) do %>
-          <div class="contract">
-            <p><span class="show-keywords">Contract name:</span> <%= contract.name %></p>
-            <% if current_user.role == "Individual" %>
-              <p><span class="show-keywords">From:</span> <%= contract.company.company_name %></p>
-            <% end %>
-            <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
-            <p><span class="show-keywords">Status:</span> <%= contract.status %></p>
-          </div>
-        <% end %>
-      <% end %>
+    <h3>Unsigned contracts</h3>
+    <div class="all-contracts" data-search-contracts-target="contracts">
+      <%= render 'contracts/contracts.html', contract: @contracts %>
     </div>
+  </div>
 </div>
 
-
+<%#  %>
 
 
 
