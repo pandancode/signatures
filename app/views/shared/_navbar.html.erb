@@ -35,11 +35,10 @@
       <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
 
     <% else %>
-      <div>
-        <%= link_to "Login", signed_path, class: "nav-item" %>
-        <%= link_to "Sign up", signed_path, class: "nav-item" %>
+      <div class="nav-login-signup">
+        <%= link_to "Login", new_user_session_path, class: "nav-item light" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-item" %>
       </div>
     <% end %>
-
 
 </div>

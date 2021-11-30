@@ -1,5 +1,9 @@
 // NAVBAR
 
+.navbar {
+  height: 10vh;
+}
+
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
@@ -29,6 +33,22 @@
   font-size: 24px;
   margin-right: 2rem;
   margin-bottom: 0;
+}
+
+.nav-login-signup {
+  margin-right: 2rem;
+}
+
+.nav-login-signup .nav-item {
+  font-size: 24px;
+}
+
+.nav-login-signup .nav-item:last-child {
+  margin-left: 2rem;
+}
+
+.light {
+  font-weight: lighter;
 }
 
 // .navbar-lewagon .navbar-collapse {
