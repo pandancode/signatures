@@ -31,6 +31,9 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
 });
 
-$(".alert").fadeOut(5000);
+
+
+$(".alert").fadeOut(4000);
 
 import "controllers"
+
