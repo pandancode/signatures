@@ -1,6 +1,7 @@
 <div class="signature-area-div">
-  <p class="signature-date">Signed the: <span class="date"><%= Date.current %></span></p>
-  <p> (using EZ-Contract)</p>
+  <p style="padding-top: 20px;">Signed by: <%= image_tag individual.signature, height: 150, crop: :fill %></p>
   <p class="signature-text"><%= individual.full_name %></p>
   <%# image_tag "signed-stamp.jpeg", id: "stamp", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <p class="signature-date">On: <%= Time.now.localtime.strftime("%Y/%m/%d at %H:%M") %></p>
+  <p>(using EZ-Contract)</p>
 </div>
