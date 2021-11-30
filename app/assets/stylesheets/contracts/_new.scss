@@ -1,22 +1,59 @@
-.container-create-contract {
-  width: 70%;
-  margin: 0 auto;
-  color: white;
+// #071013
+// #1992F7
+// #044376
 
-  padding: 2rem;
-  background-color: rgba(30, 30, 30, 0.7);
-  border: 1px solid white;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.container-create-contract {
+
 }
 
 .container-create-contract h2 {
-  font-family: 'Freehand', cursive;
-  text-align: center;
-  font-size: 2.2rem;
 }
 
-.create-contract {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
+.container-split {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.new-contract-form {
+  width: 50%;
+}
+
+.new-contract-img {
+  width: 50%;
+  height: 90vh;
+}
+
+.img-form {
+  background-size:auto;
+  background-position: center;
+}
+
+
+
+
+
+
+
+// .container-create-contract {
+//   width: 70%;
+//   margin: 0 auto;
+//   color: white;
+
+//   padding: 2rem;
+//   background-color: rgba(30, 30, 30, 0.7);
+//   border: 1px solid white;
+//   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+// }
+
+// .container-create-contract h2 {
+//   font-family: 'Freehand', cursive;
+//   text-align: center;
+//   font-size: 2.2rem;
+// }
+
+// .create-contract {
+//   display: block;
+//   width: 50%;
+//   margin: 0 auto;
+// }
