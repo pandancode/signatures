@@ -32,7 +32,9 @@
           <% end %>
         <% end %>
       </ul>
-      <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
+      <% if current_user.role == "Individual" %>
+        <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
+      <% end  %>
 
     <% else %>
       <div class="nav-login-signup">
