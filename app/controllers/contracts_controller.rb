@@ -102,7 +102,7 @@ class ContractsController < ApplicationController
   end
 
   def unsigned
-        case current_user.role
+    case current_user.role
     when "Company"
       @user = current_user.company
       if params[:query].present?
