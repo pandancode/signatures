@@ -197,12 +197,12 @@
 
 // //////footer
 .footer {
-  padding: 3px;
-  background-color: rbg(4, 67, 118);
-}
-
-.footer-text {
-  text-align: left;
+  background: #044376;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
   color: white;
 }
 
