@@ -30,6 +30,6 @@ class IndividualsController < ApplicationController
   private
 
   def individual_params
-    params.require(:individual).permit(:first_name, :last_name, :birth_date, :phone_number, :title)
+    params.require(:individual).permit(:first_name, :last_name, :birth_date, :phone_number, :title, :signature)
   end
 end
