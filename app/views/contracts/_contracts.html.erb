@@ -1,4 +1,5 @@
-<% @contracts.where(fully_signed_at: nil).each do |contract| %>
+<% @contracts.each do |contract| %>
+  <% if contract.fully_signed_at == nil %>
     <div class="contract">
       <p><span class="show-keywords">Contract name:</span> <%= link_to contract.name, contract_path(contract) %></p>
       <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
@@ -7,4 +8,26 @@
       <% end %>
       <%# <p>Contract has attachment: contract.document.attached?</p> %>
     </div>
+  <% else %>
+    <div class="contract">
+      <p><span class="show-keywords">Contract name:</span> <%= link_to contract.name, contract_path(contract) %></p>
+      <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
+      <p><span class="show-keywords">Signing date:</span> <span class="signed"><%= contract.fully_signed_at %></span></p>
+      <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
+        <%= link_to "SEE CONTRACT", contract_path(contract) %>
+      <% end %>
+        <%# <p>Contract has attachment: contract.document.attached?</p> %>
+    </div>
+  <% end %>
+
+
+
+
+
 <% end %>
+
+
+
+
+
+

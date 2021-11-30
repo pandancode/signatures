@@ -83,19 +83,22 @@ class ContractsController < ApplicationController
     when "Company"
       @user = current_user.company
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(status: "signed").where(company_id: @user).order("updated_at DESC")
       else
-        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(status: "signed").where(company_id: @user).order("updated_at DESC")
       end
     when "Individual"
       @user = current_user.individual
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(status: "signed").where(individual_id: @user).order("updated_at DESC")
       else
-        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(status: "signed").where(individual_id: @user).order("updated_at DESC")
       end
     end
-
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'contracts/contracts.html', locals: { contract: @contracts } }
+    end
     # @user = current_user.individual
     # @contracts = Contract.where(individual_id: @user)
   end
@@ -106,16 +109,16 @@ class ContractsController < ApplicationController
     when "Company"
       @user = current_user.company
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(company_id: @user).order("updated_at DESC")
       else
-        @contracts = Contract.where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(fully_signed_at: nil).where(company_id: @user).order("updated_at DESC")
       end
     when "Individual"
       @user = current_user.individual
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(individual_id: @user).order("updated_at DESC")
       else
-        @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(fully_signed_at: nil).where(individual_id: @user).order("updated_at DESC")
       end
     end
     respond_to do |format|
