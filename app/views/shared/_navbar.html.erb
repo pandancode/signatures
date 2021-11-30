@@ -5,11 +5,6 @@
     <% end %>
   </div>
 
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> %>
-
-
     <% if user_signed_in? %>
       <ul class="navbar-nav">
         <% if current_user.role == "Company" %>
@@ -32,7 +27,12 @@
           <% end %>
         <% end %>
       </ul>
-      <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
+
+      <% if current_user.role == "Company" %>
+        <p>Hello, <%= link_to current_user.company.company_name, company_path(current_user.company) %></p>
+      <% else %>
+        <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
+      <% end %>
 
     <% else %>
       <div class="nav-login-signup">
