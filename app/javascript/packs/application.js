@@ -32,3 +32,5 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 $(".alert").fadeOut(5000);
+
+import "controllers"

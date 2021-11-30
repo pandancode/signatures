@@ -1,7 +1,7 @@
 <div class="container-create-contract">
   <h2>Create a new contract</h2>
 
-  <%= simple_form_for [@contract] do |f| %>
+  <%= simple_form_for [@contract], remote: true do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :recipient_email %>

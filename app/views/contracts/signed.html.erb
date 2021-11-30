@@ -4,13 +4,13 @@
       <% if current_user.role == "Individual" %>
           <div class="individual-buttons">
             <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button" %>
+            <%= link_to "Unsigned", unsigned_path, class: "nav_button target-for-notif-signed" %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
         </div>
       <% else %>
           <div class="individual-buttons">
             <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button" %>
+            <%= link_to "Unsigned", unsigned_path, class: "nav_button target-for-notif-signed" %>
             <%= link_to "New Contract", new_contract_path, class: "nav_button" %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
         </div>

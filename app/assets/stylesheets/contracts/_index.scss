@@ -109,8 +109,20 @@
   min-width: 300px;
   width: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .contract .show-keywords {
   font-size: 0.8rem;
+}
+
+.count {
+  color: white;
+  background-color: red;
+  border-radius: 60px;
+  padding: 8px 12px;
 }
