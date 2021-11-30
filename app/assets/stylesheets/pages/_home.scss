@@ -1,4 +1,19 @@
 // Specific CSS for your home-page
+.scroll-container {
+  // scroll-snap-type: mandatory;
+  // scroll-snap-points-y: repeat(100vh);
+  // scroll-snap-type: y mandatory;
+  position: relative;
+  overflow: hidden;
+  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.scroll-snap {
+  // scroll-snap-align: start;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
 .container-home-page {
   width: 100%;
@@ -10,14 +25,8 @@
   display: flex;
   align-items: center;
   text-align: center;
-  // scroll-behavior: smooth;
-  // overflow-x: auto;
-  // scroll-snap-type: y mandatory;
 }
 
-// .container-home-page__item {
-//   scroll-snap-align: start;
-// }
 
 .main-infos {
   font-family: 'Poppins', sans-serif;
@@ -56,12 +65,35 @@
   top: 0;
   align-items: center;
   text-align: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .description, h2 {
   font-family: 'Arial', sans-serif;
   text-align: center;
 }
+
+// .desc-cards {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: flex-end;
+//   align-items: stretch;
+//   color: black;
+//   gap: 32px;
+// }
+
+// .desc-card-body {
+//   background-color: rgb(238, 238, 238);
+//   // border: 1px solid rgb(20, 30, 97);
+//   padding: 1rem;
+//   min-width: 300px;
+//   width: 300px;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
+// }
+
 
 
 /////////////////pricing
@@ -79,6 +111,10 @@
   top: 0;
   align-items: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pricing-cards {
@@ -86,8 +122,8 @@
   justify-content: space-around;
   align-items: flex-end;
   align-items: stretch;
-  padding-bottom : 286px;
   color: black;
+  gap: 32px;
 }
 
 .card-body {
@@ -99,13 +135,8 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
 }
 
-.card-pricing {
-  border-radius: 25px;
-}
-
-
 .pricing-text  {
-  padding: 182px;
+  padding: 64px 0px;
   color: white;
   font-family: 'Arial';
 }
@@ -127,7 +158,7 @@
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
-  line-height: 300px;
+  line-height: 25vh;
 }
 
 .companies-carousel {
@@ -139,6 +170,12 @@
   top: 0;
   align-items: center;
   text-align: center;
+}
+
+.companies-carousel img {
+  height: 75vh;
+  object-fit: contain;
+  object-position: center;
 }
 
 // FOOTER TEXT
@@ -176,8 +213,8 @@
   background-color: rgb(238, 238, 238);
   // border: 1px solid rgb(20, 30, 97);
   padding: 1rem;
-  min-width: 300px;
-  width: 300px;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
 }
 
@@ -189,6 +226,9 @@
   flex-grow: 1;
 }
 
-.card-img .card-img-top {
-  width: 300px;
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
