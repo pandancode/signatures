@@ -37,11 +37,5 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  background: rgb(255,255,255);
-  background: linear-gradient(4deg, rgba(20,20,20,1) 30%, rgba(20,20,20,1) 30%, rgba(20,20,20,1) 32%, rgba(255,255,255,1) 34%, rgba(20,20,20,1) 36%, rgba(20,30,97,1) 38%, rgba(20,20,20,1) 40%);
-  min-height: 100vh;
-
+  font-family: 'Poppins', sans-serif;
 }

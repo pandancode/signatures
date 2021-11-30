@@ -45,6 +45,8 @@ class ContractsController < ApplicationController
     @contract.individual_id = @individual.id
     if @contract.save
       redirect_to contract_path(@contract), flash: { success: "Contract has been successfully created" }
+      mail = UserMailer.with(user: @individual.user).new_contract_received
+      mail.deliver_now
     else
       render :new
     end
@@ -100,7 +102,7 @@ class ContractsController < ApplicationController
   end
 
   def unsigned
-        case current_user.role
+    case current_user.role
     when "Company"
       @user = current_user.company
       if params[:query].present?

@@ -25,21 +25,22 @@
         <%= submit_tag "Search", class: "d-none" %>
       <% end %>
 
-    <h3>Unsigned contracts</h3>
+    <h3>Unsigned Contracts</h3>
     <div class="all-contracts">
       <% @contracts.where(fully_signed_at: nil).each do |contract| %>
-        <div class="contract">
-          <p><span class="show-keywords">Contract name:</span> <%= link_to contract.name, contract_path(contract) %></p>
-          <p class="test-test"><span class="show-keywords">Description:</span> <%= contract.description %></p>
-          <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-            <%= link_to "SIGN ME NOW", contract_path(contract), class: "sign-btn" %>
-          <% end %>
-          <%# <p>Contract has attachment: contract.document.attached?</p> %>
-        </div>
+        <%= link_to contract_path(contract) do %>
+          <div class="contract">
+            <p><span class="show-keywords">Contract name:</span> <%= contract.name %></p>
+            <% if current_user.role == "Individual" %>
+              <p><span class="show-keywords">From:</span> <%= contract.company.company_name %></p>
+            <% end %>
+            <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
+            <p><span class="show-keywords">Status:</span> <%= contract.status %></p>
+          </div>
+        <% end %>
       <% end %>
     </div>
 </div>
-
 <%# <div data-controller="update-notifs">
   <span style="color: white" class="notif count" data-remote="true" data-insert-in-list-target="notif-number"><%= Contract.all.where(individual_id: current_user.individual.id).where(status: "unopened").count + Contract.all.where(individual_id: current_user.individual.id).where(status: "opened").count %>
 <%# </div> %>

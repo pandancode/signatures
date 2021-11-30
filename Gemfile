@@ -38,6 +38,8 @@ gem 'aws-sdk'
 gem "aws-sdk-s3", require: false
 # Giorgio added pg search gem
 gem 'pg_search', '~> 2.3.0'
+# Yilun added the development only email opener
+gem 'letter_opener', group: :development
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
