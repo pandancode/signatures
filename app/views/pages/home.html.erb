@@ -1,9 +1,46 @@
-<div class="container-home-page">
-  <div class="container main-infos">
-    <h1>Signing contracts made easy.</h1>
-    <p>See all of your contracts in one place</p>
-    <p>Sign a contract with the click of a button</p>
-    <p style="margin-bottom: 4rem">Never lose a contract again</p>
-    <%= link_to "Let's get started", new_user_registration_path, class: "home-button" %>
+<div class="main-section">
+  <div class="main-section-text">
+    <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
   </div>
+
+  <div class="main-section-img">
+    <%= image_tag "contract-undraft.svg" %>
+  </div>
+
+  <%= image_tag "polygon.svg", class: "polygon" %>
+</div>
+
+<div class="section-why">
+  <h2>Why would you use this app ?</h2>
+
+  <ul>
+    <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Ecology friendly.</span> You help preserving the environment by signing your contract online.</li>
+    <li><ion-icon name="cloud-done-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Cloud Storage.</span> Have a permanent access to your contracts. Don't waste time anymore looking after them.</li>
+    <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Sign or view your contracts in few seconds and clicks.</li>
+    <li><ion-icon name="wifi-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Accessible from anywhere.</span> No matter where you are, you only need an internet connection to have access to your contracts.</li>
+  </ul>
+</div>
+
+<div class="section-how">
+    <h2>How does it work ?</h2>
+
+    <div class="section-how-cards">
+      <div class="card">
+        <ion-icon name="eye-outline" class="ionicon-how"></ion-icon>
+        <h3>View your contract</h3>
+        <p>Have a look at your contract and read its content</p>
+      </div>
+
+      <div class="card">
+        <ion-icon name="pencil-outline" class="ionicon-how"></ion-icon>
+        <h3>Sign it</h3>
+        <p>Once you agree the terms and conditions, sign your contract</p>
+      </div>
+
+      <div class="card">
+        <ion-icon name="cloud-download-outline" class="ionicon-how"></ion-icon>
+        <h3>Download it</h3>
+        <p>You now have access to all your contract on our platform</p>
+      </div>
+    </div>
 </div>

@@ -1,37 +1,241 @@
-// Specific CSS for your home-page
+// // Specific CSS for your home-page
 
-.container-home-page {
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(signaturebis.jpg);
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0;
+// #071013
+
+.main-section{
+  position: relative;
+  height: 90vh;
+  background-color: #1992F7;
+  overflow: hidden;
+
   display: flex;
+  justify-content: space-around;
   align-items: center;
+}
+
+h1 {
+  font-size: 5rem;
   text-align: center;
-}
-
-.main-infos {
-  font-family: 'Poppins', sans-serif;
-}
-
-.container-home-page h1 {
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 48px;
+  font-weight: bolder;
+  z-index: 1000;
+}
+
+.main-section-text{
+  z-index: 200;
+}
+
+// .main-section-img{}
+
+.underline {
+  border-bottom: 5px solid white;
+}
+
+.polygon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+// SECTION WHY
+
+.section-why {
+  background-color: #f1f1f1;
+  padding: 8rem;
+  border-bottom: 2px solid rgba(25, 147, 247, 0.1);
+}
+
+.section-why h2 {
+  display: inline-block;
+  border-bottom: 3px solid #1992F7;
+  margin-bottom: 4rem;
+  font-size: 36px;
   font-weight: bold;
-  font-family: Arial, sans-serif;
+}
+
+.section-why li {
+  list-style: none;
   text-transform: uppercase;
+  font-size: 18px;
+  line-height: 5rem;
+  letter-spacing: 1px;
+}
+
+.main-page-keywords {
+  background-color: rgba(25, 147, 247, 0.2);
+  margin-left: 2rem;
+}
+
+.ionicon-why {
+  transform: scale(2);
+}
+
+// SECTION HOW
+
+.section-how {
+  background-color: #f1f1f1;
+  padding: 8rem;
+  border-bottom: 2px solid rgba(25, 147, 247, 0.1);
+}
+
+.section-how-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-how-cards .card {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.section-how h2 {
+  display: inline-block;
+  border-bottom: 3px solid #1992F7;
+  margin-bottom: 4rem;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.ionicon-how {
+  font-size: 5rem;
+  margin: 0 auto;
   margin-bottom: 2rem;
 }
 
-.container p {
-  font-size: 20px;
-  color: white;
-  opacity: .8;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-family: Arial, sans-serif;
-  font-family: 'Poppins', sans-serif;
+.card h3 {
+  margin-bottom: 2rem;
 }
+
+
+
+
+
+// .container-home-page {
+//   width: 100%;
+//   height: 100vh;
+//   background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(signaturebis.jpg);
+//   background-position: center;
+//   background-size: cover;
+//   top: 0;
+//   display: flex;
+//   align-items: center;
+//   text-align: center;
+// }
+// .main-infos {
+//   font-family: 'Poppins', sans-serif;
+// }
+
+// .container-home-page h1 {
+//   color: white;
+//   text-shadow: 0px 0px 5px #fff;
+//   font-size: 48px;
+//   font-weight: bold;
+//   font-family: Arial, sans-serif;
+//   text-transform: uppercase;
+//   margin-bottom: 2rem;
+// }
+
+// .container p {
+//   font-size: 24px;
+//   color: white;
+//   opacity: .8;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-family: Arial, sans-serif;
+//   font-family: 'Poppins', sans-serif;
+// }
+
+
+
+// // description
+// .description {
+//   padding: 182px;
+//   color: white;
+//   width: 100%;
+//   height: 100vh;
+//   background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contract1.jpg);
+//   background-position: center;
+//   background-size: cover;
+//   top: 0;
+//   align-items: center;
+//   text-align: center;
+// }
+
+// .description, h2 {
+//   font-family: 'Arial', sans-serif;
+//   text-align: center;
+// }
+
+
+// /////////////////pricing
+
+// .container-pricing {
+//   text-align: center;
+//   font-family: 'Arial';
+//   color: white;
+//   line-height: 16px;
+//   background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contracts2.jpg);
+
+//   width: 100%;
+//   height: 100vh;
+//   background-position: center;
+//   background-size: cover;
+//   top: 0;
+//   align-items: center;
+//   text-align: center;
+// }
+
+// .pricing-cards {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: flex-end;
+//   align-items: stretch;
+//   padding-bottom : 374px;
+//   color: black;
+
+// .card-body {
+//   background-color: rgb(238, 238, 238);
+//   // border: 1px solid rgb(20, 30, 97);
+//   padding: 1rem;
+//   min-width: 300px;
+//   width: 300px;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
+// }
+
+// .card {
+//   border-radius: 25px;
+// }
+
+// }
+
+// .pricing-text  {
+//   padding: 182px;
+//   color: white;
+//   font-family: 'Arial';
+// }
+
+// .pricing-text h3 {
+//   line-height: 1.4;
+// }
+
+// // carousel
+
+// .carousel-inner img {
+//   margin: auto;
+//   width: auto;
+//   max-height: 768px;
+//   overflow: hidden;
+// }
+
+// #companies-text {
+//   color: white;
+//   text-align: center;
+//   font-family: Arial, sans-serif;
+// }
+
+// .companies-carousel {
+//   padding-bottom: 214px;
+// }
