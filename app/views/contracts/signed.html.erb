@@ -19,7 +19,7 @@
   </div>
 
   <div class="content-window">
-
+    
      <%= form_tag unsigned_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description" %>
         <%= submit_tag "Search", class: "d-none" %>

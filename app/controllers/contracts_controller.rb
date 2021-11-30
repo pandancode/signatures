@@ -1,6 +1,6 @@
 class ContractsController < ApplicationController
   # def index
-  #   # sql_query = "name @@ :query OR description @@  :query"
+  #   # sql_query = "name ILIKE :query OR description ILIKE  :query"
 
   #   case current_user.role
   #   when "Company"
@@ -78,6 +78,7 @@ class ContractsController < ApplicationController
   end
 
   def signed
+    sql_query = "name ILIKE :query OR description ILIKE  :query"
     case current_user.role
     when "Company"
       @user = current_user.company
@@ -100,7 +101,8 @@ class ContractsController < ApplicationController
   end
 
   def unsigned
-        case current_user.role
+    sql_query = "name ILIKE :query OR description ILIKE  :query"
+    case current_user.role
     when "Company"
       @user = current_user.company
       if params[:query].present?
@@ -115,6 +117,10 @@ class ContractsController < ApplicationController
       else
         @contracts = Contract.where(individual_id: @user).order("updated_at DESC")
       end
+    end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'contracts/contracts.html', locals: { contract: @contracts } }
     end
     # @user = current_user.individual
     # @contracts = Contract.where(individual_id: @user)
