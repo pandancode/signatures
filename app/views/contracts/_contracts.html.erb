@@ -2,36 +2,31 @@
   <% if contract.fully_signed_at == nil %>
     <%= link_to contract_path(contract) do %>
       <div class="contract">
-        <p><span class="show-keywords">Contract name:</span> <%= contract.name %></p>
-          <% if current_user.role == "Individual" %>
-            <p><span class="show-keywords">From:</span> <%= contract.company.company_name %></p>
-          <% end %>
-          <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
-          <p><span class="show-keywords">Status:</span> <%= contract.status %></p>       
-        <%# <p>Contract has attachment: contract.document.attached?</p> %>
+        <p class="contract-name"><%= contract.name %></p>
+        <% if current_user.role == "Individual" %>
+          <p class="contract-company-name">From: <%= contract.company.company_name %></p>
+        <% else %>
+          <p class="contract-individual-name">For: <%= contract.individual.full_name %></p>
+        <% end %>
+        <ion-icon name="arrow-forward-circle-outline" class="ionicon-arrow"></ion-icon>
+        <%# <p>contract.status</p> %>
       </div>
     <% end %>
+
   <% else %>
+
     <%= link_to contract_path(contract) do %>
       <div class="contract">
-        <p><span class="show-keywords">Contract name:</span> <%= contract.name %></p>
+        <p class="contract-name"><%= contract.name %></p>
         <% if current_user.role == "Individual" %>
-          <p><span class="show-keywords">From:</span> <%= contract.company.company_name %></p>
+          <p class="contract-company-name">From: <%= contract.company.company_name %></p>
+        <% else %>
+          <p class="contract-individual-name">For: <%= contract.individual.full_name %></p>
         <% end %>
-        <p><span class="show-keywords">Description:</span> <%= contract.description %></p>
-        <p><span class="show-keywords">Status:</span> <%= contract.status %></p> 
-          <%# <p>Contract has attachment: contract.document.attached?</p> %>
+        <p class="contract-signature-date"><%= contract.fully_signed_at.strftime("%d/%m/%y") %></p>
+        <ion-icon name="arrow-forward-circle-outline" class="ionicon-arrow"></ion-icon>
+        <%# <p>contract.status</p> %>
       </div>
     <% end %>
   <% end %>
-
-
-
-
 <% end %>
-
-
-
-
-
-

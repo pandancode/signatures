@@ -1,54 +1,14 @@
-<div class="container-contracts">
-  <div class="side-actions">
-    <% if user_signed_in? %>
-      <% if current_user.role == "Individual" %>
-          <div class="individual-buttons">
-            <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button target-for-notif-signed" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
-        </div>
-      <% else %>
-          <div class="individual-buttons">
-            <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button target-for-notif-signed" %>
-            <%= link_to "New Contract", new_contract_path, class: "nav_button" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
-        </div>
-      <% end %>
+<div class="contracts-section">
+  <h2 class="section-title">Signed contracts</h2>
+
+  <div data-controller="search-contracts">
+    <%= form_tag signed_path, method: :get, data: { search_contracts_target: 'form' } do %>
+      <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
+      <%= submit_tag "Search", class: "d-none" %>
     <% end %>
   </div>
 
-  <div class="content-window">
-     <div data-controller="search-contracts">
-      <%= form_tag signed_path, method: :get, data: { search_contracts_target: 'form' } do %>
-          <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
-          <%= submit_tag "Search", class: "d-none" %>
-        <% end %>
-
-      <h3>Signed contracts</h3>
-      <div class="all-contracts" data-search-contracts-target="contracts">        
-           <%= render 'contracts/contracts.html', contract: @contracts %>       
-      </div>
-    </div>
+  <div class="all-contracts" data-search-contracts-target="contracts">
+    <%= render 'contracts/contracts.html', contract: @contracts %>
+  </div>
 </div>
-
-
-
-
-
-    <%# <h3>Signed contracts (for given user) with all attributes</h3>
-    <% @contracts.where.not(fully_signed_at: nil).each do |contract| %>
-      <%# <><em>Contract id</em>: <%= contract.id %>
-      <%# <>Contract name: <%= link_to contract.name, contract_path(contract) %>
-      <%# <>Contract description: <%= contract.description %>
-      <%# <>Contract company: <%= contract.company.company_name %>
-      <%# <p>Contract individual: <%= "#{contract.individual.title.capitalize} #{contract.individual.first_name.capitalize} #{contract.individual.last_name.capitalize}" %>
-      <%# <>Contract created at: <%= contract.created_at %>
-      <%# <p>Contract signed at: <%= contract.fully_signed_at %>
-      <%# <% if current_user.role == "Individual" && current_user.individual == contract.individual && contract.fully_signed_at.nil? %>
-        <%# <%= link_to "SIGN ME NOW", contract_path(contract) %>
-      <%# <% end %>
-      <%# <p>Contract status: <%= contract.status</p> %>
-      <%# <>Contract has attachment: <%= contract.document.attached? %>
-    <%# <% end %>
-  <%# </div> %>
