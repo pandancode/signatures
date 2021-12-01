@@ -14,6 +14,8 @@ class Individual < ApplicationRecord
   validates :title, presence: true
   validates :title, inclusion: { in: %w[Mr Ms Mx] }
 
+  has_one_attached :signature
+
   def full_name
     "#{first_name} #{last_name}"
   end
