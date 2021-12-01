@@ -9,3 +9,9 @@ Spacing rule ( 2 4 8 12 16 24 32 48 64 80 96 128 … )
 Fonts:
 
 font-family: 'Poppins', sans-serif;
+
+
+
+40% faster turnaround on contracts with online signatures
+Instant notifications so you know when contracts are opened
+100% legally binding paperless agreements, forms, and other documents

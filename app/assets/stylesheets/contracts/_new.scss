@@ -4,8 +4,12 @@
 
 // LEFT
 
+.container-create-contract {
+  background-color: #f1f1f1;
+}
+
 .container-create-contract #new_contract {
-  width: 400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -20,7 +24,6 @@
 }
 
 .container-create-contract .form-control-file {
-  // background-color: #f1f1f1;
   text-decoration: none;
 }
 
@@ -66,34 +69,4 @@
 .img-form {
   width: 100%;
   background-size: cover;
-  // transform: translateY(-10%);
 }
-
-
-
-
-
-
-
-// .container-create-contract {
-//   width: 70%;
-//   margin: 0 auto;
-//   color: white;
-
-//   padding: 2rem;
-//   background-color: rgba(30, 30, 30, 0.7);
-//   border: 1px solid white;
-//   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-// }
-
-// .container-create-contract h2 {
-//   font-family: 'Freehand', cursive;
-//   text-align: center;
-//   font-size: 2.2rem;
-// }
-
-// .create-contract {
-//   display: block;
-//   width: 50%;
-//   margin: 0 auto;
-// }

@@ -26,6 +26,11 @@
             <li class="nav-item">
               <%= link_to "Unsigned", unsigned_path %>
             </li>
+            <li>
+              <%= link_to root_path do %>
+                <ion-icon name='home-outline' class='ionicon-add-contract'></ion-icon>
+              <% end %>
+              </li>
              <li class="nav-item">
               <%= link_to "Signed", signed_path %>
             </li>
@@ -35,13 +40,17 @@
 
       <% if current_user.role == "Company" %>
         <div class="nav-login-signup">
+          <% if !current_user.company.nil? %>
+            <p class="nav-item"><%= current_user.company.company_name %></p>
+          <% end %>
           <%= link_to "Log out", destroy_user_session_path, class: "nav-item light", method: "delete" %>
-          <p><%= link_to current_user.company.company_name, company_path(current_user.company) %></p>
         </div>
       <% else %>
         <div class="nav-login-signup">
+          <% if !current_user.individual.nil? %>
+            <p class="nav-item name"><%= current_user.individual.first_name %></p>
+          <% end %>
           <%= link_to "Log out", destroy_user_session_path, class: "nav-item light", method: "delete" %>
-          <p>Hello, <%= link_to current_user.individual.first_name, individual_path(current_user.individual) %></p>
         </div>
       <% end %>
 

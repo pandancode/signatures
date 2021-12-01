@@ -1,52 +1,57 @@
 <div class="container-show-contract">
-  <div class="container-left">
-    <h2><%= @contract.name %></h2>
-    <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
+  <div class="container-text">
+    <div class="title-download">
+      <h2 class="section-title"><%= @contract.name %></h2>
+      <% if @contract.document.attached? && @contract.fully_signed_at.nil? %>
+      <%= link_to rails_blob_path(@contract.document, disposition: 'attachment'), class: "btn-download-contract" do %>
+        <ion-icon name="cloud-download-outline" class="download-icon"></ion-icon>
+      <% end %>
+    <% end %>
+    <% if @contract.document.attached? && !@contract.fully_signed_at.nil? %>
+      <%= link_to rails_blob_path(@contract.document, disposition: 'attachment'), class: "btn-download-contract"  do %>
+        <ion-icon name="cloud-download-outline" class="download-icon"></ion-icon>
+      <% end %>
+    <% end %>
+    </div>
+
+    <p><%= @contract.description %></p>
     <p><span class="show-keywords">From:</span> <%= "#{@contract.company.company_name}" %></p>
 
+    <% if @contract.fully_signed_at.nil? %>
+      <p><span class="show-keywords">Received the:</span> <%= @contract.created_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
+    <% end %>
+    <% if !@contract.fully_signed_at.nil? %>
+      <p><span class="show-keywords">Signing date:</span> <%= @contract.fully_signed_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
+    <% end %>
+
+
+
+    <% if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? %>
+      <div class="sign-form">
+        <%= form_tag contract_path(@contract), method: :patch do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Sign with your full name here"
+          %>
+          <%= submit_tag "Search", class: "d-none" %>
+        <% end %>
+      </div>
+        <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "sign-contract create-contract" %>
+    <% end %>
+
   </div>
 
-  <div class="container-right">
-    <%= image_tag "agreement.svg", class: "img-form" %>
+  <div class="container-img">
+  <% if @contract.fully_signed_at.nil? %>
+    <%= image_tag "signing-contract.svg", class: "" %>
+  <% else %>
+    <%= image_tag "agreement.svg", class: "" %>
+  <% end %>
   </div>
 
+<div class="loader-container">
+ <div class="loader"></div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-  <% if @contract.fully_signed_at.nil? %>
-    <p><span class="show-keywords">Received on:</span> <%= @contract.created_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
-  <% end %>
-  <% if !@contract.fully_signed_at.nil? %>
-    <p><span class="show-keywords">Signed on:</span> <%= @contract.fully_signed_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
-  <% end %>
-  <% if @contract.document.attached? && @contract.fully_signed_at.nil? %>
-    <%= link_to "View contract", rails_blob_path(@contract.document, disposition: 'attachment'), class: "home-button btn-sign show-sign-btn download-contract" %>
-  <% end %>
-  <% if @contract.document.attached? && !@contract.fully_signed_at.nil? %>
-    <%= link_to "View signed contract", rails_blob_path(@contract.document, disposition: 'attachment'), class: "home-button btn-sign show-sign-btn download-contract" %>
-  <% end %>
-
-
-  <% if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? %>
-    <div class="sign-form">
-      <%= form_tag contract_path(@contract), method: :patch do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Please enter your name here to sign the contract: #{@contract.individual.full_name}"
-        %>
-        <%= submit_tag "Search", class: "d-none" %>
-      <% end %>
-    </div>
-      <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button btn-sign show-sign-btn" %>
-  <% end %>
+  <%= image_tag "wave-contract-show.svg", class: "wave-img" %>
