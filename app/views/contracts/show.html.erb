@@ -1,7 +1,28 @@
 <div class="container-show-contract">
-  <h2><%= @contract.name %></h2>
-  <p><span class="show-keywords">From:</span> <%= "#{@contract.company.company_name}" %></p>
-  <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
+  <div class="container-left">
+    <h2><%= @contract.name %></h2>
+    <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
+    <p><span class="show-keywords">From:</span> <%= "#{@contract.company.company_name}" %></p>
+
+  </div>
+
+  <div class="container-right">
+    <%= image_tag "agreement.svg", class: "img-form" %>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
   <% if @contract.fully_signed_at.nil? %>
     <p><span class="show-keywords">Received on:</span> <%= @contract.created_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
   <% end %>
@@ -29,4 +50,3 @@
     </div>
       <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button btn-sign show-sign-btn" %>
   <% end %>
-</div>
