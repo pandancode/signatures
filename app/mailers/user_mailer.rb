@@ -5,8 +5,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.new_contract_received.subject
   #
-  def new_contract_received
+  def new_contract_received(contract)
     @user = params[:user]
+    @contract = contract
     mail(to: @user.email, subject: 'You got a new contract')
   end
 end

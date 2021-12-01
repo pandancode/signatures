@@ -6,9 +6,10 @@
       <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
       <%= submit_tag "Search", class: "d-none" %>
     <% end %>
+
+    <div class="all-contracts" data-search-contracts-target="contracts">
+      <%= render 'contracts/contracts.html', contract: @contracts %>
+    </div>
   </div>
 
-  <div class="all-contracts" data-search-contracts-target="contracts">
-    <%= render 'contracts/contracts.html', contract: @contracts %>
-  </div>
 </div>
