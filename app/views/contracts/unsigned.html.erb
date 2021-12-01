@@ -1,35 +1,17 @@
-<div class="container-contracts">
-  <div class="side-actions">
-    <% if user_signed_in? %>
-      <% if current_user.role == "Individual" %>
-          <div class="individual-buttons">
-            <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
-        </div>
-      <% else %>
-          <div class="individual-buttons">
-            <%= link_to "Signed", signed_path, class: "nav_button" %>
-            <%= link_to "Unsigned", unsigned_path, class: "nav_button" %>
-            <%= link_to "New Contract", new_contract_path, class: "nav_button" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_button" %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+<div class="contracts-section">
+  <h2 class="section-title">Unsigned contracts</h2>
 
-  <div class="content-window">
   <div data-controller="search-contracts">
-     <%= form_tag unsigned_path, method: :get, data: { search_contracts_target: 'form' } do %>
-        <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
-        <%= submit_tag "Search", class: "d-none" %>
-      <% end %>
+    <%= form_tag unsigned_path, method: :get, data: { search_contracts_target: 'form' }, class: "test" do %>
+      <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
+      <%= submit_tag "Search", class: "d-none" %>
+    <% end %>
 
-    <h3>Unsigned contracts</h3>
     <div class="all-contracts" data-search-contracts-target="contracts">
       <%= render 'contracts/contracts.html', contract: @contracts %>
     </div>
   </div>
+
 </div>
 
 <%# <div data-controller="update-notifs">
