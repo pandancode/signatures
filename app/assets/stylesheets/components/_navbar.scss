@@ -51,64 +51,15 @@
   font-weight: lighter;
 }
 
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
+.ionicon-add-contract {
+  display: inline-block;
+  transform: scale(4.5);
+  vertical-align: -webkit-baseline-middle;
+  transition: 300ms;
 
-// .navbar-brand {
-//   display: flex;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 75px;
-//   border-radius: 400px;
-//   border: 2px solid white;
-//   margin-left: 1.5rem;
-//   margin-top: 1rem
-// }
-
-// .navbar-nav {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 2rem;
-// }
-
-// .logo {
-//   width: 100px;
-// }
-
-// .logo-text {
-//   font-family: 'Freehand', cursive;
-//   color: rgb(255, 255, 255);
-//   align-self: center;
-//   margin-top: 2rem;
-//   margin-left: 2rem;
-//   font-size: 1.5rem;
-// }
-
-// .nav-item-no-pic a {
-//   color: rgb(255, 255, 255);
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   transition: text-shadow 200ms;
-//   font-size: 1.5rem;
-//   margin-left: 2rem;
-
-//   &:hover {
-//     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
-//   }
-// }
-
-// .nav-item-no-pic a:last-child {
-//   margin-left: 5rem;
-// }
-
-// .navbar-light .navbar-nav .nav-link:hover {
-//  color: grey;
-// }
-
-// .btn-login {
-//   margin-right: 3rem;
-// }
+  &:hover {
+    transform: scale(4);
+    color: #044376;
+    cursor: pointer;
+  }
+}
