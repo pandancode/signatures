@@ -26,9 +26,11 @@ require("channels")
 import "bootstrap";
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
+import { loader } from '../components/loader';
 
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
+  loader()
 });
 
 
@@ -36,18 +38,3 @@ $(".alert").fadeOut(4000);
 import "controllers"
 
 
-
-
-// SPINNER ON SIGN CONTRACT
-
-// select button sign contract
-const signContractButton = document.querySelector(".sign-contract")
-
-
-// listeer on click need to display the spinner
-signContractButton.addEventListener("click", (e) => {
-  e.preventDefault()
-  e.currentTarget.classList.remove("d-none");
-  e.currentTarget.classList.add("d-block");
-
-});

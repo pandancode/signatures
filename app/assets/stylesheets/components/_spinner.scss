@@ -7,7 +7,28 @@
   animation: spin 2s linear infinite;
 }
 
+// .loader-show{
+//   display: block;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+// }
+
+.loader-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #80808078;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
