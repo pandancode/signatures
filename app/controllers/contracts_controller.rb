@@ -67,12 +67,24 @@ class ContractsController < ApplicationController
   def sign
     # Updating contract
     @contract = Contract.find(params[:id])
+
+    # Renders the initials of the user (only, for now)
+    initialed_page = WickedPdf.new.pdf_from_string(render_to_string('pdf_initials/show', layout: "pdf", locals: { individual: current_user.individual }))
+    initials = ::CombinePDF.new
+    initials << ::CombinePDF.parse(initialed_page)
+    initials = initials.pages[0]
+    # initials = CombinePDF.load(initialed_page) # THIS DOES NOT WORK
+
+    # Renders the signature page
     signature_pdf = WickedPdf.new.pdf_from_string(render_to_string('pdf_signatures/show', layout: "pdf", locals: { individual: current_user.individual }))
+
     contract = @contract.document.download
 
     pdf = ::CombinePDF.new
     pdf << ::CombinePDF.parse(contract)
     pdf << ::CombinePDF.parse(signature_pdf)
+    # pdf << ::CombinePDF.parse(initialed_page) # THIS IS FOR TESTING IF initialed_page gets appended like the sig page. Answer: yes
+    pdf.pages.each { |page| page << initials }
 
     @contract.document.attach(io: StringIO.new(pdf.to_pdf), filename: "signed_contract.pdf")
     @contract.update(status: "signed", fully_signed_at: Time.current)
