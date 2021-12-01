@@ -1,19 +1,19 @@
 <div class="container-create-contract">
-  <h2>New Contract</h2>
 
   <div class="container-split">
     <div class="new-contract-form">
-      <%= simple_form_for [@contract] do |f| %>
-        <%= f.input :name, label: "Contract name" %>
-        <%= f.input :description, label: "Brief description of the contract" %>
-        <%= f.input :recipient_email, required: true %>
+      <h2 class="section-title">New Contract</h2>
+      <%= simple_form_for [@contract], class:"form" do |f| %>
+        <%= f.input :name, placeholder: "Contract name" %>
+        <%= f.input :description, placeholder: "Brief description of the contract" %>
+        <%= f.input :recipient_email, placeholder: "Recipient e-mail", required: true %>
         <%= f.input :document, as: :file, required: true  %>
-        <%= f.button :submit, 'Send it out!', class: "home-button create-contract" %>
+        <%= f.button :submit, 'Send it out!', class: "create-contract" %>
       <% end %>
     </div>
 
     <div class="new-contract-img">
-      <%= image_tag "handshake-compressed.jpg", class: "img-form" %>
+      <%= image_tag "new_contract.svg", class: "img-form" %>
     </div>
   </div>
 </div>

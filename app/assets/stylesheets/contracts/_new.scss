@@ -2,11 +2,26 @@
 // #1992F7
 // #044376
 
-.container-create-contract {
+// LEFT
 
+.container-create-contract #new_contract {
+  width: 400px;
+  margin: 0 auto;
 }
 
-.container-create-contract h2 {
+.container-create-contract .form-control {
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  border: none;
+}
+
+.container-create-contract label {
+  display: none;
+}
+
+.container-create-contract .form-control-file {
+  // background-color: #f1f1f1;
+  text-decoration: none;
 }
 
 .container-split {
@@ -16,17 +31,42 @@
 }
 
 .new-contract-form {
+  padding: 5rem;
   width: 50%;
 }
+
+.container-create-contract .create-contract {
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #1992F7;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  transition: box-shadow 400ms;
+
+  &:hover {
+    transition: box-shadow 400ms;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  }
+}
+
+// RIGHT
 
 .new-contract-img {
   width: 50%;
   height: 90vh;
+  overflow: hidden;
 }
 
 .img-form {
-  background-size:auto;
-  background-position: center;
+  width: 100%;
+  background-size: cover;
+  // transform: translateY(-10%);
 }
 
 

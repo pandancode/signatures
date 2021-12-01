@@ -3,19 +3,6 @@
   padding: 5rem;
 }
 
-.contracts-section .section-title {
-  display: inline-block;
-  border-bottom: 3px solid #1992F7;
-  margin-bottom: 5rem;
-  font-size: 36px;
-  font-weight: bold;
-  transition: transform ease-in 200ms;
-
-  &:hover {
-    transform: translate(3%);
-  }
-}
-
 .search-bar {
   display: block;
   margin: 0 auto;
@@ -63,20 +50,18 @@
   }
 }
 
-
-
 .contract-name {
   font-size: 24px;
   color: #313131;
 }
 
-.contract-company-name {
-}
+// .contract-company-name {
+// }
 
-.contract-individual-name {
-}
+// .contract-individual-name {
+// }
 
-.contract-signature-date {}
+// .contract-signature-date {}
 
 .ionicon-arrow {
   display: block;
