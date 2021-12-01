@@ -39,23 +39,21 @@ h1 {
 
 .section-how {
   background-color: #fff;
-  padding: 5rem;
   height: 100vh;
+  padding: 140px 5rem;
 }
 
 .section-how-cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .section-how-cards .card {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 460px;
-  min-width: 460px;
+  width: 200;
+  min-width: 200;
   height: 310px;
   min-height: 310px;
   background-color: #f1f1f1;
@@ -113,23 +111,21 @@ h1 {
 
 .section-pricing {
   background-color: #fff;
-  padding: 5rem;
   height: 100vh;
+  padding: 140px 5rem;
 }
 
 .section-pricing-cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .section-pricing-cards .card {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 460px;
-  min-width: 460px;
+  width: 390px;
+  min-width: 390px;
   height: 310px;
   min-height: 310px;
   background-color: #f1f1f1;
@@ -138,11 +134,11 @@ h1 {
 }
 
 .card h3 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.pricing-desc, h4 {
-  font-family: 'Poppins';;
+.pricing-explanation {
+  padding-bottom: 90px;
 }
 
 
@@ -170,39 +166,53 @@ h1 {
   height: 100vh;
 }
 
-.companies-carousel img {
-  height: 75vh;
-  object-fit: contain;
-  object-position: center;
-}
-
-#companies-text {
-  display: inline-block;
-  border-bottom: 3px solid #1992F7;
-  margin-bottom: 5rem;
-  font-size: 36px;
-  font-weight: bold;
-  transition: transform ease-in 200ms;
-}
 
 
-// //////footer - Sarah
+
+
+////////footer - Sarah
 
 .footer {
   padding: 40px 0 24px;
   background: #044376;
 }
 
-.container pt-5 py-4 {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  background: #044376;
+.container-footer {
+  display: flex;
+
+  // width: 100%;
+  // padding-right: 15px;
+  // padding-left: 15px;
+  // margin-right: auto;
+  // margin-left: auto;
+  // background: #044376;
+  // flex-direction: right;
+}
+
+.card-deck-footer {
+  display: flex;
+  align-content: flex-end;
 }
 
 .card-footer {
   background: #044376;
   color: white;
+  // flex-direction: right;
+}
+
+.footer hr {
+  border-color: white;
+  border: 2px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.social-icons {
+  color: white;
+  text-align: right;
+  font-size: 40px;
 }
