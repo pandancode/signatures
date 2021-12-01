@@ -1,0 +1,5 @@
+meta_product_name: "EZ-Contract"
+meta_title: "EZ-Contract - The easy way to sign contracts"
+meta_description: "Use EZ-Contract to sign your contracts and never lose them again"
+meta_image: "logo.svg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
