@@ -5,7 +5,9 @@
     <h4><span class="show-keywords">First name: </span><%= @individual.first_name %></h4>
     <h4><span class="show-keywords">Last name: </span><%= @individual.last_name %></h4>
     <h4><span class="show-keywords">Date of birth: </span><%= @individual.birth_date %></h4>
-    <h4><span class="show-keywords">Signature: </span><%= image_tag @individual.signature, height: 30, crop: :fill %></h4>
+    <% if @individual.signature.exists? %>
+      <h4><span class="show-keywords">Signature: </span><%= image_tag @individual.signature, height: 30, crop: :fill %></h4>
+    <% end %>
     <h4 class="last-element"><span class="show-keywords">Phone number: </span><%= @individual.phone_number %></h4>
     <div class="show-details-btns">
       <%= link_to "My contracts", unsigned_path, class: "home-button show-sign-btn" %>
