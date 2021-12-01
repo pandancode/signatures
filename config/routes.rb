@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   if Rails.env.development?
     resource :pdf_signatures, only: :show
+    resource :pdf_initials, only: :show
   end
 
   get "signed", to: "contracts#signed"
