@@ -1,4 +1,5 @@
 <div class="container-show-contract">
+ 
   <h2><%= @contract.name %></h2>
   <p><span class="show-keywords">From:</span> <%= "#{@contract.company.company_name}" %></p>
   <p><span class="show-keywords">Contract description:</span> <%= @contract.description %></p>
@@ -27,6 +28,7 @@
         <%= submit_tag "Search", class: "d-none" %>
       <% end %>
     </div>
-      <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button btn-sign show-sign-btn" %>
+      <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "home-button sign-contract btn-sign show-sign-btn" %>
   <% end %>
 </div>
+ <div class="loader d-none"></div>

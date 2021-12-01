@@ -34,3 +34,20 @@ document.addEventListener('turbolinks:load', () => {
 
 $(".alert").fadeOut(4000);
 import "controllers"
+
+
+
+
+// SPINNER ON SIGN CONTRACT
+
+// select button sign contract
+const signContractButton = document.querySelector(".sign-contract")
+
+
+// listeer on click need to display the spinner
+signContractButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  e.currentTarget.classList.remove("d-none");
+  e.currentTarget.classList.add("d-block");
+
+});
