@@ -1,6 +1,6 @@
 <p>Hi <%= @user.individual.first_name %>,</p>
 
-<p>You got a new contract! Please view it <%= link_to "here", contract_path(@contract) %>.</p>
+<p>You got a new contract! Please view it <%= link_to "here", "www.ezcontract.co.uk/contracts/#{@contract.id}" %>.</p>
 
 <p>See ya!</p>
 
