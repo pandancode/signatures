@@ -8,6 +8,14 @@
   width: 400px;
   margin: 0 auto;
   margin-top: 6.5rem;
+  transition: box-shadow 400ms;
+
+  &:hover {
+    transition: box-shadow 400ms;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
 }
 
 
