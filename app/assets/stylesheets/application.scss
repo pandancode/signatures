@@ -40,6 +40,10 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .section-title {
   display: inline-block;
   border-bottom: 3px solid #1992F7;
