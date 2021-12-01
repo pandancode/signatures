@@ -23,8 +23,6 @@ h1 {
   z-index: 200;
 }
 
-// .main-section-img{}
-
 .underline {
   border-bottom: 5px solid white;
 }
@@ -36,43 +34,13 @@ h1 {
   z-index: 100;
 }
 
-// SECTION WHY
-
-.section-why {
-  background-color: #f1f1f1;
-  padding: 5rem;
-}
-
-// .section-why h2 {
-//   display: inline-block;
-//   border-bottom: 3px solid #1992F7;
-//   margin-bottom: 4rem;
-//   font-size: 36px;
-//   font-weight: bold;
-// }
-
-.section-why li {
-  list-style: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 5rem;
-  letter-spacing: 1px;
-}
-
-.main-page-keywords {
-  background-color: rgba(25, 147, 247, 0.2);
-  margin-left: 2rem;
-}
-
-.ionicon-why {
-  transform: scale(2);
-}
 
 // SECTION HOW
 
 .section-how {
   background-color: #fff;
   padding: 5rem;
+  height: 100vh;
 }
 
 .section-how-cards {
@@ -96,7 +64,7 @@ h1 {
 }
 
 .ionicon-how {
-  font-size: 5rem;
+  font-size: 40px;
   margin: 0 auto;
   margin-bottom: 2rem;
 }
@@ -105,7 +73,80 @@ h1 {
   margin-bottom: 2rem;
 }
 
-// Specific CSS for your home-page
+
+// SECTION WHY
+
+.section-why {
+  background-color: #f1f1f1;
+  padding: 8rem;
+  height: 100vh;
+}
+
+.section-why h2 {
+  display: inline-block;
+  border-bottom: 3px solid #1992F7;
+  margin-bottom: 4rem;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section-why li {
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 5rem;
+  letter-spacing: 1px;
+}
+
+.main-page-keywords {
+  background-color: rgba(25, 147, 247, 0.2);
+  margin-left: 2rem;
+}
+
+.ionicon-why {
+  transform: scale(2);
+}
+
+
+
+// SECTION PRICING
+
+.section-pricing {
+  background-color: #fff;
+  padding: 5rem;
+  height: 100vh;
+}
+
+.section-pricing-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-pricing-cards .card {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  width: 460px;
+  min-width: 460px;
+  height: 310px;
+  min-height: 310px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.card h3 {
+  margin-bottom: 2rem;
+}
+
+.pricing-desc, h4 {
+  font-family: 'Poppins';;
+}
+
+
+
 
 // scrolling stuff - Sarah
 .scroll-container {
@@ -120,108 +161,13 @@ h1 {
   overflow: hidden;
 }
 
-// .main-infos {
-//   font-family: 'Poppins', sans-serif;
-// }
-
-// /////new homepage stuff - Amin
-
-// h1 {
-//   font-size: 5rem;
-//   text-align: center;
-//   color: white;
-//   font-weight: bolder;
-//   z-index: 1000;
-// }
-
-// .main-section-text{
-//   z-index: 200;
-// }
-
-// .underline {
-//   border-bottom: 5px solid white;
-// }
-
-// .polygon {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   z-index: 100;
-// }
-
-
-// /////Pricing - Sarah
-
-
-// .desc-cards {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: flex-end;
-//   align-items: stretch;
-//   color: black;
-//   gap: 32px;
-// }
-
-// .desc-card-body {
-//   background-color: rgb(238, 238, 238);
-//   // border: 1px solid rgb(20, 30, 97);
-//   padding: 1rem;
-//   min-width: 300px;
-//   width: 300px;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
-// }
-
-
-
-
-/////////////////pricing - Sarah
-
-.container-pricing {
-  text-align: center;
-  font-family: 'Arial';
-  color: white;
-  line-height: 16px;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contracts2.jpg);
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  top: 0;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.pricing-cards {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  align-items: stretch;
-  color: black;
-  gap: 32px;
-
-}
-
-  .pricing-text  {
-  padding: 64px 0px;
-  color: white;
-  font-family: 'Arial';
-  }
 
 
 // carousel
 .companies-carousel {
-  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.8)), url(contract3.jpg);
-  width: 100%;
+  background-color: #f1f1f1;
+  padding: 5rem;
   height: 100vh;
-  background-position: center;
-  background-size: cover;
-  top: 0;
-  align-items: center;
-  text-align: center;
 }
 
 .companies-carousel img {
@@ -230,68 +176,43 @@ h1 {
   object-position: center;
 }
 
-// #companies-text {
-//   color: white;
-//   text-align: center;
-//   font-family: Arial, sans-serif;
-//   line-height: 25vh;
-// }
+#companies-text {
+  display: inline-block;
+  border-bottom: 3px solid #1992F7;
+  margin-bottom: 5rem;
+  font-size: 36px;
+  font-weight: bold;
+  transition: transform ease-in 200ms;
+}
 
 
 // //////footer - Sarah
-// .footer {
-//   background: #044376;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   height: 100px;
-//   padding: 0px 50px;
-//   color: white;
-// }
 
-
-// FOOTER TEXT
-#footer-text, h3 {
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  line-height: 100px;
+.footer {
+  padding: 40px 0 24px;
+  background: #044376;
 }
 
-#footer-text, h5 {
-  font-weight: lighter;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-// FOOTER CARDS
-
-.footer-cards-container {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-around;
-  align-items: flex-end;
-  align-items: stretch;
+.container pt-5 py-4 {
   width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  top: 0;
-  align-items: center;
-  text-align: center;
-}
-
-.card-body-footer {
-  background-color: rgb(238, 238, 238);
-  // border: 1px solid rgb(20, 30, 97);
-  padding: 1rem;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px white;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #044376;
 }
 
 .card-footer {
-  border-radius: 25px;
-  background-color: none;
-  flex-grow: 1;
+  background: #044376;
+  color: white;
+  align-items: right;
 }
+
+
+// FOOTER TEXT
+// #footer-text, h3 {
+//   font-weight: bold;
+//   font-family: Arial, Helvetica, sans-serif;
+//   text-align: center;
+//   line-height: 100px;
+// }
