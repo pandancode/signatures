@@ -83,7 +83,8 @@ h1 {
   height: 310px;
   min-height: 310px;
   background-color: #f1f1f1;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
 .ionicon-how {
