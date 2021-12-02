@@ -103,7 +103,7 @@
 
 .stamp {
   display: inline-block;
-  position: absolute;
+  position: relative;
   padding: 0 1rem;
   font-size: 2rem !important;
   font-weight: bold;
@@ -112,8 +112,8 @@
   color: rgb(0, 255, 0);
   background-color: rgba(255, 255, 255, 0);
   border: 5px solid rgb(0, 255, 0);
-  top: 230px;
-  right: 185px;
+  top: -165px;
+  right: 205px;
 }
 
 
@@ -125,7 +125,6 @@
   width: 100%;
 
   z-index: 100;
-
 }
 
 
