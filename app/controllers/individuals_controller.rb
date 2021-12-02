@@ -1,10 +1,12 @@
 class IndividualsController < ApplicationController
   def new
     @individual = Individual.new
+    authorize @individual
   end
 
   def create
     @individual = Individual.new(individual_params)
+    authorize @individual
     @user = current_user
     @individual.user = @user
     if @individual.save
@@ -16,14 +18,17 @@ class IndividualsController < ApplicationController
 
   def show
     @individual = Individual.find(params[:id])
+    authorize @individual
   end
 
   def edit
     @individual = Individual.find(params[:id])
+    authorize @individual
   end
 
   def update
     @individual = Individual.find(params[:id])
+    authorize @individual
     @individual.update(individual_params)
     redirect_to individual_path(current_user.individual)
   end
