@@ -1,0 +1,39 @@
+.container-sign-up {
+  background-color: #fff;
+  padding: 5rem;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+// FORM
+
+.sign-up-form {
+  width: 40%;
+  margin: 0 auto;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sign-up-form .form-inputs {
+  width: 90%;
+}
+
+.container-sign-up label {
+  display: none;
+}
+
+.container-sign-up .form-control {
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  border: none;
+  background-color: #F1F1F1;
+}
+// IMAGE
+
+.sign-up-img {
+  width: 60%;
+  margin: 0 auto;
+}
