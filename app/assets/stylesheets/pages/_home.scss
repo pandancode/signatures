@@ -156,16 +156,18 @@ h1 {
 }
 
 // scrolling stuff - Sarah
+html {
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat (100vh);
+}
+
 .scroll-container {
-  position: relative;
-  overflow: hidden;
-  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat (100vh);
 }
 
 .scroll-snap {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 ////////footer - Sarah
