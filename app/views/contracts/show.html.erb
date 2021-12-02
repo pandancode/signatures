@@ -40,6 +40,8 @@
         <%= link_to "Sign contract", sign_contract_path(@contract), method: :patch, class: "sign-contract create-contract" %>
     <% end %>
 
+
+
   </div>
 
   <div class="container-img">
@@ -47,11 +49,13 @@
     <%= image_tag "signing-contract.svg", class: "" %>
   <% else %>
     <%= image_tag "agreement.svg", class: "" %>
+      <p class="stamp">Signed</p>
   <% end %>
   </div>
 
-<div class="loader-container">
- <div class="loader"></div>
-</div>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
 
   <%= image_tag "wave-contract-show.svg", class: "wave-img" %>
+</div>
