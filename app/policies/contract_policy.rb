@@ -10,7 +10,7 @@ class ContractPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    record.company == user.company || record.individual == user.individual
   end
 
   def new?
