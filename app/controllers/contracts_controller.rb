@@ -92,7 +92,7 @@ class ContractsController < ApplicationController
   end
 
   def signed
-    sql_query = "name ILIKE :query OR description ILIKE  :query"
+    sql_query = "name ILIKE :query OR description ILIKE :query"
     case current_user.role
     when "Company"
       @user = current_user.company
@@ -118,21 +118,21 @@ class ContractsController < ApplicationController
   end
 
   def unsigned
-    sql_query = "name ILIKE :query OR description ILIKE  :query"
+    sql_query = "name ILIKE :query OR description ILIKE :query"
     case current_user.role
     when "Company"
       @user = current_user.company
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(company_id: @user).order("updated_at ASC")
       else
-        @contracts = Contract.where(fully_signed_at: nil).where(company_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(fully_signed_at: nil).where(company_id: @user).order("updated_at ASC")
       end
     when "Individual"
       @user = current_user.individual
       if params[:query].present?
-        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(sql_query, query: "%#{params[:query]}%").where(fully_signed_at: nil).where(individual_id: @user).order("updated_at ASC")
       else
-        @contracts = Contract.where(fully_signed_at: nil).where(individual_id: @user).order("updated_at DESC")
+        @contracts = Contract.where(fully_signed_at: nil).where(individual_id: @user).order("updated_at ASC")
       end
     end
     respond_to do |format|
