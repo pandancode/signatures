@@ -1,34 +1,71 @@
 .container-details-show {
-  color: white !important;
-  width: 61%;
-  margin: 0 auto;
+  background-color: #f1f1f1;
+  padding: 5rem;
+  height: 90vh;
+
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 4rem;
 }
 
-.container-details-show-content {
-  width: 100%;
-  justify-self: center;
-
+.details-infos {
+  width: 50%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.container-details-show h2 {
-  text-align: center;
-  margin-bottom: 4rem;
+.details-img {
+  width: 50%;
 }
 
-.container-details-show .last-element {
+.details-infos-content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.details-infos-content p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+
+
+
+
+// EDIT INDIVIDUAL INFOS
+.container-infos-form {
+  background-color: #f1f1f1;
+  padding: 5rem;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.container-form {
+ width: 50%;
+}
+
+.container-img {
+width: 50%;
+}
+
+.container-infos-form .form-control {
+  border-radius: 4px;
   margin-bottom: 3rem;
+  border: none;
 }
 
-.container-details-show .home-button {
-  margin: 0 auto
+.container-infos-form label {
+  display: none;
 }
 
-.container-details-show-content {
-  padding: 3rem;
-  background-color: rgba(30, 30, 30, 0.7);
-  border: 1px solid white;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.individual_signature label{
+  display: block !important;
+}
+
+.individual_signature {
+  margin-top: 2rem;
 }
