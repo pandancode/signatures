@@ -19,6 +19,7 @@
 }
 
 .container-show-contract .container-img {
+  position: relative;
   width: 40%;
   height: 90vh;
   background-size: cover;
@@ -100,6 +101,20 @@
   }
 }
 
+.stamp {
+  display: inline-block;
+  position: absolute;
+  padding: 0 1rem;
+  font-size: 2rem !important;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(0, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  border: 5px solid rgb(0, 255, 0);
+  top: 230px;
+  right: 185px;
+}
 
 
 // BOTTOM PAGE
