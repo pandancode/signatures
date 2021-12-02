@@ -25,7 +25,7 @@ class IndividualsController < ApplicationController
   def update
     @individual = Individual.find(params[:id])
     @individual.update(individual_params)
-    redirect_to unsigned_path
+    redirect_to individual_path(current_user.individual)
   end
 
   private
