@@ -1,5 +1,5 @@
 <div>
-<%# class="scroll-container" id="scroll-container" %>
+<div class="scroll-container" id="scroll-container">
   <div class="main-section scroll-snap">
     <div class="main-section-text">
       <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
@@ -10,7 +10,7 @@
     </div>
     <%= image_tag "polygon.svg", class: "polygon" %>
   </div>
-  <div class="section-how">
+  <div class="section-how scroll-snap">
     <h2 class="section-title">How does EZ-Contract work?</h2>
     <div class="section-how-cards">
       <div class="card">
@@ -31,7 +31,7 @@
     </div>
     <%= link_to "Get started", unsigned_path, class: "home-btn" %>
   </div>
-  <div class="section-why">
+  <div class="section-why scroll-snap">
     <h2 class="section-title">Why EZ-Contracts?</h2>
     <ul>
       <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Environmentally friendly.</span> Going paperless helps to reduce your carbon footprint.</li>
@@ -42,7 +42,7 @@
     </ul>
   </div>
 
-<div class="section-pricing">
+<div class="section-pricing scroll-snap">
       <h2 class="section-title">Pricing</h2>
       <div class="pricing-explanation">
         <h4 class="pricing-desc">EZ-Contract is always free for individuals.</h4>
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-  <div class="footer">
+  <div class="footer scroll-snap">
     <div class="container-footer container justify-content-end pt-5 py-4 d-flex justify-content-between align-items-start mb-4">
       <%= image_tag "logo-light-blue.svg" %>
       <div class="footer-cards-container ">
@@ -130,7 +130,7 @@
   </div>
 </div>
 
-<script>
+<%# <script>
 (function() {
   "use strict";
 	/*[pan and well CSS scrolls]*/
@@ -235,4 +235,41 @@
 	well.addEventListener('wheel', _scrollY);
 	_swipe(well);
 })();
+</script> %>
+
+<script>
+$(document).ready(function () {
+  var fv = $("#scroll-container").fullView({
+    // //Navigation
+    // dots: true,
+    // dotsPosition: "right",
+    // dotsTooltips: true,
+
+    //Scrolling
+    easing: "swing",
+    backToTop: true,
+
+    // Accessibility
+    keyboardScrolling: true,
+
+    // Callback
+    onScrollEnd: function (currentView, preView) {
+      console.log("Current", currentView);
+      console.log("Previus", preView);
+    }
+  });
+
+  $("#down").click(function () {
+    // To Scroll Down 1 Section
+    fv.data("scroll-container").scrollDown();
+
+    // To Scroll Up 1 Section
+    // fv.data('fullView').scrollDown();
+  });
+
+  $("#select").change(function () {
+    // To Scroll to Specfic Section
+    fv.data("scroll-container").scrollTo($(this).val());
+  });
+});
 </script>
