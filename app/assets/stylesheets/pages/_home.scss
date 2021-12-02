@@ -47,6 +47,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 4rem;
 }
 
@@ -54,8 +55,9 @@ h1 {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 200;
-  min-width: 200;
+  width: 450px;
+  min-width: 450px;
+  max-width: 200px;
   height: 310px;
   min-height: 310px;
   background-color: #f1f1f1;
@@ -93,7 +95,7 @@ h1 {
 .section-why ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: left;
   height: 100%;
