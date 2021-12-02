@@ -48,7 +48,9 @@
       <% else %>
         <div class="nav-login-signup">
           <% if !current_user.individual.nil? %>
-            <p class="nav-item name"><%= current_user.individual.first_name %></p>
+            <%= link_to individual_path(current_user.individual), class:"nav-item name" do %>
+              <%= current_user.individual.first_name %>
+            <% end %>
           <% end %>
           <%= link_to "Log out", destroy_user_session_path, class: "nav-item light", method: "delete" %>
         </div>

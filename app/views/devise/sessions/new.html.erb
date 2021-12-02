@@ -1,24 +1,25 @@
 <div class="container-log-in">
-  <h2>Please login</h2>
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  class: "user-input",
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  class: "user-input",
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+  <div class="sign-in-form">
+    <h2 class="section-title">Login to your account</h2>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    class: "user-input",
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    class: "user-input",
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.button :submit, "Login", class: "home-btn" %>
+        <%= link_to "Forgot your password ?", new_user_password_path, class: "home-btn btn-fix" %>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "home-button btn-sign" %>
-    </div>
-  <% end %>
-  <div class="container-extra-btn">
-    <%= render "devise/shared/links" %>
+  <div class="sign-up-img">
+    <%= image_tag "login.svg", class:"img-form"%>
   </div>
 </div>

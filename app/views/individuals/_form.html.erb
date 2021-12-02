@@ -1,15 +1,23 @@
-<div class="container-sell-form">
-    <div class="container-form">
-        <h3 class="title-form">Enter your details</h3>
-        <%= simple_form_for @individual do |f| %>
-        <div>
-          <%= f.input :title, collection: ["Mr", "Ms", "Mx"] %>
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :birth_date %>
-          <%= f.input :phone_number %>
-          <%= f.input :signature, as: :file %>
-          <%= f.button :submit, 'Confirm your details', class: 'btn btn-submit' %>
-        <% end %>
-      </div>
+<div class="container-infos-form">
+  <div class="container-form">
+    <h2 class="section-title">Enter your personal details</h2>
+    <%= simple_form_for @individual, class: "form" do |f| %>
+    <div>
+      <%= f.input :title, collection: ["Mr", "Ms", "Mx"], selected: "Mr" %>
+      <%= f.input :first_name, placeholder: "First name" %>
+      <%= f.input :last_name, placeholder: "Last name" %>
+      <%= f.input :birth_date,
+                  start_year: Time.now.year - 100,
+                  end_year: Time.now.year - 0,
+                  order: %i(day month year) %>
+      <%= f.input :phone_number, placeholder: "Phone number" %>
+      <%= f.input :signature, as: :file, class: "label" %>
+      <%= f.button :submit, 'Confirm your details', class: 'home-btn', method: "post" %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="container-img">
+    <%= image_tag "personal-infos.svg", class:"img-form"%>
+  </div>
 </div>

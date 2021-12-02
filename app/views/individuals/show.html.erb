@@ -1,17 +1,18 @@
 <div class="container-details-show">
-  <div class="container-details-show-content">
-    <h2>Your details</h2>
-    <h4><span class="show-keywords">Title: </span><%= @individual.title %><h4>
-    <h4><span class="show-keywords">First name: </span><%= @individual.first_name %></h4>
-    <h4><span class="show-keywords">Last name: </span><%= @individual.last_name %></h4>
-    <h4><span class="show-keywords">Date of birth: </span><%= @individual.birth_date %></h4>
-    <% if @individual.signature.attached? %>
-      <h4><span class="show-keywords">Signature: </span><%= image_tag @individual.signature, height: 30, crop: :fill %></h4>
-    <% end %>
-    <h4 class="last-element"><span class="show-keywords">Phone number: </span><%= @individual.phone_number %></h4>
-    <div class="show-details-btns">
-      <%= link_to "My contracts", unsigned_path, class: "home-button show-sign-btn" %>
-      <%= link_to "Update my details", edit_individual_path, class: "home-button show-sign-btn" %>
+  <div class="details-infos">
+    <h2 class="section-title">Your details</h2>
+    <div class="details-infos-content">
+      <p><%= @individual.title %> <%= @individual.first_name %> <%= @individual.last_name %><p>
+      <p>Date of birth: <%= @individual.birth_date.strftime("%d %m %Y") %></p>
+      <% if @individual.signature.attached? %>
+        <p><span class="show-keywords">Signature: <%= image_tag @individual.signature, height: 50, crop: :fill %></p>
+      <% end %>
+      <p class="last-element">Phone number: <%= @individual.phone_number %></p>
+
+      <%= link_to "Edit your infos", edit_individual_path, class: "home-btn"%>
     </div>
+  </div>
+  <div class="details-img">
+    <%= image_tag "see-personal-infos.svg", class:"img-form"%>
   </div>
 </div>
