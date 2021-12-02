@@ -30,12 +30,13 @@
   margin-top: 6.5rem;
   transition: box-shadow 400ms;
   border: 1px solid #f1f1f1;
+  border-radius: 4px;
 
   &:hover {
     transition: box-shadow 400ms;
     text-decoration: none;
     color: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1);
   }
 }
 
