@@ -18,8 +18,13 @@
     <p><span class="show-keywords">From:</span> <%= "#{@contract.company.company_name}" %></p>
 
     <% if @contract.fully_signed_at.nil? %>
-      <p><span class="show-keywords">Received the:</span> <%= @contract.created_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
+      <p><span class="show-keywords">Sent on:</span> <%= @contract.created_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
     <% end %>
+
+    <% if current_user.role == "Company" && @contract.status != "signed" %>
+      <p><span class="show-keywords">Status:</span> <%= @contract.status %></p>
+    <% end %>
+
     <% if !@contract.fully_signed_at.nil? %>
       <p><span class="show-keywords">Signing date:</span> <%= @contract.fully_signed_at.localtime.strftime("%Y/%m/%d %H:%M") %></p>
     <% end %>
