@@ -44,10 +44,15 @@
 .nav-login-signup .nav-item {
   font-size: 24px;
   margin-left: -1rem;
+  transition: 200ms;
+}
+
+.navbar a:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 .nav-login-signup .nav-item:last-child {
-  // margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .light {

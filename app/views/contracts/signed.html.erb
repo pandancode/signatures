@@ -3,7 +3,7 @@
 
   <div data-controller="search-contracts">
     <%= form_tag signed_path, method: :get, data: { search_contracts_target: 'form' } do %>
-      <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract by name or description", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
+      <%= text_field_tag :query, params[:query], class: "search-bar", placeholder: "Search a contract", data: { search_contracts_target: 'input', action: "keyup->search-contracts#update" } %>
       <%= submit_tag "Search", class: "d-none" %>
     <% end %>
 

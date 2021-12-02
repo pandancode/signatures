@@ -29,6 +29,7 @@
 
 // USER ACTIONS
 @import "user-actions/login";
+@import "user-actions/signup";
 
 // PERSONAL DETAILS
 @import "personal-details/show";
@@ -40,6 +41,10 @@
   padding: 0;
   font-family: 'Poppins', sans-serif !important;
 }
+
+// html {
+//   font-size: 10px;
+// }
 
 body {
   overflow-x: hidden;

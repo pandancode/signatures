@@ -1,37 +1,47 @@
 .container-log-in {
-  width: 55%;
+  background-color: #fff;
+  padding: 5rem;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.sign-in-form {
+  width: 40%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid rgb(238, 238, 238);
-  background-color: rgb(20, 30, 97);
-  box-shadow: 0 0 20px rgba(238, 238, 238, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.container-log-in h2 {
-  font-family: 'Freehand', cursive;
-  color: rgb(238, 238, 238);
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+.sign-in-form .new_user {
+  width: 90%;
+  // margin: 0 auto;
 }
 
-.container-log-in .form-inputs {
-  color: white;
-  font-family: 'Poppins', sans-serif;
+
+.sign-up-img {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.btn-fix {
+  margin-top: 1rem;
   font-size: 1.5rem;
 }
 
-#user_remember_me {
-  top: 10px !important;
+.container-log-in label {
+  display: none;
 }
 
-.container-log-in .form-check-label {
-  font-size: 1rem;
+.container-log-in .form-control {
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  border: none;
+  background-color: #F1F1F1 !important;
 }
 
-.container-extra-btn {
+.container-log-in .form-check .form-check-label {
   display: block;
-  width: 70%;
-  margin: 0 auto;
-  margin-top: 1rem;
 }

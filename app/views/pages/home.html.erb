@@ -1,48 +1,233 @@
-<div class="main-section">
-  <div class="main-section-text">
-    <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
+<div>
+<%# class="scroll-container" id="scroll-container" %>
+  <div class="main-section scroll-snap">
+    <div class="main-section-text">
+      <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
+    </div>
+    <div class="main-section-img">
+      <%= image_tag "contract-undraft.svg" %>
+    </div>
+    <%= image_tag "polygon.svg", class: "polygon" %>
   </div>
-
-  <div class="main-section-img">
-    <%= image_tag "contract-undraft.svg" %>
-  </div>
-
-  <%= image_tag "polygon.svg", class: "polygon" %>
-</div>
-
-<div class="section-why">
-  <h2 class="section-title">Why would you use this app ?</h2>
-
-  <ul>
-    <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Ecology friendly.</span> You help preserving the environment by signing your contract online.</li>
-    <li><ion-icon name="cloud-done-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Cloud Storage.</span> Have a permanent access to your contracts. Don't waste time anymore looking after them.</li>
-    <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Sign or view your contracts in few seconds and clicks.</li>
-    <li><ion-icon name="wifi-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Accessible from anywhere.</span> No matter where you are, you only need an internet connection to have access to your contracts.</li>
-  </ul>
-</div>
-
-<div class="section-how">
-    <h2 class="section-title">How does it work ?</h2>
-
+  <div class="section-how">
+    <h2 class="section-title">How does EZ-Contract work?</h2>
     <div class="section-how-cards">
       <div class="card">
-        <ion-icon name="eye-outline" class="ionicon-how"></ion-icon>
-        <h3>View your contract</h3>
-        <p>Have a look at your contract and read its content</p>
+        <ion-icon name="send-outline" class="ionicon-how"></ion-icon>
+        <h3>Send</h3>
+        <p>EZ-Contract allows companies to upload and send contracts to users.</p>
       </div>
-
       <div class="card">
         <ion-icon name="pencil-outline" class="ionicon-how"></ion-icon>
-        <h3>Sign it</h3>
-        <p>Once you agree the terms and conditions, sign your contract</p>
+        <h3>Sign</h3>
+        <p>EZ-Contract allows users to view and sign contracts at the click of a button.</p>
       </div>
-
       <div class="card">
         <ion-icon name="cloud-download-outline" class="ionicon-how"></ion-icon>
-        <h3>Download it</h3>
-        <p>You now have access to all your contracts on our platform</p>
+        <h3>Save</h3>
+        <p>All of your contracts are always accessible once you have signed in.</p>
       </div>
     </div>
-
     <%= link_to "Get started", unsigned_path, class: "home-btn" %>
+  </div>
+  <div class="section-why">
+    <h2 class="section-title">Why EZ-Contracts?</h2>
+    <ul>
+      <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Environmentally friendly.</span> Going paperless helps to reduce your carbon footprint.</li>
+      <li><ion-icon name="cloud-done-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Cloud Storage.</span> No more storing paper contracts, and no more losing contracts.</li>
+      <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Sign your contract with the click of a button.</li>
+    </ul>
+  </div>
+
+<div class="section-pricing">
+      <h2 class="section-title">Pricing</h2>
+      <div class="pricing-explanation">
+        <h4 class="pricing-desc">EZ-Contract is always free for individuals.</h4>
+        <h4 class="pricing-desc">For companies, EZ-Contract offers a 30-day free trial.</h4>
+      </div>
+      <div class="section-pricing-cards">
+        <div class="card">
+          <h3>Standard</h3>
+          <h6 class="font-weight-bold">£7.50 per month</h6>
+          <p style="padding-top: 20px;">Send up to 10 contracts each month</p>
+        </div>
+
+        <div class="card">
+          <h3>Pro</h3>
+          <h6 class="font-weight-bold">£12.99 per month</h6>
+          <p style="padding-top: 20px;">Send up to 30 contracts each month</p>
+        </div>
+
+        <div class="card">
+          <h3>Advanced</h3>
+          <h6 class="font-weight-bold">£20 per month</h6>
+          <p style="padding-top: 20px;">Unlimited contracts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container-footer container justify-content-end pt-5 py-4 d-flex justify-content-between align-items-start mb-4">
+      <%= image_tag "logo-light-blue.svg" %>
+      <div class="footer-cards-container ">
+        <div class="card-deck-footer ">
+          <div class="card-footer">
+            <div class="card-body-footer">
+              <h5 class="card-title">About Us</h5>
+              <p class="card-text">FAQ</p>
+              <p class="card-text">Press</p>
+              <p class="card-text">Contact us</p>
+              <p class="card-text">Privacy Policy</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-body-footer">
+              <h5 class="card-title">Resources</h5>
+              <p class="card-text">Blog</p>
+              <p class="card-text">Development</p>
+              <p class="card-text">Events</p>
+              <p class="card-text">Webinars</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-body-footer">
+              <h5 class="card-title">Corporate</h5>
+              <p class="card-text">Training</p>
+              <p class="card-text">Careers</p>
+              <p class="card-text">Legal Notice</p>
+              <p class="card-text">Our Team</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-body-footer">
+              <h5 class="card-title">Follow us</h5>
+              <p class="card-text">Instagram</p>
+              <p class="card-text">Twitter</p>
+              <p class="card-text">Facebook</p>
+              <p class="card-text">Linkedin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="container" style="background-color: white; height: 2px;">
+    <div class="footer-bottom">
+        <p>EZ-Contract</p>
+        <p>©ezcontract2021</p>
+      <div class="social-icons">
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<script>
+(function() {
+  "use strict";
+	/*[pan and well CSS scrolls]*/
+	var pnls = document.querySelectorAll('.scroll-snap').length,
+		scdir, hold = false;
+
+	function _scrollY(obj) {
+    var slength, plength, pan, step = 100,
+			vh = window.innerHeight / 100,
+			vmin = Math.min(window.innxerHeight, window.innerWidth) / 100;
+		if ((this !== undefined && this.id === 'scroll-container') || (obj !== undefined && obj.id === 'scroll-container')) {
+      pan = this || obj;
+			plength = parseInt(pan.offsetHeight / vh);
+		}
+		if (pan === undefined) {
+      return;
+		}
+		plength = plength || parseInt(pan.offsetHeight / vmin);
+		slength = parseInt(pan.style.transform.replace('translateY(', ''));
+		if (scdir === 'up' && Math.abs(slength) < (plength - plength / pnls)) {
+      slength = slength - step;
+		} else if (scdir === 'down' && slength < 0) {
+      slength = slength + step;
+		} else if (scdir === 'top') {
+      slength = 0;
+		}
+		if (hold === false) {
+      hold = true;
+			pan.style.transform = 'translateY(' + slength + 'vh)';
+			setTimeout(function() {
+        hold = false;
+			}, 1000);
+		}
+		console.log(scdir + ':' + slength + ':' + plength + ':' + (plength - plength / pnls));
+    console.log(step)
+	}
+	/*[swipe detection on touchscreen devices]*/
+	function _swipe(obj) {
+		var swdir,
+			sX,
+			sY,
+			dX,
+			dY,
+			threshold = 100,
+			/*[min distance traveled to be considered swipe]*/
+			slack = 50,
+			/*[max distance allowed at the same time in perpendicular direction]*/
+			alT = 500,
+			/*[max time allowed to travel that distance]*/
+			elT, /*[elapsed time]*/
+			stT; /*[start time]*/
+		obj.addEventListener('touchstart', function(e) {
+			var tchs = e.changedTouches[0];
+			swdir = 'none';
+			sX = tchs.pageX;
+			sY = tchs.pageY;
+			stT = new Date().getTime();
+			//e.preventDefault();
+		}, false);
+
+		obj.addEventListener('touchmove', function(e) {
+			e.preventDefault(); /*[prevent scrolling when inside DIV]*/
+		}, false);
+
+		obj.addEventListener('touchend', function(e) {
+			var tchs = e.changedTouches[0];
+			dX = tchs.pageX - sX;
+			dY = tchs.pageY - sY;
+			elT = new Date().getTime() - stT;
+			if (elT <= alT) {
+				if (Math.abs(dX) >= threshold && Math.abs(dY) <= slack) {
+					swdir = (dX < 0) ? 'left' : 'right';
+				} else if (Math.abs(dY) >= threshold && Math.abs(dX) <= slack) {
+					swdir = (dY < 0) ? 'up' : 'down';
+				}
+				if (obj.id === 'scroll-container') {
+					if (swdir === 'up') {
+						scdir = swdir;
+						_scrollY(obj);
+					} else if (swdir === 'down' && obj.style.transform !== 'translateY(0)') {
+						scdir = swdir;
+						_scrollY(obj);
+
+					}
+					e.stopPropagation();
+				}
+			}
+		}, false);
+	}
+	/*[assignments]*/
+	var well = document.getElementById('scroll-container');
+	well.style.transform = 'translateY(0)';
+	well.addEventListener('wheel', function(e) {
+		if (e.deltaY < 0) {
+			scdir = 'down';
+		}
+		if (e.deltaY > 0) {
+			scdir = 'up';
+		}
+		e.stopPropagation();
+	});
+	well.addEventListener('wheel', _scrollY);
+	_swipe(well);
+})();
+</script>
