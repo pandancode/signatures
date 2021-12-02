@@ -40,6 +40,8 @@ gem "aws-sdk-s3", require: false
 gem 'pg_search', '~> 2.3.0'
 # Yilun added the development only email opener
 gem 'letter_opener', group: :development
+# Yilun added Pundit
+gem 'pundit'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

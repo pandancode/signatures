@@ -22,6 +22,7 @@ class ContractsController < ApplicationController
 
   def show
     @contract = Contract.find(params[:id])
+    authorize @contract
     if current_user.role == "Individual" && current_user.individual == @contract.individual && @contract.fully_signed_at.nil? && @contract.status == "unopened"
       @contract.status = "opened"
       @contract.save
@@ -31,12 +32,14 @@ class ContractsController < ApplicationController
   def new
     @company = current_user.company if current_user.role == "Company"
     @contract = Contract.new
+    authorize @contract
   end
 
   def create
     @contract = Contract.new(new_contract_params)
     @company = current_user.company
     @contract.company = @company
+    authorize @contract
     # This presumes that the recipient email is in our database, else, we will still have to create one (which would conflict with our validations but whatever)
     # The below kind of works but I want to go to the next level faster
     @user = User.where(email: new_contract_params[:recipient_email])
@@ -52,8 +55,10 @@ class ContractsController < ApplicationController
     end
   end
 
+  # I don't think edit and update is technically used. Yilun removed routes too
   def edit
     @contract = Contract.find(params[:id])
+    authorize @contract
   end
 
   def update
@@ -67,7 +72,7 @@ class ContractsController < ApplicationController
   def sign
     # Updating contract
     @contract = Contract.find(params[:id])
-
+    authorize @contract
     # Renders the initials of the user (only, for now)
     initialed_page = WickedPdf.new.pdf_from_string(render_to_string('pdf_initials/show', layout: "pdf", locals: { individual: current_user.individual }))
     initials = ::CombinePDF.new
@@ -115,6 +120,7 @@ class ContractsController < ApplicationController
     end
     # @user = current_user.individual
     # @contracts = Contract.where(individual_id: @user)
+    authorize @contracts
   end
 
   def unsigned
@@ -141,6 +147,7 @@ class ContractsController < ApplicationController
     end
     # @user = current_user.individual
     # @contracts = Contract.where(individual_id: @user)
+    authorize @contracts
   end
 
   private
