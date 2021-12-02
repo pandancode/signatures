@@ -3,6 +3,7 @@
   <div class="main-section scroll-snap">
     <div class="main-section-text">
       <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
+      <%= link_to "Get started", unsigned_path, class: "home-home-btn" %>
     </div>
     <div class="main-section-img">
       <%= image_tag "contract-undraft.svg" %>
@@ -35,8 +36,10 @@
     <ul>
       <li><ion-icon name="leaf-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Environmentally friendly.</span> Going paperless helps to reduce your carbon footprint.</li>
       <li><ion-icon name="cloud-done-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Cloud Storage.</span> No more storing paper contracts, and no more losing contracts.</li>
-      <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Sign your contract with the click of a button.</li>
+      <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Online contracts have a 40% faster turnaround compared to paper versions.</li>
+       <li><ion-icon name="checkmark-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Legally Binding.</span> All contracts signed on EZ-Contract are 100% legally binding.</li>
     </ul>
+    <%= link_to "Get started", unsigned_path, class: "home-btn" %>
   </div>
 
 <div class="section-pricing">
@@ -50,18 +53,21 @@
           <h3>Standard</h3>
           <h6 class="font-weight-bold">£7.50 per month</h6>
           <p style="padding-top: 20px;">Send up to 10 contracts each month</p>
+          <button class="pricing-btn">Buy now!</button>
         </div>
 
         <div class="card">
           <h3>Pro</h3>
           <h6 class="font-weight-bold">£12.99 per month</h6>
           <p style="padding-top: 20px;">Send up to 30 contracts each month</p>
+          <button class="pricing-btn">Buy now!</button>
         </div>
 
         <div class="card">
           <h3>Advanced</h3>
           <h6 class="font-weight-bold">£20 per month</h6>
           <p style="padding-top: 20px;">Unlimited contracts</p>
+          <button class="pricing-btn">Buy now!</button>
         </div>
       </div>
     </div>
@@ -123,7 +129,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
 (function() {
