@@ -27,13 +27,11 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
 import { loader } from '../components/loader';
-import { loader } from '../components/loader';
 
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
   loader()
 });
-
 
 $(".alert").fadeOut(4000);
 import "controllers"
