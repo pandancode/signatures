@@ -30,7 +30,12 @@ import { loader } from '../components/loader';
 
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
-  loader()
+  if (document.querySelector("#scroll-container")) {
+    document.querySelector("html").classList.add("scroll-home");
+  } else {
+    document.querySelector("html").classList.remove("scroll-home");
+  };
+  loader();
 });
 
 $(".alert").fadeOut(4000);

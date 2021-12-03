@@ -155,9 +155,9 @@ h1 {
 }
 
 // scrolling stuff - Sarah
-html {
+.scroll-home {
   scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat (100vh);
+  // scroll-snap-points-y: repeat (100vh);
 }
 
 .scroll-container {
