@@ -7,16 +7,25 @@
 .search-bar {
   display: block;
   margin: 0 auto;
-  padding: 1rem 7rem;
+  padding: 1rem 1rem;
+  width: 30%;
   border-radius: 100px;
+  text-align: center;
   border: 1px solid #1992F7;
   margin-bottom: 5rem;
   background-color: #f1f1f1;
+  font-size: 1.4rem;
 
   &:focus {
     box-shadow: 0 0 15px rgba(25, 147, 247, 0.3);
     outline-color: #1992F7;
   }
+}
+
+.search-bar::placeholder {
+  text-align: center;
+  width: 100%;
+  transform: scale(1.4);
 }
 
 .all-contracts {
