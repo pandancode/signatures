@@ -4,9 +4,11 @@ class Individual < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :birth_date, presence: true
 
-  validates :phone_number, presence: true
+  # we will make signing up very easy by hashing out the next two validations
+  # validates :birth_date, presence: true
+  # validates :phone_number, presence: true
+
   validates :phone_number, length: { minimum: 10 }
   validates :phone_number, length: { maximum: 11 }
   validates :phone_number, numericality: { only_integer: true }
