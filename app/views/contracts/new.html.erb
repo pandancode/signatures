@@ -6,6 +6,9 @@
       <%= simple_form_for [@contract], class:"form" do |f| %>
         <%= f.input :name, placeholder: "Contract name" %>
         <%= f.input :description, placeholder: "Brief description of the contract" %>
+        <%= f.input :title, collection: %w[Mr Ms Mx] %>
+        <%= f.input :first_name, placeholder: "First name" %>
+        <%= f.input :last_name, placeholder: "Last name" %>
         <%= f.input :recipient_email, placeholder: "Recipient e-mail", required: true %>
         <%= f.input :document, as: :file, required: true  %>
         <%= f.button :submit, 'Send it out!', class: "create-contract" %>

@@ -40,12 +40,24 @@ class ContractsController < ApplicationController
     @company = current_user.company
     @contract.company = @company
     authorize @contract
-    # This presumes that the recipient email is in our database, else, we will still have to create one (which would conflict with our validations but whatever)
-    # The below kind of works but I want to go to the next level faster
-    @user = User.where(email: new_contract_params[:recipient_email])
-    # Note the below technically returns an array, which is why we need the [0]
-    @individual = Individual.where(user_id: User.where(email: new_contract_params[:recipient_email]))[0]
-    @contract.individual_id = @individual.id
+    @target_email = new_contract_params[:recipient_email]
+    @user = User.where(email: @target_email)
+
+    # Below handles whether the email could be matched
+    if @user == []
+      new_user = User.new(email: @target_email, password: "111111", role: "Individual")
+      @individual = Individual.new(title: new_contract_params[:title], first_name: new_contract_params[:first_name], last_name: new_contract_params[:last_name], user: new_user)
+      new_user.save
+      @individual.save
+      @contract.individual_id = @individual.id
+    else
+      # This presumes that the recipient email is in our database, else, we will still have to create one (which would conflict with our validations but whatever)
+      # The below kind of works but I want to go to the next level faster
+      # Note the below technically returns an array, which is why we need the [0]
+      @individual = Individual.where(user_id: User.where(email: @target_email))[0]
+      @contract.individual_id = @individual.id
+    end
+
     if @contract.save
       redirect_to contract_path(@contract), flash: { success: "Contract has been successfully created" }
       mail = UserMailer.with(user: @individual.user).new_contract_received(@contract)
@@ -153,6 +165,6 @@ class ContractsController < ApplicationController
   private
 
   def new_contract_params
-    params.require(:contract).permit(:name, :description, :recipient_email, :document)
+    params.require(:contract).permit(:name, :description, :recipient_email, :document, :title, :first_name, :last_name)
   end
 end
