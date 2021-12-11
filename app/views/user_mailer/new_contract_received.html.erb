@@ -1,4 +1,5 @@
-<p>Hi <%= @user.individual.first_name %>,</p>
+<%# View this here: localhost:3000/rails/mailers/user_mailer/new_contract_received %>
+<p>Hi<%= " #{@user.individual.first_name}" %>,</p>
 
 <p>You got a new contract! Please view it <%= link_to "here", "www.ezcontract.co.uk/contracts/#{@contract.id}" %>.</p>
 

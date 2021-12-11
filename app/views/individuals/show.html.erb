@@ -3,11 +3,11 @@
     <h2 class="section-title">Your details</h2>
     <div class="details-infos-content">
       <p><%= @individual.title %> <%= @individual.first_name %> <%= @individual.last_name %><p>
-      <p>Date of birth: <%= @individual.birth_date.strftime("%d %m %Y") %></p>
+      <p>Date of birth: <%= @dob %></p>
       <% if @individual.signature.attached? %>
         <p><span class="show-keywords">Signature: <%= image_tag @individual.signature, height: 50, crop: :fill %></p>
       <% end %>
-      <p class="last-element">Phone number: <%= @individual.phone_number %></p>
+      <p class="last-element">Phone number: <%= @phone_no %></p>
 
       <%= link_to "Edit your details", edit_individual_path, class: "home-btn"%>
     </div>
