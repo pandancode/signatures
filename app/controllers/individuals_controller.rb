@@ -19,6 +19,20 @@ class IndividualsController < ApplicationController
   def show
     @individual = Individual.find(params[:id])
     authorize @individual
+
+    # Below prevents errors for nil info provided for newly set up accounts due to loosened validations
+    if @individual.birth_date.nil?
+     @dob = "No birthday provided"
+   else
+     @dob = @individual.birth_date.strftime("%d %m %Y")
+   end
+
+    # Below prevents errors for nil info provided for newly set up accounts due to loosened validations
+   if @individual.phone_number.nil?
+     @phone_no = "No phone number provided"
+   else
+     @phone_no = @individual.phone_number
+   end
   end
 
   def edit
