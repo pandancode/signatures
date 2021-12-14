@@ -41,17 +41,25 @@
 }
 
 .container-form {
- width: 50%;
+ width: 40%;
 }
 
 .container-img {
-width: 50%;
+width: 60%;
+}
+
+.container-infos-form .home-btn {
+  margin-top: 3.5rem;
 }
 
 .container-infos-form .form-control {
   border-radius: 4px;
   margin-bottom: 3rem;
   border: none;
+}
+
+.container-infos-form .section-title {
+  font-size: 3rem;
 }
 
 .container-infos-form label {

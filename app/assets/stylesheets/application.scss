@@ -54,7 +54,7 @@ body {
   display: inline-block;
   border-bottom: 3px solid #1992F7;
   margin-bottom: 5rem;
-  font-size: 3.6rem;
+  font-size: 3rem;
   font-weight: bold;
   transition: transform ease-in 200ms;
   line-height: 5rem;
@@ -68,4 +68,8 @@ body {
   padding-bottom: 1.2rem;
   width: 15rem;
   margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: -1.5rem;
 }
