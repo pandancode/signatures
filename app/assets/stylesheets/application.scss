@@ -42,9 +42,9 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
-// html {
-//   font-size: 10px;
-// }
+html {
+  font-size: 10px;
+}
 
 body {
   overflow-x: hidden;
@@ -57,6 +57,7 @@ body {
   font-size: 36px;
   font-weight: bold;
   transition: transform ease-in 200ms;
+  line-height: 5rem;
 
   &:hover {
     transform: translate(3%);

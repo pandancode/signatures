@@ -23,26 +23,28 @@
 
 .logo {
   margin-left: 4rem;
+  transform: scale(0.8);
 }
 
 .navbar-nav .nav-item {
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 .navbar p {
-  font-size: 24px;
+  font-size: 2rem;
   margin-right: 2rem;
   margin-bottom: 0;
 }
 
 .nav-login-signup {
+  font-size: 2rem;
   margin-right: 2rem;
   display: flex;
   gap: 1rem;
 }
 
 .nav-login-signup .nav-item {
-  font-size: 24px;
+  font-size: 2rem;
   margin-left: -1rem;
   transition: 200ms;
 }
