@@ -5,7 +5,7 @@
   color: white;
   font-weight: bold;
   background-color: #1992F7;
-  width: 400px;
+  width: 300px;
   margin: 0 auto;
   margin-top: 6.5rem;
   transition: box-shadow 400ms;
@@ -43,7 +43,7 @@
 
 
 .pricing-btn {
-  font-size: 28px;
+  font-size: 2.5rem;
   text-align: center;
   color: white;
   background-color: #1992F7;
@@ -54,6 +54,7 @@
   border-radius: 4px;
   border: none;
   transition: 400ms;
+  text-transform: uppercase;
 
   &:hover {
     transition: 400ms;
