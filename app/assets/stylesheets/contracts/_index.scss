@@ -1,14 +1,13 @@
 .contracts-section {
   background-color: #fff;
   padding: 5rem;
-
 }
 
 .search-bar {
   display: block;
   margin: 0 auto;
   padding: 1rem 1rem;
-  width: 30%;
+  width: 30rem;
   border-radius: 100px;
   text-align: center;
   border: 1px solid #1992F7;
@@ -34,7 +33,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 4rem;
-
 }
 
 .all-contracts a {
@@ -44,9 +42,9 @@
 .contract {
   text-decoration: none;
   background-color: #f1f1f1;
-  width: 325px;
-  min-height: 220px;
-  max-height: 220px;
+  width: 290px;
+  min-height: 190px;
+  max-height: 190px;
   position: relative;
   padding: 2rem 1rem;
   color: black;
@@ -62,17 +60,9 @@
 }
 
 .contract-name {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #313131;
 }
-
-// .contract-company-name {
-// }
-
-// .contract-individual-name {
-// }
-
-// .contract-signature-date {}
 
 .ionicon-arrow {
   display: block;
