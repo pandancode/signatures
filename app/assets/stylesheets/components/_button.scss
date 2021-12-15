@@ -1,11 +1,11 @@
 .home-btn {
   display: block;
-  font-size: 3.6rem;
+  font-size: 2.6rem;
   text-align: center;
   color: white;
   font-weight: bold;
   background-color: #1992F7;
-  width: 300px;
+  width: 30rem;
   margin: 0 auto;
   margin-top: 6.5rem;
   transition: box-shadow 400ms;
@@ -47,7 +47,7 @@
   text-align: center;
   color: white;
   background-color: #1992F7;
-  width: 200px;
+  width: 20rem;
   margin: 0 auto;
   margin-top: 1.5rem;
   transition: box-shadow 400ms;
@@ -62,5 +62,20 @@
     text-decoration: none;
     color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+// MEDIA QUERIES
+
+@media (max-width: 1175px) {
+  .home-btn {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 510px) {
+  .home-home-btn {
+    width: inherit;
   }
 }
