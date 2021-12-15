@@ -1,4 +1,4 @@
-// // Specific CSS for your home-page
+// Specific CSS for your home-page
 
 .main-section {
   position: relative;
@@ -64,8 +64,8 @@ h1 {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 300px;
-  min-width: 300px;
+  width: 30rem;
+  // min-width: 300px;
   background-color: #f1f1f1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border: none;
@@ -112,6 +112,7 @@ h1 {
   font-size: 1.5rem;
   line-height: 5rem;
   letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
 .main-page-keywords {
@@ -143,7 +144,7 @@ h1 {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 300px;
+  width: 30rem;
   background-color: #f1f1f1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border: none;
@@ -230,4 +231,64 @@ h1 {
   color: white;
   text-align: right;
   font-size: 4rem;
+}
+
+
+// MEDIA QUERIES
+
+@media (max-width: 1175px) {
+  html {
+    font-size: 50% !important;
+  }
+
+  .section-why ul {
+    margin-top: 4rem;
+  }
+
+  .section-why li {
+    margin-bottom: 4rem;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  html {
+    font-size: 40% !important;
+  }
+
+  .section-how-cards .card {
+    width: 30rem;
+  }
+
+  // .section-how-cards .card {
+  //   width: 20rem;
+  // }
+}
+
+@media (max-width: 815px) {
+  .main-section-img {
+    display: none;
+  }
+}
+
+@media (max-height: 825px) {
+  html {
+    font-size: 28% !important;
+  }
+
+  .pricing-desc {
+    margin-top: unset;
+  }
+
+  .section-pricing-cards {
+    gap: 2rem;
+  }
+
+  .pricing-explanation {
+    padding-bottom: 4rem;
+  }
+
+  .section-how-cards {
+    gap: 2rem;
+  }
 }
