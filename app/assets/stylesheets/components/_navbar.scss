@@ -1,7 +1,7 @@
-// NAVBAR
+// // NAVBAR
 
 .navbar {
-  height: 10vh;
+  height: 100%;
 }
 
 .navbar-lewagon {
@@ -10,6 +10,7 @@
   align-items: center;
   background-color: #1992F7;
   color: white !important;
+  min-width: 350px;
 }
 
 .navbar-lewagon a {
@@ -19,6 +20,7 @@
 
 .navbar-nav {
   gap: 5rem;
+  width: 100%;
 }
 
 .logo {
@@ -78,4 +80,44 @@
 .nav-login-signup .p {
   transform: scale(1.3);
   margin-right: -2rem !important;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+
+// NAVBAR COLLAPSE PART
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 4.25rem;
+  line-height: 1;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+
+.navbar-collapse {
+  width: 62.5%;
+}
+
+.li-signed {
+  margin-right: auto;
+}
+
+@media (max-width: 565px) {
+  .li-icon {
+    text-align: center;
+  }
+
+  .nav-item {
+    text-align: center;
+    font-size: 5rem !important;
+  }
+
+  .li-signed {
+    margin-right: 0;
+  }
 }
