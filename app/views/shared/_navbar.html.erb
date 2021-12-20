@@ -5,62 +5,75 @@
     <% end %>
   </div>
 
+  <div class="clc">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <% if user_signed_in? %>
       <ul class="navbar-nav">
         <% if current_user.role == "Company" %>
           <% if current_user.company %>
-              <li class="nav-item">
-                <%= link_to "Unsigned", unsigned_path %>
-              </li>
-              <li>
-                <%= link_to new_contract_path do %>
-                  <ion-icon name='add-circle-outline' class='ionicon-add-contract'></ion-icon>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Signed", signed_path %>
-              </li>
+            <li class="nav-item">
+              <%= link_to "Unsigned", unsigned_path %>
+            </li>
+            <li class="li-icon">
+              <%= link_to new_contract_path do %>
+                <ion-icon name='add-circle-outline' class='ionicon-add-contract'></ion-icon>
+              <% end %>
+            </li>
+            <li class="nav-item li-signed">
+              <%= link_to "Signed", signed_path %>
+            </li>
           <% end %>
         <% else %>
           <% if current_user.individual %>
             <li class="nav-item">
               <%= link_to "Unsigned", unsigned_path %>
             </li>
-            <li>
+            <li class="li-icon">
               <%= link_to root_path do %>
                 <ion-icon name='home-outline' class='ionicon-add-contract'></ion-icon>
               <% end %>
               </li>
-             <li class="nav-item">
+             <li class="nav-item li-signed">
               <%= link_to "Signed", signed_path %>
             </li>
           <% end %>
         <% end %>
-      </ul>
+
 
       <% if current_user.role == "Company" %>
-        <div class="nav-login-signup">
-          <% if !current_user.company.nil? %>
-            <p class="nav-item"><%= current_user.company.company_name %></p>
-          <% end %>
-          <%= link_to "Log out", destroy_user_session_path, class: "nav-item light", method: "delete" %>
-        </div>
-      <% else %>
-        <div class="nav-login-signup">
-          <% if !current_user.individual.nil? %>
-            <%= link_to individual_path(current_user.individual), class:"nav-item name" do %>
+        <% if !current_user.company.nil? %>
+            <li class="nav-item">
+              <p><%= current_user.company.company_name %></p>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
+            </li>
+        <% end %>
+      <% elsif !current_user.individual.nil? %>
+          <li class="nav-item">
+            <%= link_to individual_path(current_user.individual), class:" name" do %>
               <%= current_user.individual.first_name %>
             <% end %>
-          <% end %>
-          <%= link_to "Log out", destroy_user_session_path, class: "nav-item light", method: "delete" %>
-        </div>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
+          </li>
+      <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: " light" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "" %>
+          </li>
+  </ul>
       <% end %>
-
-    <% else %>
-      <div class="nav-login-signup">
-        <%= link_to "Login", new_user_session_path, class: "nav-item light" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-item" %>
-      </div>
     <% end %>
-
+  </div>
 </div>
