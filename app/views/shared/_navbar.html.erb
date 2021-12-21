@@ -14,8 +14,8 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <% if user_signed_in? %>
-      <ul class="navbar-nav">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
         <% if current_user.role == "Company" %>
           <% if current_user.company %>
             <li class="nav-item">
@@ -53,27 +53,27 @@
                 <p><%= current_user.company.company_name %></p>
               </li>
               <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "light", method: "delete" %>
               </li>
           <% end %>
         <% elsif !current_user.individual.nil? %>
             <li class="nav-item">
-              <%= link_to individual_path(current_user.individual), class:" name" do %>
+              <%= link_to individual_path(current_user.individual), class:"name" do %>
                 <%= current_user.individual.first_name %>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
-            </li>
-        <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: " light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "light", method: "delete" %>
             </li>
         <% end %>
-      </ul>
-    <% end %>
+      <% else %>
+        <li class="nav-item li-login">
+          <%= link_to "Login", new_user_session_path, class: "light" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
