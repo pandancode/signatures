@@ -74,3 +74,12 @@
 .container-create-contract .form-group {
     margin-bottom: -1.5rem;
 }
+
+
+/////////////////////////////////////// MEDIA QUERIES
+
+@media (max-width: 1130px) {
+  .container-infos-form .section-title {
+    font-size: 2.8rem !important;
+  }
+}
