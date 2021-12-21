@@ -47,33 +47,33 @@
         <% end %>
 
 
-      <% if current_user.role == "Company" %>
-        <% if !current_user.company.nil? %>
+        <% if current_user.role == "Company" %>
+          <% if !current_user.company.nil? %>
+              <li class="nav-item">
+                <p><%= current_user.company.company_name %></p>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
+              </li>
+          <% end %>
+        <% elsif !current_user.individual.nil? %>
             <li class="nav-item">
-              <p><%= current_user.company.company_name %></p>
+              <%= link_to individual_path(current_user.individual), class:" name" do %>
+                <%= current_user.individual.first_name %>
+              <% end %>
             </li>
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
             </li>
+        <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: " light" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path, class: "" %>
+            </li>
         <% end %>
-      <% elsif !current_user.individual.nil? %>
-          <li class="nav-item">
-            <%= link_to individual_path(current_user.individual), class:" name" do %>
-              <%= current_user.individual.first_name %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, class: " light", method: "delete" %>
-          </li>
-      <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: " light" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "" %>
-          </li>
-  </ul>
-      <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
