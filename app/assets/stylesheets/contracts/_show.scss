@@ -121,3 +121,16 @@
 
   z-index: 100;
 }
+
+
+// MEDIA QUERIES
+
+@media (max-width: 1060px) {
+  .container-show-contract .container-text {
+    width: unset;
+  }
+
+  .container-img {
+    display: none !important;
+  }
+}
