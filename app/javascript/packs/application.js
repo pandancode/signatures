@@ -40,41 +40,37 @@ document.addEventListener('turbolinks:load', () => {
   loader();
 });
 
-//////////////////// ADDING / REMOVING ACTION ICON FROM NAVBAR (AMIN) ////////////////////:
-
-// INITIALISING THE VARIABLE WHICH WILL STORE THE HTML CODE OF THE ACTION NAV ITEM
-let li_icon;
-
-// WHEN THE APP LOAD, CHECK IF SIZE <= 565 px.
-// IF YES, REMOVES THE ACTION ICON FROM THE DROPDOWN LIST IN THE NAVBAR.
-// IF NO, JUST STORES THE HTML CODE OF THE ACTION BUTTON (SO HOME FOR INDIV / CONTRACT FOR COMPANIES)
-
-window.addEventListener("load", () => {
-  li_icon = document.querySelector(".li-icon");
-
-  if (document.documentElement.clientWidth <= 565) {
-    li_icon.parentNode.removeChild(li_icon);
-  }
-});
-
-// FUNCTION THAT WILL ADD / REMOVE THE ACTION BUTTON DEPENDING ON THE "clientWidth" SIZE.
-
-const displayIconNavItem = () => {
-  const navbarUlElem = document.querySelector(".navbar-nav");
-  if (document.documentElement.clientWidth <= 565) {
-    // REMOVES THE ACTION ICON NAV ITEM ELEMENT FROM DOM TREE
-    li_icon.parentNode.removeChild(li_icon);
-  } else if (document.documentElement.clientWidth > 565) {
-    // ADD THE ACTION ICON NAV ITEM ELEMENT TO DOM TREE
-    document.querySelector(".li-icon") ? "" : navbarUlElem.insertBefore(li_icon, navbarUlElem.children[1]);
-  }
-};
-
-// EVENT LISTENER CHECKING THE SIZE OF THE CLENT WIDTH AND CALLING "displayIconNavItem" EVERYTIME WINDOW IS RESIZED
-window.onresize = displayIconNavItem
-
-
 ///////////////////// ALERT POPUPS WINDOWS (YILUN)
 
 $(".alert").fadeOut(4000);
 import "controllers"
+
+//////////////////// ADDING / REMOVING ACTION ICON FROM NAVBAR (AMIN) /////////////////////
+
+// INITIALISING THE VARIABLEs WHICH WILL STORE THE HTML CODE OF THE ACTION NAV ITEM AND NAVBAR ELEMENT
+const li_icon = document.querySelector(".li-icon");
+const li_iconCopy = document.querySelector(".li-icon");
+const navbarUlElem = document.querySelector(".navbar-nav");
+
+// FUNCTION THAT WILL ADD / REMOVE THE ACTION BUTTON DEPENDING ON THE "clientWidth" SIZE.
+
+const displayIconNavItem = () => {
+  if (document.documentElement.clientWidth <= 565) {
+    // REMOVES THE ACTION ICON NAV ITEM ELEMENT FROM DOM TREE
+    li_icon.parentNode.removeChild(li_icon);
+  } else {
+    // ADD THE ACTION ICON NAV ITEM ELEMENT TO DOM TREE
+    // document.querySelector(".li-icon") ? "" : navbarUlElem.insertBefore(li_icon, navbarUlElem.children[1]);
+    navbarUlElem.insertBefore(li_icon, navbarUlElem.children[1]);
+  }
+}
+
+// WHEN THE APP LOAD, CHECK IF SIZE <= 565 px.
+// IF YES, REMOVES THE ACTION ICON FROM THE DROPDOWN LIST IN THE NAVBAR.
+// IF NOT, JUST STORES THE HTML CODE OF THE ACTION BUTTON (SO HOME FOR INDIV / CONTRACT FOR COMPANIES)
+
+document.addEventListener("DOMContentLoaded", displayIconNavItem());
+// document.addEventListener("beforeunload", displayIconNavItem());
+
+// EVENT LISTENER CHECKING THE SIZE OF THE CLENT WIDTH AND CALLING "displayIconNavItem" EVERYTIME WINDOW IS RESIZED
+window.onresize = displayIconNavItem

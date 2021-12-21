@@ -46,3 +46,34 @@
   padding-top: 2px;
   padding-left: 10px;
 }
+
+///////////////////////////////// MEDIA QUERIES
+
+@media (max-width: 1060px) {
+  // SIGN IN PART
+  .sign-in-form {
+    width: 100%;
+    border-right: none;
+  }
+
+  .sign-up-img {
+    display: none !important;
+  }
+
+  .sign-in-form #new_user {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 1060px) {
+  // SIGN UP PART
+  .container-sign-up .sign-up-form {
+    width: 100%;
+    border-right: none;
+  }
+
+  .container-sign-up .sign-up-form #new_user {
+    width: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 .container-details-show {
   background-color: #f1f1f1;
-  padding: 5rem;
-  height: 90vh;
+  padding: 8rem;
+  height: 87.5vh;
 
   display: flex;
   justify-content: center;
@@ -10,12 +10,12 @@
 }
 
 .details-infos {
-  width: 50%;
+  width: 35%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .details-img {
-  width: 50%;
+  width: 65%;
 }
 
 .details-infos-content {
@@ -32,7 +32,7 @@
 .container-infos-form {
   background-color: #f1f1f1;
   padding: 5rem;
-  height: 90vh;
+  min-height: 90vh;
 
   display: flex;
   justify-content: center;
@@ -72,4 +72,22 @@ width: 60%;
 
 .individual_signature {
   margin-top: 2rem;
+}
+
+
+////////////////////////// MEDIA QUERIES
+
+@media (max-width: 1060px) {
+  .details-infos {
+    width: unset;
+    border-right: none;
+  }
+
+  .details-img {
+    display: none !important;
+  }
+
+  .container-form {
+    width: unset;
+  }
 }

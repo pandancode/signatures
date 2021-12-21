@@ -5,9 +5,9 @@
   color: white;
   font-weight: bold;
   background-color: #1992F7;
-  width: 30rem;
-  margin: 0 auto;
-  margin-top: 6.5rem;
+  width: 99%;
+  // margin: 0 auto;
+  margin-top: 1.5rem;
   transition: box-shadow 400ms;
   border-radius: 4px;
 
@@ -71,6 +71,12 @@
 @media (max-width: 1175px) {
   .home-btn {
     padding: 2rem 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-btn {
+    font-size: 1.4rem;
   }
 }
 

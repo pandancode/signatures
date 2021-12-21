@@ -11,6 +11,7 @@
   background-color: #1992F7;
   color: white !important;
   min-width: 350px;
+  padding-right: 3rem;
 }
 
 .navbar-lewagon a {
@@ -52,7 +53,7 @@
 }
 
 .navbar a:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 .nav-login-signup .nav-item:last-child {
@@ -93,10 +94,19 @@
   padding: 0.25rem 0.75rem;
   font-size: 4.25rem;
   line-height: 1;
-  background-color: white;
-  border: 1px solid transparent;
+  // background-color: white;
+  border: 3px solid white;
   border-radius: 2px;
   margin-right: 20px;
+}
+
+.navbar-toggler-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .navbar-collapse {
@@ -106,6 +116,13 @@
 .li-signed {
   margin-right: auto;
 }
+
+.li-login {
+  margin-left: auto;
+}
+
+
+// MEDIA QUERIES
 
 @media (max-width: 565px) {
   .li-icon {
@@ -119,5 +136,23 @@
 
   .li-signed {
     margin-right: 0;
+  }
+
+  .li-login {
+    margin-left: 0;
+  }
+
+  .nav-item:first-of-type {
+    margin-top: 5rem;
+  }
+
+  .nav-item:last-of-type {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 566px) {
+  html {
+    font-size: 60% !important;
   }
 }

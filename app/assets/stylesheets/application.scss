@@ -46,8 +46,12 @@ html {
   font-size: 62.5%;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+}
+
+body {
+  position: relative
 }
 
 .section-title {
@@ -68,4 +72,15 @@ body {
   padding-bottom: 1.2rem;
   width: 15rem;
   margin: 0 auto;
+}
+
+
+@media (max-width: 713px) {
+  .section-title {
+    display: block !important;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 3.5rem;
+  }
 }

@@ -46,7 +46,7 @@ h1 {
 
 .section-how {
   background-color: #fff;
-  height: 100vh;
+  // height: 100vh;
   padding: 5rem;
 }
 
@@ -86,7 +86,7 @@ h1 {
 .section-why {
   background-color: #f1f1f1;
   padding: 5rem;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .section-why h2 {
@@ -110,9 +110,13 @@ h1 {
   list-style: none;
   text-transform: uppercase;
   font-size: 1.5rem;
-  line-height: 2rem;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-why .home-btn {
+  width: 33%;
+  margin: 0 auto;
 }
 
 .main-page-keywords {
@@ -128,7 +132,7 @@ h1 {
 
 .section-pricing {
   background-color: #fff;
-  height: 100vh;
+  // height: 100vh;
   padding: 5rem;
 }
 
@@ -138,6 +142,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 4rem;
+  margin-bottom: 5rem;
 }
 
 .section-pricing-cards .card {
@@ -177,21 +182,22 @@ h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 4rem;
+  margin-bottom: -2rem;
 }
 
 // scrolling stuff - Sarah
-.scroll-home {
-  scroll-snap-type: y mandatory;
-}
+// .scroll-home {
+//   scroll-snap-type: y mandatory;
+// }
 
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat (100vh);
-}
+// .scroll-container {
+//   scroll-snap-type: y mandatory;
+//   scroll-snap-points-y: repeat (100vh);
+// }
 
-.scroll-snap {
-  scroll-snap-align: start;
-}
+// .scroll-snap {
+//   scroll-snap-align: start;
+// }
 
 //////// FOOTER - SARAH
 
@@ -234,134 +240,42 @@ h1 {
 }
 
 
-// MEDIA QUERIES
+////////////////////////////////// MEDIA QUERIES
 
-// MQ WIDTH
-
-
-
-@media (max-width: 1175px) {
-  html {
-    font-size: 50% !important;
-  }
-
+@media (max-width: 1035px) {
   .section-why ul {
-    margin-top: 4rem;
-  }
-
-  .section-why li {
-    margin-bottom: 3rem;
+    align-items: initial;
   }
 }
 
-@media (max-width: 1050px) {
-  .section-how-cards .card {
-    width: 30rem;
-  }
-}
-
-@media (max-width: 965px) {
-  .section-why li {
-    font-size: 2rem;
-    line-height: 4rem;
+@media (max-width: 850px) {
+  .navbar-nav {
+    gap: 3rem;
   }
 
-  .section-why ul {
-    align-items: unset !important;
-  }
-}
-
-@media (max-width: 840px) {
-  html {
-    font-size: 40% !important;
+  .navbar-nav .nav-item {
+    font-size: 1.6rem;
   }
 
-  .section-how-cards .card {
-    width: 40rem;
+  .ionicon-add-contract {
+    transform: scale(3.5);
   }
 
-  .section-pricing-cards .card {
-    width: 40rem;
-  }
-
-  .pricing-desc {
-    margin-top: 10rem;
-  }
-}
-
-@media (max-width: 815px) {
   .main-section-img {
     display: none;
   }
 
   h1 {
     line-height: 10.5rem;
-    font-size: 7rem;
   }
 }
 
-@media (max-width: 595px) {
-  html {
-    font-size: 33% !important;
+@media (max-width: 600px) {
+  .navbar-nav .nav-item {
+    font-size: 1.5rem;
   }
 
-  .section-how-cards {
-    margin-top: 15rem;
-  }
-}
-
-@media (max-width: 400px) {
-  html {
-    font-size: 33% !important;
-  }
-
-  .section-how-cards {
-    margin-top: 15rem;
-  }
-}
-
-// MQ HEIGHT
-
-@media (max-height: 825px) {
-  // html {
-  //   font-size: 32% !important;
-  // }
-
-  .section-pricing-cards {
-    gap: 2rem;
-  }
-
-  .pricing-explanation {
-    padding-bottom: 4rem;
-  }
-
-  .section-how-cards {
-    gap: 2rem;
-  }
-
-  .section-how-cards .home-btn {
-    margin-top: 2.5rem;
-  }
-}
-
-@media (max-height: 690px) {
-  html {
-    // font-size: 28% !important;
-  }
-
-  .home-home-btn {
-    font-size: 6.6rem;
-    padding: 1rem 0;
-  }
-}
-
-@media (max-height: 640px) {
-  html {
-    font-size: 25% !important;
-  }
-
-  .section-why li {
-    font-size: 2.5rem;
-    line-height: 4.5rem;
+  .ionicon-add-contract {
+    transform: scale(2.5);
   }
 }
