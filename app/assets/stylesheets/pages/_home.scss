@@ -111,7 +111,6 @@ h1 {
   text-transform: uppercase;
   font-size: 1.5rem;
   line-height: 3rem;
-  // letter-spacing: 1px;
   margin-bottom: 3rem;
 }
 
@@ -240,56 +239,11 @@ h1 {
 
 // MQ WIDTH
 
-
-
-// @media (max-width: 1175px) {
-//   html {
-//     font-size: 50% !important;
-//   }
-
-//   .section-why ul {
-//     margin-top: 4rem;
-//   }
-
-//   .section-why li {
-//     margin-bottom: 3rem;
-//   }
-// }
-
-// @media (max-width: 1050px) {
-//   .section-how-cards .card {
-//     width: 30rem;
-//   }
-// }
-
-// @media (max-width: 965px) {
-//   .section-why li {
-//     font-size: 2rem;
-//     line-height: 4rem;
-//   }
-
-//   .section-why ul {
-//     align-items: unset !important;
-//   }
-// }
-
-// @media (max-width: 840px) {
-//   html {
-//     font-size: 40% !important;
-//   }
-
-//   .section-how-cards .card {
-//     width: 40rem;
-//   }
-
-//   .section-pricing-cards .card {
-//     width: 40rem;
-//   }
-
-//   .pricing-desc {
-//     margin-top: 10rem;
-//   }
-// }
+@media (max-width: 1035px) {
+  .section-why ul {
+    align-items: initial;
+  }
+}
 
 @media (max-width: 850px) {
   .navbar-nav {
@@ -310,7 +264,6 @@ h1 {
 
   h1 {
     line-height: 10.5rem;
-    // font-size: 7rem;
   }
 }
 
@@ -323,69 +276,3 @@ h1 {
     transform: scale(2.5);
   }
 }
-
-// @media (max-width: 595px) {
-//   html {
-//     font-size: 33% !important;
-//   }
-
-//   .section-how-cards {
-//     margin-top: 15rem;
-//   }
-// }
-
-// @media (max-width: 400px) {
-//   html {
-//     font-size: 33% !important;
-//   }
-
-//   .section-how-cards {
-//     margin-top: 15rem;
-//   }
-// }
-
-// // MQ HEIGHT
-
-// @media (max-height: 825px) {
-//   // html {
-//   //   font-size: 32% !important;
-//   // }
-
-//   .section-pricing-cards {
-//     gap: 2rem;
-//   }
-
-//   .pricing-explanation {
-//     padding-bottom: 4rem;
-//   }
-
-//   .section-how-cards {
-//     gap: 2rem;
-//   }
-
-//   .section-how-cards .home-btn {
-//     margin-top: 2.5rem;
-//   }
-// }
-
-// @media (max-height: 690px) {
-//   html {
-//     // font-size: 28% !important;
-//   }
-
-//   .home-home-btn {
-//     font-size: 6.6rem;
-//     padding: 1rem 0;
-//   }
-// }
-
-// @media (max-height: 640px) {
-//   html {
-//     font-size: 25% !important;
-//   }
-
-//   .section-why li {
-//     font-size: 2.5rem;
-//     line-height: 4.5rem;
-//   }
-// }

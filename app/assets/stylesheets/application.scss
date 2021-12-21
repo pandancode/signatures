@@ -73,3 +73,14 @@ body {
   width: 15rem;
   margin: 0 auto;
 }
+
+
+@media (max-width: 713px) {
+  .section-title {
+    display: block !important;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+  }
+}

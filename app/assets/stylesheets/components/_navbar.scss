@@ -94,10 +94,19 @@
   padding: 0.25rem 0.75rem;
   font-size: 4.25rem;
   line-height: 1;
-  background-color: white;
-  border: 1px solid transparent;
+  // background-color: white;
+  border: 3px solid white;
   border-radius: 2px;
   margin-right: 20px;
+}
+
+.navbar-toggler-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .navbar-collapse {
