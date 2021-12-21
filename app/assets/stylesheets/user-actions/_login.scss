@@ -46,3 +46,20 @@
   padding-top: 2px;
   padding-left: 10px;
 }
+
+///////////////////////////////// MEDIA QUERIES
+
+@media (max-width: 1060px) {
+  .sign-in-form {
+    width: unset;
+    border-right: none;
+  }
+
+  .sign-up-img {
+    display: none !important;
+  }
+
+  .sign-in-form #new_user {
+    width: 100%;
+  }
+}
