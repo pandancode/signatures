@@ -50,8 +50,9 @@
 ///////////////////////////////// MEDIA QUERIES
 
 @media (max-width: 1060px) {
+  // SIGN IN PART
   .sign-in-form {
-    width: unset;
+    width: 100%;
     border-right: none;
   }
 
@@ -60,6 +61,16 @@
   }
 
   .sign-in-form #new_user {
+    width: 100%;
+  }
+
+  // SIGN UP PART
+  .sign-up-form {
+    width: 100%;
+    border-right: none;
+  }
+
+  .sign-up-form #new_user {
     width: 100%;
   }
 }
