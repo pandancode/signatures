@@ -1480,7 +1480,6 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin
   x86_64-darwin-18
 
 DEPENDENCIES
