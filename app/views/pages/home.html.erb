@@ -1,5 +1,5 @@
 <div>
-<div class="scroll-container" id="scroll-container">
+<div class="scroll-container">
   <div class="main-section">
     <div class="main-section-text">
       <h1>Signing<br><span class="underline">contracts</span><br>made easy.</h1>
@@ -29,7 +29,7 @@
         <p>All of your contracts are always accessible once you have signed in.</p>
       </div>
     </div>
-    <%= link_to "Get started", unsigned_path, class: "home-btn" %>
+    <%# link_to "Get started", unsigned_path, class: "home-btn" %>
   </div>
   <div class="section-why scroll-snap">
     <h2 class="section-title">Why EZ-Contracts?</h2>
@@ -39,36 +39,35 @@
       <li><ion-icon name="extension-puzzle-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Quick and Easy.</span> Online contracts have a 40% faster turnaround compared to paper versions.</li>
       <li><ion-icon name="checkmark-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Legally Binding.</span> All contracts signed on EZ-Contract are 100% legally binding.</li>
       <li><ion-icon name="cash-outline" class="ionicon-why"></ion-icon> <span class="main-page-keywords">Online signatures</span> Can be used by anyone in the world with an internet connection, and save you time and money.</li>
-      <%= link_to "Get started", unsigned_path, class: "home-btn" %>
     </ul>
+      <%= link_to "Get started", unsigned_path, class: "home-btn" %>
   </div>
 
 <div class="section-pricing scroll-snap">
       <h2 class="section-title">Pricing</h2>
       <div class="pricing-explanation">
-        <h4 class="pricing-desc">EZ-Contract is always free for individuals.</h4>
-        <h4 class="pricing-desc">For companies, EZ-Contract offers a 30-day free trial.</h4>
+        <h4 class="pricing-desc">EZ-Contract is always free for individuals, and offers a 30-day free trial for companies</h4>
       </div>
       <div class="section-pricing-cards">
         <div class="card">
           <h3 class="section-title section-title-pad-bottom-fix">Standard</h3>
           <h6 class="font-weight-bold">£7.50 per month</h6>
-          <p style="padding-top: 20px;">Send up to 10 contracts each month</p>
-          <button class="pricing-btn">Buy now</button>
+          <p>Send up to 10 contracts each month</p>
+          <button class="pricing-btn">Start</button>
         </div>
 
         <div class="card">
           <h3 class="section-title section-title-pad-bottom-fix">Pro</h3>
           <h6 class="font-weight-bold">£12.99 per month</h6>
           <p style="padding-top: 20px;">Send up to 30 contracts each month</p>
-          <button class="pricing-btn">Buy now</button>
+          <button class="pricing-btn">Start</button>
         </div>
 
         <div class="card">
           <h3 class="section-title section-title-pad-bottom-fix">Advanced</h3>
           <h6 class="font-weight-bold">£20 per month</h6>
           <p style="padding-top: 20px;">Unlimited contracts</p>
-          <button class="pricing-btn">Buy now</button>
+          <button class="pricing-btn">Start</button>
         </div>
       </div>
     </div>
@@ -130,3 +129,6 @@
     </div>
   </div>
 </div>
+
+
+<%# id="scroll-container" %>

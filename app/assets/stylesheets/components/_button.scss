@@ -1,13 +1,13 @@
 .home-btn {
   display: block;
-  font-size: 36px;
+  font-size: 2.6rem;
   text-align: center;
   color: white;
   font-weight: bold;
   background-color: #1992F7;
-  width: 400px;
-  margin: 0 auto;
-  margin-top: 6.5rem;
+  width: 99%;
+  // margin: 0 auto;
+  margin-top: 1.5rem;
   transition: box-shadow 400ms;
   border-radius: 4px;
 
@@ -21,12 +21,12 @@
 
 .home-home-btn {
   display: block;
-  font-size: 36px;
+  font-size: 3rem;
   text-align: center;
   color: white;
   font-weight: bold;
   background-color: #1992F7;
-  width: 400px;
+  width: 35rem;
   margin: 0 auto;
   margin-top: 6.5rem;
   transition: box-shadow 400ms;
@@ -43,17 +43,18 @@
 
 
 .pricing-btn {
-  font-size: 28px;
+  font-size: 2.5rem;
   text-align: center;
   color: white;
   background-color: #1992F7;
-  width: 200px;
+  width: 20rem;
   margin: 0 auto;
   margin-top: 1.5rem;
   transition: box-shadow 400ms;
   border-radius: 4px;
   border: none;
   transition: 400ms;
+  text-transform: uppercase;
 
   &:hover {
     transition: 400ms;
@@ -65,52 +66,22 @@
 }
 
 
+// MEDIA QUERIES
 
+@media (max-width: 1175px) {
+  .home-btn {
+    padding: 2rem 0;
+  }
+}
 
+@media (max-width: 850px) {
+  .home-btn {
+    font-size: 1.4rem;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .home-button {
-//   padding: 12px 32px;
-//   border-radius: 4px;
-//   text-transform: uppercase;
-//   background: rgb(20,30,97);
-//   color: rgb(238, 238, 238);
-//   font-weight: bold;
-//   transition: background-color 100ms;
-//   border: 1px solid rgb(238,238,238);
-//   width: 50%;
-//   margin: 0 auto;
-
-//   &:hover{
-//     text-decoration: none;
-//     background: rgb(238, 238, 238);
-//     color: rgb(20,30,97);
-//     border: 1px solid rgb(20,30,97);
-//   }
-// }
-
-// // RESPECT THE ORDER OF THE RULES (PRECENDENCE IN ACTION ON THIS PAGE)
-
-// .btn-sign {
-//   padding: 8px 72px;
-// }
-
-// .extra-btn {
-//   padding: 4px 32px;
-//   background-color: rgb(40,40,40);
-// }
+@media (max-width: 510px) {
+  .home-home-btn {
+    width: inherit;
+  }
+}

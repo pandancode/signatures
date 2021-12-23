@@ -1,4 +1,4 @@
-// // Specific CSS for your home-page
+// Specific CSS for your home-page
 
 .main-section {
   position: relative;
@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -17,10 +18,16 @@ h1 {
   color: white;
   font-weight: bolder;
   z-index: 1000;
+  line-height: 6.5rem;
 }
 
 .main-section-text{
   z-index: 200;
+}
+
+.main-section-img {
+  z-index: 200;
+  transform: scale(0.8);
 }
 
 .underline {
@@ -29,7 +36,7 @@ h1 {
 
 .polygon {
   position: absolute;
-  bottom: 0;
+  bottom: -150px;
   left: 0;
   z-index: 100;
 }
@@ -39,8 +46,8 @@ h1 {
 
 .section-how {
   background-color: #fff;
-  height: 100vh;
-  padding: 140px 5rem;
+  // height: 100vh;
+  padding: 5rem;
 }
 
 .section-how-cards {
@@ -49,63 +56,67 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 4rem;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .section-how-cards .card {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 400px;
-  min-width: 300px;
-  height: 310px;
-  min-height: 310px;
+  width: 30rem;
+  // min-width: 300px;
   background-color: #f1f1f1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border: none;
 }
 
 .ionicon-how {
-  font-size: 75px;
+  font-size: 5rem;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
   margin-bottom: 2rem;
 }
 
-
 // SECTION WHY
 
 .section-why {
   background-color: #f1f1f1;
   padding: 5rem;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .section-why h2 {
   display: inline-block;
   border-bottom: 3px solid #1992F7;
   margin-bottom: 4rem;
-  font-size: 36px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .section-why ul {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: left;
-  height: 100%;
+  height: 80%;
 }
 
 .section-why li {
   list-style: none;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 5rem;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-why .home-btn {
+  width: 33%;
+  margin: 0 auto;
 }
 
 .main-page-keywords {
@@ -121,8 +132,8 @@ h1 {
 
 .section-pricing {
   background-color: #fff;
-  height: 100vh;
-  padding: 140px 5rem;
+  // height: 100vh;
+  padding: 5rem;
 }
 
 .section-pricing-cards {
@@ -131,45 +142,64 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 4rem;
+  margin-bottom: 5rem;
 }
 
 .section-pricing-cards .card {
   padding: 2rem;
   text-align: center;
   border-radius: 5px;
-  width: 390px;
-  min-width: 390px;
-  height: 310px;
-  min-height: 310px;
+  width: 30rem;
   background-color: #f1f1f1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border: none;
 }
 
+.section-pricing-cards .card .section-title {
+  font-size: 2rem;
+}
+
 .card h3 {
   margin-bottom: 1rem;
+  width: 100%;
+}
+
+.card h6 {
+  font-size: 1.2rem;
+}
+
+.card p {
+  padding-top: 2rem;
+  font-size: 1.3rem;
 }
 
 .pricing-explanation {
-  padding-bottom: 90px;
+  padding-bottom: 9rem;
+  text-align: center;
+}
+
+.pricing-desc {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 4rem;
+  margin-bottom: -2rem;
 }
 
 // scrolling stuff - Sarah
-.scroll-home {
-  scroll-snap-type: y mandatory;
-  // scroll-snap-points-y: repeat (100vh);
-}
+// .scroll-home {
+//   scroll-snap-type: y mandatory;
+// }
 
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat (100vh);
-}
+// .scroll-container {
+//   scroll-snap-type: y mandatory;
+//   scroll-snap-points-y: repeat (100vh);
+// }
 
-.scroll-snap {
-  scroll-snap-align: start;
-}
+// .scroll-snap {
+//   scroll-snap-align: start;
+// }
 
-////////footer - Sarah
+//////// FOOTER - SARAH
 
 .footer {
   padding: 40px 0 24px;
@@ -199,12 +229,53 @@ h1 {
   display: flex;
   justify-content: space-around;
   color: white;
-  padding-left: 200px;
-  padding-right: 200px
+  padding-left: 2rem;
+  padding-right: 20rem
 }
 
 .social-icons {
   color: white;
   text-align: right;
-  font-size: 40px;
+  font-size: 4rem;
+}
+
+
+////////////////////////////////// MEDIA QUERIES
+
+@media (max-width: 1035px) {
+  .section-why ul {
+    align-items: initial;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar-nav {
+    gap: 3rem;
+  }
+
+  .navbar-nav .nav-item {
+    font-size: 1.6rem;
+  }
+
+  .ionicon-add-contract {
+    transform: scale(3.5);
+  }
+
+  .main-section-img {
+    display: none;
+  }
+
+  h1 {
+    line-height: 10.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-nav .nav-item {
+    font-size: 1.5rem;
+  }
+
+  .ionicon-add-contract {
+    transform: scale(2.5);
+  }
 }

@@ -42,21 +42,26 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
-// html {
-//   font-size: 10px;
-// }
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  overflow-x: hidden;
+}
 
 body {
-  overflow-x: hidden;
+  position: relative
 }
 
 .section-title {
   display: inline-block;
   border-bottom: 3px solid #1992F7;
   margin-bottom: 5rem;
-  font-size: 36px;
+  font-size: 3rem;
   font-weight: bold;
   transition: transform ease-in 200ms;
+  line-height: 5rem;
 
   &:hover {
     transform: translate(3%);
@@ -67,4 +72,15 @@ body {
   padding-bottom: 1.2rem;
   width: 15rem;
   margin: 0 auto;
+}
+
+
+@media (max-width: 713px) {
+  .section-title {
+    display: block !important;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 3.5rem;
+  }
 }

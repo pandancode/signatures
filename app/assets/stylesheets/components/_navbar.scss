@@ -1,7 +1,7 @@
-// NAVBAR
+// // NAVBAR
 
 .navbar {
-  height: 10vh;
+  height: 100%;
 }
 
 .navbar-lewagon {
@@ -10,6 +10,8 @@
   align-items: center;
   background-color: #1992F7;
   color: white !important;
+  min-width: 350px;
+  padding-right: 3rem;
 }
 
 .navbar-lewagon a {
@@ -19,36 +21,39 @@
 
 .navbar-nav {
   gap: 5rem;
+  width: 100%;
 }
 
 .logo {
   margin-left: 4rem;
+  transform: scale(0.8);
 }
 
 .navbar-nav .nav-item {
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 .navbar p {
-  font-size: 24px;
+  font-size: 2rem;
   margin-right: 2rem;
   margin-bottom: 0;
 }
 
 .nav-login-signup {
+  font-size: 2rem;
   margin-right: 2rem;
   display: flex;
   gap: 1rem;
 }
 
 .nav-login-signup .nav-item {
-  font-size: 24px;
+  font-size: 2rem;
   margin-left: -1rem;
   transition: 200ms;
 }
 
 .navbar a:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 .nav-login-signup .nav-item:last-child {
@@ -64,6 +69,7 @@
   transform: scale(4.5);
   vertical-align: -webkit-baseline-middle;
   transition: 300ms;
+  padding-top: 2px;
 
   &:hover {
     transform: scale(4);
@@ -75,4 +81,78 @@
 .nav-login-signup .p {
   transform: scale(1.3);
   margin-right: -2rem !important;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+
+// NAVBAR COLLAPSE PART
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 4.25rem;
+  line-height: 1;
+  // background-color: white;
+  border: 3px solid white;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+
+.navbar-toggler-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-collapse {
+  width: 62.5%;
+}
+
+.li-signed {
+  margin-right: auto;
+}
+
+.li-login {
+  margin-left: auto;
+}
+
+
+// MEDIA QUERIES
+
+@media (max-width: 565px) {
+  .li-icon {
+    text-align: center;
+  }
+
+  .nav-item {
+    text-align: center;
+    font-size: 5rem !important;
+  }
+
+  .li-signed {
+    margin-right: 0;
+  }
+
+  .li-login {
+    margin-left: 0;
+  }
+
+  .nav-item:first-of-type {
+    margin-top: 5rem;
+  }
+
+  .nav-item:last-of-type {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 566px) {
+  html {
+    font-size: 60% !important;
+  }
 }
