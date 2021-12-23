@@ -20,5 +20,9 @@ module Signatures
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+
+    # ATTEMPT TO FIX THE PROBLEM WHEN PUSHING TO HEROKU
+    config.assets.initialize_on_precompile = false
   end
 end
