@@ -50,7 +50,15 @@
         <% if current_user.role == "Company" %>
           <% if !current_user.company.nil? %>
               <li class="nav-item">
-                <p><%= current_user.company.company_name %></p>
+                <%# link_to current_user.company.company_name[0] + ".", class: "light company-name" %>
+                <p class="company-name" style=" border: 3px solid rgba(4, 67, 118, 0.8);
+                                                border-radius: 500px;
+                                                width: 33px;
+                                                height: 33px;
+                                                text-align: center;
+                                                display: inline-block;">
+                  <%= current_user.company.company_name[0] + "." %>
+                </p>
               </li>
               <li class="nav-item">
                 <%= link_to "Log out", destroy_user_session_path, class: "light", method: "delete" %>
