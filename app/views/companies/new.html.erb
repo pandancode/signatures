@@ -1,7 +1,28 @@
-<h1>Form To Create Company</h1>
+<div class="container-infos-form">
+  <div class="container-form">
+    <h2 class="section-title">Enter your personal details</h2>
 
-<div class="container-sell-form">
-    <div class="container-form">
+    <%= simple_form_for @company do |f| %>
+          <%= f.input :company_name, placeholder: "Company name", input_html: { style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
+          <%= f.input :address, placeholder: "Company address", label_html: { class: "row justify-content-center"} %>
+          <%= f.input :detail, placeholder: "Describe your company here", label_html: { class: "row justify-content-center"} %>
+
+          <%= f.button :submit, 'Create Company!', class: 'home-btn' %>
+        <% end %>
+    </div>
+
+    <div class="container-img">
+      <%= image_tag "company-infos.svg", class:"img-form"%>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<%
+=begin %>
         <h3 class="title-form">Add Your Details</h3>
         <%= simple_form_for @company do |f| %>
           <%= f.input :company_name, input_html: { style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
@@ -16,3 +37,5 @@
 
     </div>
 </div>
+<%
+=end %>

@@ -4,6 +4,7 @@
   height: 100%;
 }
 
+
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
@@ -129,7 +130,7 @@
     text-align: center;
   }
 
-  .nav-item {
+  .nav-item, .nav-item p {
     text-align: center;
     font-size: 5rem !important;
   }
